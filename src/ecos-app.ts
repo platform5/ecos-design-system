@@ -3,37 +3,21 @@ import { IRouterConfiguration, Navigation, RoutingInstruction, IRouter } from 'a
 import template from './ecos-app.html';
 import components from './routes/components/components.json';
 
-// const mainRoutes: IRoute[] = [
-//   {id: 'home', path:'', component: import('./routes/welcome-page'), title: 'Welcome at Ecos'},
-//   {id: 'components', path:'components', component: import('./routes/components/components-list'), title: 'Components'},
-//   {path:'the-project', component: import('./routes/the-project'), title: 'The Ecos Project'},
-//   {path:'use-cases', component: import('./routes/use-cases'), title: 'Use Cases'},
-//   {path:'use-cases/blog', component: import('./routes/use-cases/blog-page'), title: 'Use Cases / Blog'},
-//   {path:'use-cases/website', component: import('./routes/use-cases/one-page-website'), title: 'Use Cases / One page website'},
-//   {path:'use-cases/dashboard', component: import('./routes/use-cases/admin-dashboard'), title: 'Use Cases / Admin Dashboard'},
-// ];
-
-// const componentsRoutes: IRoute[] = components.map((component) => {
-//   {return {path: `components/${component.load}`, component: import(`./routes/components/${component.load}-component`), title: `${component.name} component`}}
-// });
-
-// @routes([...mainRoutes, ...componentsRoutes])
 @customElement({name: 'ecos-app', template})
 export class EcosApp implements ICustomElementViewModel {
 
-  public isWelcomePath = false;
-  public isComponentsPath = false;
-  public isUseCasesPath = false;
+
 
   public displayComponentsList = false;
+  public isUseCaseRouterInUse = false;
   public componentsList = components;
 
-  public isUseCaseRouterInUse = false;
 
   public constructor(
     @IRouterConfiguration private routerConfiguration: IRouterConfiguration,
     @IRouter private router: IRouter
     ) {
+      this.handleUrlRoutes();
     this.routerConfiguration.addHook((instructions: RoutingInstruction[], navigation: Navigation) => {
       // when routing we want to scroll the viewport up again
       const vp = document.querySelector('au-viewport');
@@ -46,22 +30,30 @@ export class EcosApp implements ICustomElementViewModel {
       return true;
     });
     this.routerConfiguration.addHook((instructions: RoutingInstruction[], navigation: Navigation) => {
-      console.log('instructions', instructions);
-      console.log('navigation', navigation);
-      console.log('navigation.path', navigation.path);
-      this.isComponentsPath = navigation.path && navigation.path.includes('components');
-      this.displayComponentsList = navigation.path && navigation.path.includes('components/');
-      this.isWelcomePath = !navigation.path;
-      this.isUseCasesPath = navigation.path && navigation.path.includes('use-cases');
-      this.isUseCaseRouterInUse = navigation.path && navigation.path.includes('use-cases/');
-      console.log('isUseCaseRouterInUse', this.isUseCaseRouterInUse);
+      this.displayComponentsList = instructions.find(i => i.viewport.name === 'components-viewport') !== undefined && instructions.find(i => i.component.name === 'components-list') === undefined;
+      this.isUseCaseRouterInUse = instructions.find(i => i.viewport.name === 'use-cases-viewport') !== undefined && instructions.find(i => i.component.name === 'use-cases-list') === undefined;
       this.handleBodyStyles();
       return true;
     });
   }
 
+  private handleUrlRoutes() {
+    this.routerConfiguration.addHook(
+          (url: string) => {
+            return url;
+          },
+          { type: 'transformFromUrl' }
+    );
+    this.routerConfiguration.addHook(
+      (instructions: string | RoutingInstruction[]) => {
+        return instructions;
+      },
+      { type: 'transformToUrl'}
+    );
+  }
+
   private handleBodyStyles() {
-    document.body.classList.toggle('body-fixed', this.isUseCaseRouterInUse);
+    document.body.classList.toggle('use-cases-on', this.isUseCaseRouterInUse);
   }
 
 }

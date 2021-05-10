@@ -46,7 +46,12 @@ ecos-navbar ecos-anchor.active {
   font-weight: bold;
 }
 
-/* au-viewport.use-case-viewport {
+body.use-cases-on {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+}
+body.use-cases-on au-viewport {
   display: block;
   position: absolute;
   z-index: 10;
@@ -54,15 +59,6 @@ ecos-navbar ecos-anchor.active {
   right: 0;
   bottom: 0;
   left: 0;
-  transition: transform 250ms ease;
   background: var(--background-color);
   overflow: auto;
 }
-au-viewport.use-case-viewport:empty {
-  transform: scale(0);
-}
-body.body-fixed {
-  position: fixed;
-  overflow: hidden;
-  width: 100%;
-} */

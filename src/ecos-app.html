@@ -13,9 +13,9 @@
         <ecos-colorize slot="branding" style="color: var(--accent-foreground-rest)">
           <img load="welcome-page" src="./images/Ecos.png" style="height: 30px" class="logo" />
         </ecos-colorize>
-        <ecos-anchor slot="main" nav-active.class="isWelcomePath" load="welcome-page" appearance="lightweight">Welcome</ecos-anchor>
-        <ecos-anchor slot="main" nav-active.class="isComponentsPath" load="components-index/components-list" appearance="lightweight">Components</ecos-anchor>
-        <ecos-anchor slot="main" nav-active.class="isUseCasesPath" load="use-cases-index/use-cases-list" appearance="lightweight">Use cases</ecos-anchor>
+        <ecos-anchor slot="main" load="welcome-page" appearance="lightweight">Welcome</ecos-anchor>
+        <ecos-anchor slot="main" considered-active="components-index" load="components-index/components-list" appearance="lightweight">Components</ecos-anchor>
+        <ecos-anchor slot="main" considered-active="use-cases-index" load="use-cases-index/use-cases-list" appearance="lightweight">Use cases</ecos-anchor>
         <ecos-anchor slot="secondary-toggler" appearance="lightweight">More</ecos-anchor>
 
         <template if.bind="displayComponentsList">

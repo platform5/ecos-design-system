@@ -1,22 +1,18 @@
-<ecos-navbar layer="1" transparentfirst scrollingcontainerselector=".use-case-viewport">
-  <ecos-button appearance="lightweight" slot="branding" style="color: var(--accent-foreground-rest)" load="../-@use-case-viewport">
+<ecos-navbar layer="1" transparentfirst scrollingcontainerselector="[name=use-cases-viewport]">
+  <ecos-button appearance="lightweight" slot="branding" style="color: var(--accent-foreground-rest)" load="../use-cases-list">
     <ecos-icon icon="X" slot="start" weight="2"></ecos-icon>
-    Pavo
+    PAVO
   </ecos-button>
-  <ecos-anchor slot="main" nav-active.class="isWelcomePath" load="welcome-page" appearance="lightweight">Welcome</ecos-anchor>
-  <ecos-anchor slot="main" nav-active.class="isComponentsPath" load="components" appearance="lightweight">Components</ecos-anchor>
-  <ecos-anchor slot="main" nav-active.class="isUseCasesPath" load="use-cases" appearance="lightweight">Use cases</ecos-anchor>
-  <ecos-anchor slot="secondary-toggler" appearance="lightweight">More</ecos-anchor>
-
-  <ecos-anchor slot="secondary" load="the-project" appearance="lightweight">About The Project</ecos-anchor>
-  <ecos-anchor slot="secondary" load="the-project" appearance="lightweight">GitHub</ecos-anchor>
+  <ecos-anchor slot="main" appearance="lightweight">About</ecos-anchor>
+  <ecos-anchor slot="main" appearance="lightweight">Services</ecos-anchor>
+  <ecos-anchor slot="main" appearance="lightweight">Contact</ecos-anchor>
 </ecos-navbar>
 
 <div class="navbar-content header-gradient">
 
   <div style="width: 100%; height: 500px;">
     <ecos-section>
-      <h1>Welcome</h1>
+      
     </ecos-section>
   </div>
 </div>
