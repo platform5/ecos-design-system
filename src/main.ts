@@ -1,3 +1,8 @@
+import { TheProject } from './routes/the-project';
+import { UseCasesIndex } from './routes/use-cases/use-cases-index';
+import { ComponentsIndex } from './routes/components/components-index';
+import { MissingPage } from './routes/missing-page';
+import { WelcomePage } from './routes/welcome-page';
 import { 
   AureliaEcosAdapter,
 
@@ -24,7 +29,7 @@ import { LoggerConfiguration, LogLevel, ConsoleSink, ColorOptions } from 'aureli
 import { RouterConfiguration } from 'aurelia-direct-router';
 import { SVGAnalyzerRegistration } from '@aurelia/runtime-html';
 import { EcosApp } from './ecos-app';
-import { MissingPage } from './routes/missing-page';
+import * as routes from './routes';
 
 import { User as OutlineUser } from './ecos-design-system/icons/outline';
 import { User as SolidUser } from './ecos-design-system/icons/solid';
@@ -65,10 +70,10 @@ EcosIcon.solid['ArrowNarrowRight'] = SolidArrowNarrowRight;
 EcosIcon.outline['X'] = OutlineX;
 EcosIcon.solid['X'] = SolidX;
 
-import { WelcomePage } from './routes/welcome-page';
-
 Aurelia
-  .register(WelcomePage, MissingPage)
+  // .register(routes)
+  // .register(WelcomePage, MissingPage, ComponentsIndex, UseCasesIndex, TheProject)
+  .register(routes)
   .register(LoggerConfiguration.create({
     level: LogLevel.debug,
     sinks: [ConsoleSink],

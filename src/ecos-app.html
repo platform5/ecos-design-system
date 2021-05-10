@@ -14,8 +14,8 @@
           <img load="welcome-page" src="./images/Ecos.png" style="height: 30px" class="logo" />
         </ecos-colorize>
         <ecos-anchor slot="main" nav-active.class="isWelcomePath" load="welcome-page" appearance="lightweight">Welcome</ecos-anchor>
-        <ecos-anchor slot="main" nav-active.class="isComponentsPath" load="components" appearance="lightweight">Components</ecos-anchor>
-        <ecos-anchor slot="main" nav-active.class="isUseCasesPath" load="use-cases" appearance="lightweight">Use cases</ecos-anchor>
+        <ecos-anchor slot="main" nav-active.class="isComponentsPath" load="components-index/components-list" appearance="lightweight">Components</ecos-anchor>
+        <ecos-anchor slot="main" nav-active.class="isUseCasesPath" load="use-cases-index/use-cases-list" appearance="lightweight">Use cases</ecos-anchor>
         <ecos-anchor slot="secondary-toggler" appearance="lightweight">More</ecos-anchor>
 
         <template if.bind="displayComponentsList">
@@ -27,13 +27,11 @@
       </ecos-navbar>
 
       <div class="navbar-content">
-        <au-viewport default="welcome-page" fallback="missing-page"></au-viewport>
+        <au-viewport name="main" default="welcome-page" fallback="missing-page"></au-viewport>
       </div>
     </div>
   </div>
 
   <ecos-icon button icon="Adjustments" id="design-settings-opener" click.delegate="sidebarOpened = !sidebarOpened"></ecos-icon>
-
-  <au-viewport class="use-case-viewport" name="use-case-viewport" used-by="one-page-website,admin-dashboard,blog-page"></au-viewport>
 
 </ecos-design-system-provider>

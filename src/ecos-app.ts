@@ -1,24 +1,23 @@
-import { ICustomElementViewModel, customElement } from 'aurelia';
-import { IRouterConfiguration, Navigation, RoutingInstruction, IRouter, IRoute, routes } from 'aurelia-direct-router';
+import { ICustomElementViewModel, customElement, Key } from 'aurelia';
+import { IRouterConfiguration, Navigation, RoutingInstruction, IRouter } from 'aurelia-direct-router';
 import template from './ecos-app.html';
-
 import components from './routes/components/components.json';
 
-const mainRoutes: IRoute[] = [
-  {id: 'home', path:'', component: import('./routes/welcome-page'), title: 'Welcome at Ecos'},
-  {id: 'components', path:'components', component: import('./routes/components/components-list'), title: 'Components'},
-  {path:'the-project', component: import('./routes/the-project'), title: 'The Ecos Project'},
-  {path:'use-cases', component: import('./routes/use-cases'), title: 'Use Cases'},
-  {path:'use-cases/blog', component: import('./routes/use-cases/blog-page'), title: 'Use Cases / Blog'},
-  {path:'use-cases/website', component: import('./routes/use-cases/one-page-website'), title: 'Use Cases / One page website'},
-  {path:'use-cases/dashboard', component: import('./routes/use-cases/admin-dashboard'), title: 'Use Cases / Admin Dashboard'},
-];
+// const mainRoutes: IRoute[] = [
+//   {id: 'home', path:'', component: import('./routes/welcome-page'), title: 'Welcome at Ecos'},
+//   {id: 'components', path:'components', component: import('./routes/components/components-list'), title: 'Components'},
+//   {path:'the-project', component: import('./routes/the-project'), title: 'The Ecos Project'},
+//   {path:'use-cases', component: import('./routes/use-cases'), title: 'Use Cases'},
+//   {path:'use-cases/blog', component: import('./routes/use-cases/blog-page'), title: 'Use Cases / Blog'},
+//   {path:'use-cases/website', component: import('./routes/use-cases/one-page-website'), title: 'Use Cases / One page website'},
+//   {path:'use-cases/dashboard', component: import('./routes/use-cases/admin-dashboard'), title: 'Use Cases / Admin Dashboard'},
+// ];
 
-const componentsRoutes: IRoute[] = components.map((component) => {
-  {return {path: `components/${component.load}`, component: import(`./routes/components/${component.load}-component`), title: `${component.name} component`}}
-});
+// const componentsRoutes: IRoute[] = components.map((component) => {
+//   {return {path: `components/${component.load}`, component: import(`./routes/components/${component.load}-component`), title: `${component.name} component`}}
+// });
 
-@routes([...mainRoutes, ...componentsRoutes])
+// @routes([...mainRoutes, ...componentsRoutes])
 @customElement({name: 'ecos-app', template})
 export class EcosApp implements ICustomElementViewModel {
 

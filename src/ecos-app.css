@@ -41,12 +41,12 @@
   justify-self: stretch;
 }
 
-ecos-navbar ecos-anchor.nav-active {
+ecos-navbar ecos-anchor.active {
   text-decoration: underline;
   font-weight: bold;
 }
 
-au-viewport.use-case-viewport {
+/* au-viewport.use-case-viewport {
   display: block;
   position: absolute;
   z-index: 10;
@@ -65,4 +65,4 @@ body.body-fixed {
   position: fixed;
   overflow: hidden;
   width: 100%;
-}
+} */
