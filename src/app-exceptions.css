@@ -1,0 +1,6 @@
+ecos-navbar ecos-anchor {
+  text-transform: uppercase;
+}
+ecos-navbar ::part(control) {
+  cursor: pointer;
+}

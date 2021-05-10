@@ -1,0 +1,42 @@
+<div>
+  <ecos-design-system-provider background-color="#222" design-unit="4" density="0">
+    <div class="wrapper" style="padding-bottom: 150px;">
+      <h3>Design settings</h3>
+    
+      <ecos-form change.delegate="updateDesignSystem()">
+        <ecos-form-row>
+          <label>Background color</label>
+          <input type="color" value.bind="color">
+        </ecos-form-row>
+        <ecos-form-row>
+          <label>Accent color</label>
+          <input type="color" value.bind="accent">
+        </ecos-form-row>
+        <ecos-form-row>
+          <label>Design unit</label>
+          <ecos-slider value.bind="designUnit" min="2" max="6" step="0.5"></ecos-slider>
+        </ecos-form-row>
+        <ecos-form-row>
+          <label>Density</label>
+          <ecos-slider value.bind="density" min="-3" max="3" step="0.5"></ecos-slider>
+        </ecos-form-row>
+        <ecos-form-row>
+          <label>Corner Radius</label>
+          <ecos-slider value.bind="cornerRadius" min="0" max="20" step="0.5"></ecos-slider>
+        </ecos-form-row>
+        <ecos-form-row>
+          <label>Font Size</label>
+          <ecos-slider value.bind="typeRampBaseFontSize" min="10" max="20" step="0.5"></ecos-slider>
+        </ecos-form-row>
+        <ecos-form-row>
+          <label>Type ramp ratio (modular scale)</label>
+          <ecos-slider value.bind="typeRampRatio" min="1.067" max="2" step="0.01"></ecos-slider>
+        </ecos-form-row>
+        <ecos-form-row>
+          <label>Line Height Ratio</label>
+          <ecos-slider value.bind="lineHeightRatio" min="1" max="2" step="0.01"></ecos-slider>
+        </ecos-form-row>
+      </ecos-form>
+    </div>
+  </ecos-design-system-provider>
+</div>

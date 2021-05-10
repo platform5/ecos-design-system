@@ -1,0 +1,76 @@
+<div class="header" style="height:50vh; position: relative;">
+   <animated-svg2 style="position: absolute; bottom: 0; left: 0; width: 100%;"></animated-svg2>
+
+  
+  <fast-design-system-provider background-color="#333" class="header-text" style="position: relative;">
+    <div class="header-text">Design system built on <a href="https://fast.design">FAST</a> and web-components</div>
+  </fast-design-system-provider>
+  
+
+</div>
+
+<ecos-section centerwidth="70ch">
+  <h1>Experiment extension of FAST design system</h1>
+  <p>You might have heard of <a href="https://fast.design">fast.design</a> developed by Microsoft. It's a pretty neat theming system using modern web-component technology.</p>
+  <p>What you see on this page is an experiment to build an extended version of the FAST frame design system provided by FAST.</p>
+</ecos-section>
+
+<ecos-section centerwidth="70ch">
+  <h2>What's a design system</h2>
+  <p>Based on a set of <i>design tokens</i>, the design system apply a consistent design and user experience on websites or applications. The design system under the hood of this particular website let's you play with those design token. For this you only need to find the <i>Adjustments</i> at the bottom left of each page and play with it.</p>
+</ecos-section>
+
+<ecos-section centerwidth="70ch">
+  <h2>Getting Started</h2>
+  <p>Well, like lots of things in life it start with a little install command</p>
+
+  <au-snippet class="mobile-full-bleed breath">
+    <div language="shell">
+      npm install @ecos/ecos-design-system --save
+    </div>
+  </au-snippet>
+
+  <p>In order to use web-components they need to be registered. You can do this by importing each desired components</p>
+  <au-snippet class="mobile-full-bleed breath" enable-output.bind="false">
+    <div language="typescript">
+      import { EcosDesignSystemProvider, EcosButton } from "@ecos/ecos-design-system";
+
+      /*
+      * Ensure that tree-shaking doesn't remove these components from the bundle.
+      * There are multiple ways to prevent tree shaking, of which this is one.
+      */
+      EcosDesignSystemProvider;
+      EcosButton;
+    </div>
+  </au-snippet>
+
+  <p>Make sure you have a Design System Provider encapsulating all the ecos components in the DOM. A common practice is to place it right after the body tag</p>
+  <au-snippet class="mobile-full-bleed breath">
+    <div language="html">
+      <body>
+        <ecos-design-system-provider use-defaults>
+          <!-- `use-defaults` is only required on the top level design-system-provider -->
+          <!-- code continues here -->
+        </ecos-design-system-provider>
+      </body>
+    </div>
+  </au-snippet>
+
+  <p>Use the components as native elements</p>
+  <au-snippet class="larger mobile-full-bleed breath" enable-output.bind="true">
+    <div language="html">
+      <ecos-design-system-provider background-color="#FFFFFF">
+        <h1>Hello World</h1>
+        <p>This text is supposed to motivate you to click below</p>
+        <ecos-button>Click me !</ecos-button>
+      </ecos-design-system-provider>
+    </div>
+  </au-snippet>
+
+
+</ecos-section>
+
+<ecos-section>
+  <h3>Want to know more ?</h3>
+  <p>Head over to the <ecos-anchor appearance="hypertext" load="../the-project">About the project</ecos-anchor> page to learn more about Ecos.</p>
+</ecos-section>

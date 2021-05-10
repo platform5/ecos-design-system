@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 50" stroke="currentColor" width="1000" height="500">
+<g>
+  <rect x="0" y="0" width="100%" height="100%" fill="yellow" stroke="none">
+</g>
+<g>
+  <rect x="0" y="50%" width="100%" height="50%" fill="red" stroke="none" style="transform: rotate(-15deg);">
+</g>
+<g>
+  <rect x="0" y="50%" width="100%" height="50%" fill="blue" stroke="none" style="transform: rotate(-10deg);">
+</g>
+<g>
+  <path 
+    stroke-linecap="square" 
+    stroke-linejoin="square" 
+    stroke-width="2" 
+    d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" 
+    clip-rule="evenodd"/>
+</g>
+</svg>

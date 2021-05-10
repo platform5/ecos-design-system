@@ -1,0 +1,68 @@
+.load-active {
+  background-color: lightgray;
+}
+
+#design-settings-opener {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+}
+#design-settings-dialog::part(positioning-region) {
+  z-index: 2;
+}
+
+[load] {
+  cursor: pointer;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 0px 1fr;
+  transition: grid-template-columns 100ms ease;
+}
+.page.sidebar--opened {
+  grid-template-columns: 250px 1fr;
+}
+.sidebar {
+  position: fixed;
+  width: 250px;
+  transform: translateX(-250px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: all 100ms ease;
+  box-shadow: var(--elevation3);
+  height: 100vh;
+}
+.sidebar.sidebar--opened {
+  transform: translateX(0);
+}
+.main-content {
+  grid-column-start: 2;
+  justify-self: stretch;
+}
+
+ecos-navbar ecos-anchor.nav-active {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+au-viewport.use-case-viewport {
+  display: block;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: transform 250ms ease;
+  background: var(--background-color);
+  overflow: auto;
+}
+au-viewport.use-case-viewport:empty {
+  transform: scale(0);
+}
+body.body-fixed {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+}

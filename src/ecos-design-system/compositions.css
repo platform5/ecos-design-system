@@ -1,0 +1,18 @@
+ecos-navbar > .logo {
+  margin-right: 16px;
+}
+ecos-navbar > * + * {
+  margin-left: calc((20 + (var(--design-unit) + (var(--design-unit) * max(0, var(--density))))) * 1px);
+}
+
+ecos-navbar > .right {
+  margin-left: auto;
+}
+ecos-navbar > ecos-anchor {
+  --outline-width: 0;
+  color: currentColor;
+}
+ecos-navbar > ecos-anchor:hover {
+  --outline-width: 0;
+  color: var(--accent-foreground-hover);
+}

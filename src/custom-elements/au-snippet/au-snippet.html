@@ -1,0 +1,38 @@
+<template show-shell.class="showShell" show-ts.class="showTS" show-html.class="showHTML" show-css.class="showCSS" show-output.class="showOutput" multiple.class="enableMultiple">
+  <div class="topbar">
+    <button if.bind="hasShell" selected.class="showShell" click.delegate="toggle('shell')">Shell</button>
+    <button if.bind="hasTS" selected.class="showTS" click.delegate="toggle('ts')">Typescript</button>
+    <button if.bind="hasHTML" selected.class="showHTML" click.delegate="toggle('html')">HTML</button>
+    <button if.bind="hasCSS" selected.class="showCSS" click.delegate="toggle('css')">CSS</button>
+  </div>
+  <div class="codes">
+    <div class="shell">
+      <label>Shell</label>
+      <au-slot name="shell"></au-slot>
+    </div>
+    <div class="typescript">
+      <label>Typescript</label>
+      <au-slot name="typescript"></au-slot>
+    </div>
+    <div class="html">
+      <label>HTML</label>
+      <au-slot name="html"></au-slot>
+    </div>
+    <div class="css">
+      <label>CSS</label>
+      <au-slot name="css"></au-slot>
+    </div>
+  </div>
+  <div class="output">
+    <div class="topbar">
+      <button class="selected">Result</button>
+    </div>
+    <div class="output-content">
+      <au-slot name="output"></au-slot>
+    </div>
+    <div class="styles-content">
+      <au-slot name="styles"></au-slot>
+    </div>
+  </div>
+  <au-slot></au-slot>
+</template>

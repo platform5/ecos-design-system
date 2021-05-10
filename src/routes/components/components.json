@@ -1,0 +1,6 @@
+[
+  {"name": "Button", "load": "button", "description": "You probably knows what a button is"},
+  {"name": "Button 3D", "load": "button-3d", "description": "A fun button with cool interactivity"},
+  {"name": "Slider", "load": "slider", "description": "Input component to select a numeric value"},
+  {"name": "Card", "load": "card", "description": "A visual surface to group information"}
+]
