@@ -3,7 +3,7 @@ import { EcosSection } from './index';
 
 export const SectionTemplate = html<EcosSection>`
 <template 
-  class="ecos-section ${x => !x.verticalpadded ? 'no-vertical-padding' : ''} ${x => x.stacked ? 'ecos-stack' : ''}"
+  class="ecos-section ${x => !x.verticalpadded ? 'no-vertical-padding' : ''} ${x => x.stacked ? 'ecos-stack' : ''} ${x => x.largev ? 'largev' : ''}"
   style="--ecos-section-center-width: ${x => x.centerwidth};"
   >
   <slot></slot>

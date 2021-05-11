@@ -24,14 +24,14 @@
   <h2>Getting Started</h2>
   <p>Well, like lots of things in life it start with a little install command</p>
 
-  <au-snippet class="mobile-full-bleed breath">
+  <au-snippet class="mobile-full-bleed">
     <div language="shell">
       npm install @ecos/ecos-design-system --save
     </div>
   </au-snippet>
 
   <p>In order to use web-components they need to be registered. You can do this by importing each desired components</p>
-  <au-snippet class="mobile-full-bleed breath" enable-output.bind="false">
+  <au-snippet class="mobile-full-bleed" enable-output.bind="false">
     <div language="typescript">
       import { EcosDesignSystemProvider, EcosButton } from "@ecos/ecos-design-system";
 
@@ -45,7 +45,7 @@
   </au-snippet>
 
   <p>Make sure you have a Design System Provider encapsulating all the ecos components in the DOM. A common practice is to place it right after the body tag</p>
-  <au-snippet class="mobile-full-bleed breath">
+  <au-snippet class="mobile-full-bleed">
     <div language="html">
       <body>
         <ecos-design-system-provider use-defaults>
@@ -57,7 +57,7 @@
   </au-snippet>
 
   <p>Use the components as native elements</p>
-  <au-snippet class="larger mobile-full-bleed breath" enable-output.bind="true">
+  <au-snippet class="larger mobile-full-bleed" enable-output.bind="true">
     <div language="html">
       <ecos-design-system-provider background-color="#FFFFFF">
         <h1>Hello World</h1>

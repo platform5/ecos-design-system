@@ -15,4 +15,7 @@ export class EcosStack extends FASTElement {
   @attr({mode: 'boolean'})
   large = false;
 
+  @attr({mode: 'boolean'})
+  inline = false;
+
 }

@@ -4,6 +4,7 @@ import {
   EcosAnchor, 
   EcosArticle, 
   EcosArticleList, 
+  EcosBadge, 
   EcosButton, 
   EcosButton3D,
   EcosCard,
@@ -15,9 +16,12 @@ import {
   EcosFormRow, 
   EcosIcon,
   EcosNavbar,
+  EcosOption,
   EcosSection,
+  EcosSelect,
   EcosSlider,
   EcosStack,
+  EcosTextField,
   EcosTwo,
 } from './ecos-design-system';
 import Aurelia from 'aurelia';
@@ -42,6 +46,7 @@ import { AuSnippet } from './custom-elements/au-snippet/au-snippet';
 EcosAnchor;
 EcosArticle;
 EcosArticleList;
+EcosBadge;
 EcosButton;
 EcosButton3D;
 EcosCard;
@@ -53,9 +58,12 @@ EcosForm;
 EcosFormRow;
 EcosIcon;
 EcosNavbar;
+EcosOption;
 EcosSection;
+EcosSelect;
 EcosSlider;
 EcosStack;
+EcosTextField;
 EcosTwo;
 
 EcosIcon.outline['User'] = OutlineUser;
@@ -76,7 +84,10 @@ Aurelia
     sinks: [ConsoleSink],
     colorOptions: ColorOptions.colors
   }))
-  .register(RouterConfiguration.customize({ useUrlFragmentHash: true }))
+  .register(RouterConfiguration.customize({ 
+    useUrlFragmentHash: true,
+    swapOrder:'attach-next-detach-current'
+  }))
   .register(AureliaEcosAdapter)
   .register(EcosSettings)
   .register(AuSnippet)

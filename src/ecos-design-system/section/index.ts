@@ -17,9 +17,15 @@ export class EcosSection extends FASTElement {
   public verticalpadded = true;
 
   @attr({mode: 'boolean'})
+  public nocontain = false;
+
+  @attr({mode: 'boolean'})
   public stacked = true;
 
   @attr()
   public centerwidth = '65ch';
+
+  @attr({mode: 'boolean'})
+  public largev = false;
 
 }

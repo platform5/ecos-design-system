@@ -53,7 +53,13 @@ export class EcosApp implements ICustomElementViewModel {
   }
 
   private handleBodyStyles() {
-    document.body.classList.toggle('use-cases-on', this.isUseCaseRouterInUse);
+    if (this.isUseCaseRouterInUse) {
+      setTimeout(() => {
+        document.body.classList.add('use-cases-on');
+      }, 150);
+    } else {
+      document.body.classList.remove('use-cases-on');
+    }
   }
 
 }

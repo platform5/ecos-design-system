@@ -1,6 +1,56 @@
 [
-  {"name": "Button", "load": "button", "description": "You probably knows what a button is"},
-  {"name": "Button 3D", "load": "button-3d", "description": "A fun button with cool interactivity"},
-  {"name": "Slider", "load": "slider", "description": "Input component to select a numeric value"},
-  {"name": "Card", "load": "card", "description": "A visual surface to group information"}
+  {
+    "name": "Anchor",
+    "load": "anchor",
+    "description": "Like a button but not really",
+    "badges": ["FAST"]
+  },
+  {
+    "name": "Article",
+    "load": "article",
+    "description": "Preview of a text + image type of content. Works great in an ecos-collection",
+    "badges": ["FAST"]
+  },
+  {
+    "name": "Badge",
+    "load": "badge",
+    "description": "A nice little tag to place next to your content to give it some identity",
+    "badges": ["FAST", "Extended"]
+  },
+  {
+    "name": "Button",
+    "load": "button",
+    "description": "You probably knows what a button is",
+    "badges": ["FAST", "Extended"]
+  },
+  {
+    "name": "Button 3D",
+    "load": "button-3d",
+    "description": "A fun button with cool interactivity",
+    "badges": ["New"]
+  },
+  {
+    "name": "Card",
+    "load": "card",
+    "description": "A visual surface to group information",
+    "badges": ["FAST"]
+  },
+  {
+    "name": "Collection",
+    "load": "collection",
+    "description": "Display a list of content around something like a responsive grid",
+    "badges": ["New"]
+  },
+  {
+    "name": "Colorize",
+    "load": "colorize",
+    "description": "Smartly colorize some content using your browser blend-mode",
+    "badges": ["New"]
+  },
+  {
+    "name": "Slider",
+    "load": "slider",
+    "description": "Input component to select a numeric value",
+    "badges": ["FAST"]
+  }
 ]

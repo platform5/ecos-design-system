@@ -8,6 +8,29 @@
   --elevation5: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 
   --spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 1px);
+  --spacing-unit-v: var(--spacing-unit);
+  --spacing-unit-h: var(--spacing-unit);
+
+  --badge-fill-primary: var(--accent-fill-rest);
+  --badge-fill-secondary: var(--neutral-fill-rest);
+  --badge-fill-transparent: transparent;
+  --badge-color-black: #000000;
+  --badge-color-white: var(--accent-foreground-cut-rest);
+}
+.space-small {
+  --spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 0.5px);
+}
+.space-large {
+  --spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 2px);
+}
+.space-extra-large {
+  --spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 4px);
+}
+.space-large-v {
+  --spacing-unit-v: calc(var(--spacing-unit) * 2);
+}
+.space-extra-large-v {
+  --spacing-unit-v: calc(var(--spacing-unit) * 4);
 }
 
 .elevation,
@@ -39,16 +62,6 @@
 }
 .radius-small {
   border-radius: calc(var(--corner-radius) * 0.5);
-}
-
-.breath {
-  margin-top: var(--spacing-unit);
-  margin-bottom: var(--spacing-unit);
-}
-
-.section {
-  padding-top: 32px;
-  padding-bottom: 32px;
 }
 
 .wrapper {

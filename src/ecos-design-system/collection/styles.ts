@@ -13,7 +13,7 @@ export const CollectionStyles = css`
   
   @media screen and (min-width: 732px) {
     :host {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(var(--ecos-collection-min-item-width), 1fr));
     }
   }
 `;

@@ -1,10 +1,29 @@
 <ecos-section>
+  <h1>Some components to build great stuff</h1>
+  <p>Many components are identical or close to identical from their FAST implementation. They are re-exported in the `ecos` name space for consistency.</p>
+</ecos-section>
+
+<ecos-section nocontain>
+  <ecos-text-field placeholder="Search a component" value.bind="search">
+    <ecos-icon icon="User" slot="start"></ecos-icon>
+  </ecos-text-field>
+  <ecos-select value.bind="filteringTag">
+    <ecos-option value="all">All tags</ecos-option>
+    <ecos-option value="${tag}" repeat.for="tag of tags">${tag}</ecos-option>
+  </ecos-select>
+  <p class="muted-text">Displaying ${getComponentsList(search, filteringTag).length} components</p>
+</ecos-section>
+
+<ecos-section centerwidth="100ch">
   <ecos-collection>
-    <ecos-card repeat.for="component of componentsList">
+    <ecos-card repeat.for="component of getComponentsList(search, filteringTag)">
       <ecos-stack class="wrapper">
+        <ecos-stack inline small>
+          <ecos-badge appearance="${badge === 'New' ? 'accent-light':'neutral'}" repeat.for="badge of component.badges">${badge}</ecos-badge>
+        </ecos-stack>
         <h2>${component.name}</h2>
         <p>${component.description}</p>
-        <ecos-button load="../${component.load}-component">Explore</ecos-button>
+        <ecos-button appearance="accent" load="../${component.load}-component">Explore</ecos-button>
       </ecos-stack>
     </ecos-card>
   </ecos-card>

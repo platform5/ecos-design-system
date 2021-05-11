@@ -7,6 +7,9 @@ export const SectionStyles = css`
     contain: content;
     --ecos-section-center-width: 60ch;
   }
+  .ecos-section[nocontain] {
+    contain: inherit;
+  }
 
   .ecos-section {
     grid-template-columns: 1fr min(var(--ecos-section-center-width), calc(100% - 2 * var(--spacing-unit))) 1fr;
@@ -16,6 +19,10 @@ export const SectionStyles = css`
   .ecos-section:not(.no-vertical-padding) {
     padding-top: var(--spacing-unit);
     padding-bottom: var(--spacing-unit);
+  }
+  .ecos-section.largev:not(.no-vertical-padding) {
+    padding-top: calc(var(--spacing-unit) * 2);
+    padding-bottom: calc(var(--spacing-unit) * 2);
   }
 
   .ecos-section > * {

@@ -22,9 +22,14 @@ h3 {
   line-height: var(--type-ramp-plus-3-line-height);
 }
 
-h1, .ecos-stack > :not(h1, h2, h3) + h1:not(.breath),
-h2:not(:first-child), .ecos-stack > :not(h1, h2, h3) + h2:not(.breath),
-h3:not(:first-child), .ecos-stack > :not(h1, h2, h3) + h3:not(.breath) {
+.muted-text {
+  font-size: var(--type-ramp-minus-1-font-size);
+  line-height: var(--type-ramp-minus-1-line-height);
+}
+
+h1, .ecos-stack > :not(h1, h2, h3) + h1,
+h2:not(:first-child), .ecos-stack > :not(h1, h2, h3) + h2,
+h3:not(:first-child), .ecos-stack > :not(h1, h2, h3) + h3 {
   margin-top: calc(2 * var(--spacing-unit));
 }
 

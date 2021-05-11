@@ -51,8 +51,8 @@ body.use-cases-on {
   overflow: hidden;
   width: 100%;
 }
-body.use-cases-on au-viewport {
-  display: block;
+body.use-cases-on au-viewport[name=use-cases-viewport] {
+  display: grid;
   position: absolute;
   z-index: 10;
   top: 0;
@@ -61,4 +61,17 @@ body.use-cases-on au-viewport {
   left: 0;
   background: var(--background-color);
   overflow: auto;
+}
+
+au-viewport[name=use-cases-viewport] {
+  display: grid;
+  position: relative;
+  overflow: hidden;
+}
+
+au-viewport[name=use-cases-viewport] > * {
+  display: block;
+  position: relative;
+  grid-column: 1;
+  grid-row: 1;
 }

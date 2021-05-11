@@ -3,6 +3,7 @@ import 'modern-css-reset';
 export * from './anchor';
 export * from './article';
 export * from './article-list';
+export * from './badge';
 export * from './button';
 export * from './button-3d';
 export * from './card';
@@ -15,8 +16,10 @@ export * from './form-row';
 export * from './icon';
 export * from './navbar';
 export * from './section';
+export * from './select';
 export * from './slider';
 export * from './stack';
+export * from './text-field';
 export * from './two';
 
 export * from './ecos-aurelia-adapter';

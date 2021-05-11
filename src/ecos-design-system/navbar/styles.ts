@@ -36,6 +36,8 @@ export const NavbarStyles = css`
     box-shadow: var(--elevation2);
     background: ${neutralLayerL4Behavior.var};
     color: ${neutralForegroundRestBehavior.var};
+    transition: 500ms ease;
+    transition-property: background-color, box-shadow;
   }
   :host(.transparent-first:not(.scrolled)) .navbar {
     background-color: transparent;

@@ -109,9 +109,9 @@ export class EcosNavbar extends FASTElement {
 
   public handleScroll(event: Event): void {
     if (event.target instanceof HTMLElement) {
-      this.scrolled = event.target.scrollTop > 10;
+      this.scrolled = event.target.scrollTop > 20;
     } else {
-      this.scrolled = window.scrollY > 10;
+      this.scrolled = window.scrollY > 20;
     }
   }
 
