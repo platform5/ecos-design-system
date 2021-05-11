@@ -6,6 +6,7 @@ export const ColorizeStyles = css`
 
   :host {
     position: relative;
+    display: inline-block;
   }
 
   .colorizer {
