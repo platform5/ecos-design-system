@@ -3,7 +3,7 @@ import { ArticleListStyles as styles } from './styles';
 import { ArticleListTemplate as template } from './template';
 
 @customElement({
-  name: 'ecos-collection',
+  name: 'ecos-article-list',
   template,
   styles
 })

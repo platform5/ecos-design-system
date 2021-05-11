@@ -1,9 +1,9 @@
-import { customElement, FASTElement, attr } from '@microsoft/fast-element';
+import { customElement, FASTElement } from '@microsoft/fast-element';
 import { CollectionStyles as styles } from './styles';
 import { CollectionTemplate as template } from './template';
 
 @customElement({
-  name: 'ecos-article-list',
+  name: 'ecos-collection',
   template,
   styles
 })
