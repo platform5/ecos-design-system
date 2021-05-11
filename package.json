@@ -12,11 +12,8 @@
   "dependencies": {
     "@microsoft/fast-components": "^1.19.1",
     "@microsoft/fast-element": "^1.0.1",
-    "aurelia": "latest",
-    "aurelia-direct-router": "*",
     "lodash-es": "^4.17.21",
-    "modular-scale": "^5.1.0",
-    "prismjs": "^1.23.0"
+    "modular-scale": "^5.1.0"
   },
   "devDependencies": {
     "@aurelia/testing": "latest",
@@ -26,6 +23,8 @@
     "@types/prismjs": "^1.16.5",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.19.0",
+    "aurelia": "latest",
+    "aurelia-direct-router": "*",
     "autoprefixer": "^10.2.5",
     "concurrently": "^6.0.0",
     "copy-webpack-plugin": "^8.1.1",
@@ -38,6 +37,7 @@
     "modern-css-reset": "^1.4.0",
     "postcss": "^8.2.8",
     "postcss-loader": "^5.2.0",
+    "prismjs": "^1.23.0",
     "rimraf": "^3.0.2",
     "style-loader": "^2.0.0",
     "ts-loader": "^8.0.18",
