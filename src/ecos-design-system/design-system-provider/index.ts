@@ -4,7 +4,7 @@ import {
   defineDesignSystemProvider,
   DesignSystemProviderTemplate as template,
 } from "@microsoft/fast-foundation";
-import { css } from '@microsoft/fast-element';
+import { attr, css } from '@microsoft/fast-element';
 import { parseColor, ColorRGBA64, darkenViaLAB, blendLighten, blendDarken, blendColor } from "@microsoft/fast-colors";
 import { setTypeRamp } from './modular-type';
 
@@ -14,6 +14,9 @@ import { setTypeRamp } from './modular-type';
   styles: css`:host { display: block }`
 })
 export class EcosDesignSystemProvider extends FASTDesignSystemProvider {
+
+  @attr({mode: 'boolean'})
+  public applybackgroundtobody = false;
 
   public accentBaseColorChanged(oldValue: string, newValue: string): void {
     console.log('accentBaseColorChanged');
@@ -43,6 +46,9 @@ export class EcosDesignSystemProvider extends FASTDesignSystemProvider {
       this.neutralPalette = createColorPalette(parsedColor);
     }
     this.setBackgroundTeintedColor();
+    if (this.applybackgroundtobody) {
+      document.body.style.setProperty('background-color', parsedColor.toStringHexRGB());
+    }
   }
 
   public typeRampBaseFontSizeChanged(oldValue: string, newValue: string): void {
