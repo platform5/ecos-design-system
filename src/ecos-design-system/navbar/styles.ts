@@ -25,7 +25,6 @@ export const NavbarStyles = css`
   .navbar {
     position: relative;
     z-index: 2;
-    display: grid;
     height: calc((${navbarHeightNumber}) * 1px);
     width: 100%;
     box-sizing: border-box;
@@ -34,8 +33,6 @@ export const NavbarStyles = css`
     line-height: var(--type-ramp-base-line-height);
     padding-left: calc(var(--design-unit) * 4px);
     padding-right: calc(var(--design-unit) * 4px);
-    align-items: center;
-    justify-content: flex-start;
     box-shadow: var(--elevation2);
     background: ${neutralLayerL4Behavior.var};
     color: ${neutralForegroundRestBehavior.var};
@@ -51,8 +48,18 @@ export const NavbarStyles = css`
     background: ${neutralLayerL1Behavior.var};
   }
 
+  .navbar-content {
+    display: grid;
+    height: 100%;
+    max-width: 100ch;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
   /* (mobile) mode */
-  .navbar {
+  .navbar-content {
     grid-template-columns: 1fr 50px;
   }
   .branding {
@@ -117,7 +124,7 @@ export const NavbarStyles = css`
 
   /* (desktop) mode */
   @media screen and (min-width: 732px) {
-    .navbar {
+    .navbar-content {
       grid-template-columns: 1fr max-content 1fr;
     }
     .main {
