@@ -1,0 +1,12 @@
+/node_modules
+/dist-app
+/src
+/static
+.eslintrc.json
+.gitignore
+.htmlhintrc
+gulpfile.js
+index.html
+tsconfig.json
+tsconfig2.json
+webpack.config.js

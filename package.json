@@ -1,5 +1,5 @@
 {
-  "name": "ecos-design-system",
+  "name": "@ecos/ecos-design-system",
   "description": "Design system based on FAST, compatible with Aurelia2, 11ty and more",
   "version": "0.1.0",
   "main": "dist/commonjs/index.js",
