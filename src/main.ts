@@ -1,8 +1,3 @@
-import { TheProject } from './routes/the-project';
-import { UseCasesIndex } from './routes/use-cases/use-cases-index';
-import { ComponentsIndex } from './routes/components/components-index';
-import { MissingPage } from './routes/missing-page';
-import { WelcomePage } from './routes/welcome-page';
 import { 
   AureliaEcosAdapter,
 
@@ -23,6 +18,7 @@ import {
   EcosSection,
   EcosSlider,
   EcosStack,
+  EcosTwo,
 } from './ecos-design-system';
 import Aurelia from 'aurelia';
 import { LoggerConfiguration, LogLevel, ConsoleSink, ColorOptions } from 'aurelia';
@@ -60,6 +56,7 @@ EcosNavbar;
 EcosSection;
 EcosSlider;
 EcosStack;
+EcosTwo;
 
 EcosIcon.outline['User'] = OutlineUser;
 EcosIcon.solid['User'] = SolidUser;

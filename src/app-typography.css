@@ -5,62 +5,6 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-ecos-design-system-provider {
-  font-size: var(--type-ramp-base-font-size);
-  line-height: var(--type-ramp-base-line-height);
-}
-
-
-h1 {
+h1, h2, h3 {
   font-family: 'Orelega One', cursive;
-  font-size: var(--type-ramp-plus-3-font-size);
-  line-height: var(--type-ramp-plus-3-line-height);
-  max-width: 50vw;
-  min-width: min-content;
-}
-h2 {
-  font-family: 'Orelega One', cursive;
-  font-size: var(--type-ramp-plus-2-font-size);
-  line-height: var(--type-ramp-plus-2-line-height);
-}
-h3 {
-  font-family: 'Orelega One', cursive;
-  font-size: var(--type-ramp-plus-1-font-size);
-  line-height: var(--type-ramp-plus-1-line-height);
-}
-
-h1, .ecos-stack > :not(h1, h2, h3) + h1:not(.breath),
-h2:not(:first-child), .ecos-stack > :not(h1, h2, h3) + h2:not(.breath),
-h3:not(:first-child), .ecos-stack > :not(h1, h2, h3) + h3:not(.breath) {
-  margin-top: calc(2 * var(--spacing-unit));
-}
-
-@media screen and (min-width: 732px) {
-  h1 {
-    font-size: var(--type-ramp-plus-4-font-size);
-    line-height: var(--type-ramp-plus-4-line-height);
-    max-width: 400px;
-    min-width: min-content;
-  }
-  h2 {
-    font-size: var(--type-ramp-plus-3-font-size);
-    line-height: var(--type-ramp-plus-3-line-height);
-  }
-  h3 {
-    font-size: var(--type-ramp-plus-2-font-size);
-    line-height: var(--type-ramp-plus-2-line-height);
-  }
-}
-
-a {
-  color: inherit;
-  text-decoration: underline;
-}
-
-a:hover {
-  color: var(--accent-foreground-hover);
-}
-
-a:active {
-  color: var(--accent-foreground-active);
 }

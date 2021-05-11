@@ -3,14 +3,14 @@
 <import from="./app-exceptions.css"></import>
 
 
-<ecos-design-system-provider use-defaults>
+<ecos-design-system-provider use-defaults applybackgroundtobody>
   <div class="sidebar" sidebar--opened.class="sidebarOpened">
     <ecos-settings></ecos-settings>
   </div>
   <div class="page" sidebar--opened.class="sidebarOpened">
     <div class="main-content">
       <ecos-navbar layer="1">
-        <ecos-colorize slot="branding" style="color: var(--accent-foreground-rest)">
+        <ecos-colorize slot="branding" style="color: var(--accent-fill-rest)">
           <img load="welcome-page" src="./images/Ecos.png" style="height: 30px" class="logo" />
         </ecos-colorize>
         <ecos-anchor slot="main" load="welcome-page" appearance="lightweight">Welcome</ecos-anchor>
