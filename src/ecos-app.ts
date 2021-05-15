@@ -6,12 +6,9 @@ import components from './routes/components/components.json';
 @customElement({name: 'ecos-app', template})
 export class EcosApp implements ICustomElementViewModel {
 
-
-
   public displayComponentsList = false;
   public isUseCaseRouterInUse = false;
   public componentsList = components;
-
 
   public constructor(
     @IRouterConfiguration private routerConfiguration: IRouterConfiguration,

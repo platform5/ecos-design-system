@@ -9,7 +9,7 @@
     "name": "Article",
     "load": "article",
     "description": "Preview of a text + image type of content. Works great in an ecos-collection",
-    "badges": ["FAST"]
+    "badges": ["New"]
   },
   {
     "name": "Badge",

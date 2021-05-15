@@ -19,11 +19,11 @@
         <ecos-anchor slot="secondary-toggler" appearance="lightweight">More</ecos-anchor>
 
         <template if.bind="displayComponentsList">
-          <ecos-anchor repeat.for="component of componentsList" slot="secondary" load="components/${component.load}" appearance="lightweight">${component.name}</ecos-anchor>          
+          <ecos-anchor repeat.for="component of componentsList" slot="secondary" load="components-index/${component.load}-component" appearance="lightweight">${component.name}</ecos-anchor>          
         </template>
 
         <ecos-anchor slot="secondary" load="the-project" appearance="lightweight">About The Project</ecos-anchor>
-        <ecos-anchor slot="secondary" load="the-project" appearance="lightweight">GitHub</ecos-anchor>
+        <ecos-anchor slot="secondary" href="https://github.com/ben-girardet/ecos-design-system" appearance="lightweight">GitHub</ecos-anchor>
       </ecos-navbar>
 
       <div class="navbar-content">

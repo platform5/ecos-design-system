@@ -1,0 +1,26 @@
+<ecos-section>
+  <h1>Article</h1>
+  <p>This is an Ecos custom made component to display article like type of content.</p>
+  <p>This component is designed to display the following content:</p>
+  <ul>
+    <li>An image as "card" image</li>
+    <li>A button in the `button` slot</li>
+    <li>Some content in the default slot</li>
+  </ul>
+  <au-snippet class="larger mobile-full-bleed" enable-output.bind="true">
+    <div language="html">
+      <ecos-article imagesrc="./images/office-interior-design.jpg">
+        <ecos-button slot="button" appearance="accent">
+          <ecos-icon type="solid" size="10" icon="ArrowNarrowRight" slot="start"></ecos-icon>
+          Discover project
+        </ecos-button>
+        <ecos-stack>
+          <h3>Autour de l'escalier</h3>
+          <p>Le lieu central d'une pièce à vivre remis au goût du jour</p>
+        </ecos-stack>
+      </ecos-article>
+    </div>
+  </au-snippet>
+
+  <p>This component works well with the `ecos-collection` component to list several article components</p>
+</ecos-section>

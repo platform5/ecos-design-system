@@ -19,7 +19,6 @@ export class EcosDesignSystemProvider extends FASTDesignSystemProvider {
   public applybackgroundtobody = false;
 
   public accentBaseColorChanged(oldValue: string, newValue: string): void {
-    console.log('accentBaseColorChanged');
     if (newValue !== oldValue) {
       this.accentBaseColor = newValue;
       const parsedColor = parseColor(newValue)
@@ -30,6 +29,9 @@ export class EcosDesignSystemProvider extends FASTDesignSystemProvider {
     }
   }
 
+  // we can't extend backgroundColorChanged as it is private in the FASTDesignSystemProvider class
+  // we for now let's keep this commented and use backgroundColorChanged2
+  // Follow https://github.com/microsoft/fast/issues/4721 for updates
   // public backgroundColorChanged(oldValue: string, newValue: string): void {
   //   if (newValue !== oldValue) {
   //     this.backgroundColor = newValue;
