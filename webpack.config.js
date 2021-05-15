@@ -26,7 +26,7 @@ module.exports = function(env, { analyze }) {
       entry: './src/main.ts'
     },
     output: {
-      path: path.resolve(__dirname, 'dist-app'),
+      path: path.resolve(__dirname, 'docs'),
       filename: production ? '[name].[contenthash].bundle.js' : '[name].bundle.js'
     },
     resolve: {
@@ -52,7 +52,7 @@ module.exports = function(env, { analyze }) {
     plugins: [
       new HtmlWebpackPlugin({ template: 'index.html' }),
       new CopyWebpackPlugin({patterns: [
-        { from: 'static', to: path.resolve(__dirname, 'dist-app') },
+        { from: 'static', to: path.resolve(__dirname, 'docs') },
         // { from: 'locales', to: path.resolve(__dirname, 'dist/locales') }
       ]}),
       analyze && new BundleAnalyzerPlugin()
