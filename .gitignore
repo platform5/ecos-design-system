@@ -34,25 +34,3 @@ node_modules
 /dist
 /.nyc_output
 /coverage
-dist-app/entry.0f84a8e8deccaca55da8.bundle.js
-dist-app/entry.0f84a8e8deccaca55da8.bundle.js.LICENSE.txt
-dist-app/index.html
-dist-app/images/E.svg
-dist-app/images/Ecos SVG.svg
-dist-app/images/Ecos.png
-dist-app/images/header.svg
-dist-app/images/header2.svg
-dist-app/images/header3.svg
-dist-app/images/myhq-workspaces-mwsnmLZltOs-unsplash.jpg
-dist-app/images/office-interior-design.jpg
-dist-app/images/use-cases/website/conclusion-smartphone.png
-dist-app/images/use-cases/website/details-1.jpg
-dist-app/images/use-cases/website/details-2.jpg
-dist-app/images/use-cases/website/details-3.jpg
-dist-app/images/use-cases/website/features-icon-1.svg
-dist-app/images/use-cases/website/features-icon-2.svg
-dist-app/images/use-cases/website/features-icon-3.svg
-dist-app/images/use-cases/website/features-icon-4.svg
-dist-app/images/use-cases/website/features-icon-5.svg
-dist-app/images/use-cases/website/features-icon-6.svg
-dist-app/images/use-cases/website/header-smartphone.png
