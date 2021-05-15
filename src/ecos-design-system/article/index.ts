@@ -9,13 +9,9 @@ import { ArticleTemplate as template } from './template';
 })
 export class EcosArticle extends FASTElement {
 
-  @attr()
-  public imagesrc: string;
+  @attr({attribute: 'image-src'})
+  public imageSrc: string;
 
-  public imagesrcChanged(): void {
-    console.log('imagesrc', this.imagesrc);
-  }
-
-  @attr()
+  @attr({attribute: 'image-ratio'})
   public imageRatio = 4 / 3;
 }

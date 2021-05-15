@@ -48,6 +48,12 @@
     "badges": ["New"]
   },
   {
+    "name": "Dialog",
+    "load": "dialog",
+    "description": "Dialog component",
+    "badges": ["FAST", "Extended"]
+  },
+  {
     "name": "Slider",
     "load": "slider",
     "description": "Input component to select a numeric value",

@@ -2,7 +2,7 @@ import { html, ref, when } from '@microsoft/fast-element';
 import { EcosNavbar } from './index';
 
 export const NavbarTemplate = html<EcosNavbar>`
-<template class="${x => x.fixed ? 'fixed':''} ${x => x.transparentfirst ? 'transparent-first':''} ${x => x.scrolled ? 'scrolled':''} navbar-layer-${x => x.layer}">
+<template class="${x => x.fixed ? 'fixed':''} ${x => x.transparentFirst ? 'transparent-first':''} ${x => x.scrolled ? 'scrolled':''} navbar-layer-${x => x.layer}">
   <div class="navbar" part="navbar" ${ref('navbarElement')}>
     <div class="navbar-content" part="navbar-content">
       <div class="branding" part="branding">

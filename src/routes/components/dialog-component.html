@@ -1,0 +1,39 @@
+<ecos-section>
+  <h1>Dialog</h1>
+  <p>Web component implementation of an <a href="https://w3c.github.io/aria-practices/#dialog_modal">dialog</a>.</p>
+  <p>The ecos version is slightly extended from its <a href="https://explore.fast.design/components/fast-dialog">FAST version</a> with some animations when opening / closing dialogs.</p>
+
+  <ecos-collection min-item-width="100px">
+    <ecos-button click.delegate="defaultDialogOpened = !defaultDialogOpened">Open default dialog</ecos-button>
+    <ecos-button click.delegate="fadingDialogOpened = !fadingDialogOpened">Open fading dialog</ecos-button>
+    <ecos-button click.delegate="slideUpDialogOpened = !slideUpDialogOpened">Open slide up dialog</ecos-button>
+  </ecos-collection>
+
+  <au-snippet class="larger mobile-full-bleed">
+    <div language="html">
+      <ecos-dialog hidden.bind="!defaultDialogOpened">
+        <ecos-button click.delegate="defaultDialogOpened = !defaultDialogOpened">Close dialog</ecos-button>
+      </ecos-dialog>
+      <ecos-dialog hidden.bind="!fadingDialogOpened" class="ecos-dialog--fading">
+        <ecos-button click.delegate="fadingDialogOpened = !fadingDialogOpened">Close dialog</ecos-button>
+      </ecos-dialog>
+      <ecos-dialog hidden.bind="!fadingDialogOpened" class="ecos-dialog--fading">
+        <ecos-button click.delegate="fadingDialogOpened = !fadingDialogOpened">Close dialog</ecos-button>
+      </ecos-dialog>
+    </div>
+  </au-snippet>
+
+
+  <ecos-dialog hidden.bind="!defaultDialogOpened">
+    <ecos-button click.delegate="defaultDialogOpened = !defaultDialogOpened">Close dialog</ecos-button>
+  </ecos-dialog>
+
+  <ecos-dialog hidden.bind="!fadingDialogOpened" class="ecos-dialog--fading">
+    <ecos-button click.delegate="fadingDialogOpened = !fadingDialogOpened">Close dialog</ecos-button>
+  </ecos-dialog>
+
+  <ecos-dialog hidden.bind="!slideUpDialogOpened" class="ecos-dialog--slide-up">
+    <ecos-button click.delegate="slideUpDialogOpened = !slideUpDialogOpened">Close dialog</ecos-button>
+  </ecos-dialog>
+
+</ecos-section>

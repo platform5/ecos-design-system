@@ -1,5 +1,7 @@
 <ecos-section>
   <h1>Card</h1>
+  <p>The ecos-card component is a visual container and design system provider. By default fast-card applies neutralFillCard to its background that is calculated from its parent design system provider. If a custom background color is desired the attribute card-background-color is available, this will reset the cards design system to that value. Cards are snapshots of content that are typically used in a group to present collections of related information.</p>
+  <p>This component is stricktly identical to its <a href="https://explore.fast.design/components/fast-card">FAST version</a>.</p>
   <au-snippet class="larger mobile-full-bleed" enable-output.bind="true">
     <div language="html">
       <ecos-card>
@@ -7,12 +9,41 @@
         <p>I'm an orange fruit</p>
         <ecos-button>Taste me</ecos-button>
       </ecos-card>
-
+    </div>
+  </au-snippet>
+  <p>As you can see, a card in itself doesn't look "good" out of the box. It is designed to provide a surface on which we place other flow components.</p>
+  <au-snippet class="larger mobile-full-bleed" enable-output.bind="true">
+    <div language="html">
       <ecos-card>
-        <h2>Strawberry</h2>
-        <p>I'm a red fruit</p>
-        <ecos-button>Taste me</ecos-button>
+        <div class="wrapper">
+          <h2>Orange</h2>
+          <p>I'm an orange fruit</p>
+          <ecos-button>Taste me</ecos-button>
+        </div>
       </ecos-card>
+    </div>
+    <div language="css">
+      .wrapper {
+        padding: var(--spacing-unit);
+      }
+    </div>
+  </au-snippet>
+  <p>Cards acts as design provider. Therefore they adjust their components properties according to the card background color</p>
+
+  <au-snippet class="larger mobile-full-bleed" enable-output.bind="true">
+    <div language="html">
+      <ecos-card card-background-color="#333333">
+        <div class="wrapper">
+          <h2>Orange</h2>
+          <p>I'm an orange fruit</p>
+          <ecos-button>Taste me</ecos-button>
+        </div>
+      </ecos-card>
+    </div>
+    <div language="css">
+      .wrapper {
+        padding: var(--spacing-unit);
+      }
     </div>
   </au-snippet>
 </ecos-section>

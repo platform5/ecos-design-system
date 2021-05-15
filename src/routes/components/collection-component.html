@@ -1,0 +1,29 @@
+<ecos-section>
+  <h1>Collection</h1>
+  <p>The collection component is a <i>flow</i> component. It handles how several child components are displayed together. This component is well suited to display a list of content such as a list of articles or cards.</p>
+  <au-snippet class="larger mobile-full-bleed" enable-output.bind="true">
+    <div language="html">
+      <ecos-collection min-item-width="100px">
+        <ecos-button>Button 1</ecos-button>
+        <ecos-button>Button 2</ecos-button>
+        <ecos-button>Button 3</ecos-button>
+        <ecos-button>Button 4</ecos-button>
+      </ecos-collection>
+    </div>
+  </au-snippet>
+
+  <p>You can adjust the minimum width of each element in the collection with the `min-item-width` property. Each item will then be displayed organized in a grid where each element is at least this width and as many elements as possible can fit in the container width.</p>
+
+  <!-- TODO: here it would be nice to display collections with cards with a full-width output-->
+  <!-- <h3>Collections play nicely with cards and articles</h3>
+  <au-snippet class="larger mobile-full-bleed" enable-output.bind="true">
+    <div language="html">
+      <ecos-collection min-item-width="100px">
+        <ecos-card>Card 1</ecos-card>
+        <ecos-card>Card 1</ecos-card>
+        <ecos-card>Card 1</ecos-card>
+      </ecos-collection>
+    </div>
+  </au-snippet> -->
+
+</ecos-section>

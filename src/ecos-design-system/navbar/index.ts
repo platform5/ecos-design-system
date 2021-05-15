@@ -15,11 +15,11 @@ export class EcosNavbar extends FASTElement {
   @attr({mode: 'boolean'})
   public fixed = true;
 
-  @attr({mode: 'boolean'})
-  public transparentfirst = false;
+  @attr({mode: 'boolean', attribute: 'transparent-first'})
+  public transparentFirst = false;
 
-  @attr()
-  public scrollingcontainerselector = '';
+  @attr({attribute: 'scrolling-container-selector'})
+  public scrollingContainerSelector = '';
 
   @observable
   public scrolled = false;
@@ -65,19 +65,19 @@ export class EcosNavbar extends FASTElement {
   }
 
   public addScrollListener(): void {
-    if (!this.scrollingcontainerselector) {
+    if (!this.scrollingContainerSelector) {
       document.addEventListener('scroll', this);
     } else {
-      const scrollingContainer = document.querySelector(this.scrollingcontainerselector);
+      const scrollingContainer = document.querySelector(this.scrollingContainerSelector);
       scrollingContainer.addEventListener('scroll', this);
     }
   }
 
   public removeScrollListener(): void {
-    if (!this.scrollingcontainerselector) {
+    if (!this.scrollingContainerSelector) {
       document.removeEventListener('scroll', this);
     } else {
-      const scrollingContainer = document.querySelector(this.scrollingcontainerselector);
+      const scrollingContainer = document.querySelector(this.scrollingContainerSelector);
       scrollingContainer.removeEventListener('scroll', this);
     }
   }

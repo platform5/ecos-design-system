@@ -9,6 +9,6 @@ import { CollectionTemplate as template } from './template';
 })
 export class EcosCollection extends FASTElement {
   
-  @attr()
-  public minitemwidth = '250px';
+  @attr({attribute: 'min-item-width'})
+  public minItemWidth = '250px';
 }

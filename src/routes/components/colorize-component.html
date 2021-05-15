@@ -1,0 +1,41 @@
+<ecos-section>
+  <h1>Colorize</h1>
+  <p>Colorize is a special component that uniquely transform the color of its included content. This is useful for exemple to colorize a black logo with a dynamic color.</p>
+  <p>It works by applying a CSS blending mode to its content. By default the blending mode is "lighten" but with the `mode` attribute one can select any of the valid CSS blending mode available.</p>
+  <au-snippet class="larger mobile-full-bleed" enable-output.bind="true">
+    <div language="html">
+      <p>Hello, I am some normal text.</p>
+      <ecos-colorize style="color: red;">Hello, I am colorized in red.</ecos-colorize>
+    </div>
+  </au-snippet>
+
+  <p>The exemple above seems pretty useless as a text can by colorized with the `color` css property. Let's do the same now with an image:</p>
+
+  <au-snippet class="larger mobile-full-bleed" enable-output.bind="true">
+    <div language="html">
+      <p>
+        <img src="./images/Ecos.png" style="height: 30px" />
+      </p>
+      <p>
+        <ecos-colorize style="color: red;">
+          <img src="./images/Ecos.png" style="height: 30px" />
+        </ecos-colorize>
+      </p>
+    </div>
+  </au-snippet>
+
+  <p>Now you know how we achived to have the top-left logo adjust to the current accent color:</p>
+
+  <au-snippet class="larger mobile-full-bleed" enable-output.bind="true">
+    <div language="html">
+      <p>
+        <img src="./images/Ecos.png" style="height: 30px" />
+      </p>
+      <p>
+        <ecos-colorize style="color: var(--accent-fill-rest);">
+          <img src="./images/Ecos.png" style="height: 30px" />
+        </ecos-colorize>
+      </p>
+    </div>
+  </au-snippet>
+</ecos-section>
