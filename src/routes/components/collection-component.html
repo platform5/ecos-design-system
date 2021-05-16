@@ -14,16 +14,47 @@
 
   <p>You can adjust the minimum width of each element in the collection with the `min-item-width` property. Each item will then be displayed organized in a grid where each element is at least this width and as many elements as possible can fit in the container width.</p>
 
-  <!-- TODO: here it would be nice to display collections with cards with a full-width output-->
-  <!-- <h3>Collections play nicely with cards and articles</h3>
-  <au-snippet class="larger mobile-full-bleed" enable-output.bind="true">
+  <h3>Collections play nicely with cards and articles</h3>
+
+  <ecos-card>
+    <div class="wrapper">
+      <h2>Orange</h2>
+      <p>I'm an orange fruit</p>
+      <ecos-button>Taste me</ecos-button>
+    </div>
+  </ecos-card>
+
+  <au-snippet class="larger mobile-full-bleed" enable-output.bind="true" full-width-output.bind="true" style="width: 100%;">
     <div language="html">
-      <ecos-collection min-item-width="100px">
-        <ecos-card>Card 1</ecos-card>
-        <ecos-card>Card 1</ecos-card>
-        <ecos-card>Card 1</ecos-card>
+      <ecos-collection min-item-width="250px">
+        <ecos-card card-background-color="#efefef">
+          <div class="wrapper">
+            <h2>Orange</h2>
+            <p>I'm an orange fruit</p>
+            <ecos-button>Taste me</ecos-button>
+          </div>
+        </ecos-card>
+        <ecos-card card-background-color="#efefef">
+          <div class="wrapper">
+            <h2>Orange</h2>
+            <p>I'm an orange fruit</p>
+            <ecos-button>Taste me</ecos-button>
+          </div>
+        </ecos-card>
+        <ecos-card card-background-color="#efefef">
+          <div class="wrapper">
+            <h2>Orange</h2>
+            <p>I'm an orange fruit</p>
+            <ecos-button>Taste me</ecos-button>
+          </div>
+        </ecos-card>
       </ecos-collection>
     </div>
-  </au-snippet> -->
+    <div language="css">
+      .wrapper {
+        padding: var(--spacing-unit);
+      }
+    </div>
+  </au-snippet>
 
 </ecos-section>
