@@ -43,13 +43,23 @@ export class AuSnippet implements ICustomElementViewModel {
   public static processContent(node: INode): boolean {
     const children = node.childNodes;
     const el = node as Element;
+
+    let hasOutputSlottedContent = false;
+    for (const child of children) {
+      hasOutputSlottedContent = hasOutputSlottedContent || (child instanceof HTMLElement && child.hasAttribute('au-slot') && child.getAttribute('au-slot') === 'output');
+      if (hasOutputSlottedContent) {
+        break;
+      }
+    }
     const outputElement = document.createElement('div');
     const stylesElement = document.createElement('div');
+
+
     for (const child of children) {
       if (child instanceof Element && child.hasAttribute('language')) {
         const language = child.getAttribute('language');
         let content = child.innerHTML;
-        if (language === 'html') {
+        if (language === 'html' && !hasOutputSlottedContent) {
           outputElement.innerHTML = content,
           outputElement.setAttribute('au-slot', 'output');
           content = AuSnippet.decodeHtml(content);
