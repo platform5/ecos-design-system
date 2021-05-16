@@ -1,6 +1,8 @@
 import { customElement, inject, INode, bindable } from 'aurelia';
 import { processContent, shadowCSS, ICustomElementViewModel, ICustomElementController } from '@aurelia/runtime-html';
 import prism from 'prismjs';
+import 'prismjs/components/prism-bash';
+import 'prismjs/components/prism-typescript';
 import prismStyles from '!css-loader!prismjs/themes/prism.css';
 import templateStyles from '!!css-loader!./au-snippet.css';
 import template from './au-snippet.html';

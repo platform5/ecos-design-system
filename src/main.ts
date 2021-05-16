@@ -1,3 +1,5 @@
+import { AnimatedSVG } from './custom-elements/animated-svg/index';
+import { AnimatedSVG2 } from './custom-elements/animated-svg2/index';
 import { 
   AureliaEcosAdapter,
 
@@ -74,6 +76,9 @@ EcosIcon.outline['ArrowNarrowRight'] = OutlineArrowNarrowRight;
 EcosIcon.solid['ArrowNarrowRight'] = SolidArrowNarrowRight;
 EcosIcon.outline['X'] = OutlineX;
 EcosIcon.solid['X'] = SolidX;
+
+AnimatedSVG;
+AnimatedSVG2;
 
 Aurelia
   // .register(routes)
