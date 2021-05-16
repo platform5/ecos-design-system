@@ -24,6 +24,7 @@ export class AuSnippet implements ICustomElementViewModel {
   @bindable public showHTML: boolean | 'auto' = 'auto';
   @bindable public showCSS: boolean | 'auto' = 'auto';
   @bindable public showOutput: boolean | 'auto' = 'auto';
+  @bindable public fullWidthOutput = false;
 
   @bindable public theme: '' | 'dark' = '';
 

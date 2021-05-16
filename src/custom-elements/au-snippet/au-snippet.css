@@ -91,14 +91,14 @@
 
 /* (desktop) mode */
 @media screen and (min-width: 732px) {
-  :host(.show-output) {
+  :host(.show-output:not(.full-width-output)) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 40px auto;
   }
-  :host(.show-output).codes {
+  :host(.show-output:not(.full-width-output)).codes {
     grid-column: 1;
   }
-  :host(.show-output) .output {
+  :host(.show-output:not(.full-width-output)) .output {
     grid-row-start: 1;
     grid-row-end: 3;
     grid-column: 2;
