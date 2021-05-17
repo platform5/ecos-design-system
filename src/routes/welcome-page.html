@@ -11,8 +11,8 @@
 
 <ecos-section centerwidth="70ch">
   <h1>Experiment extension of FAST design system</h1>
-  <p>You might have heard of <a href="https://fast.design">fast.design</a> developed by Microsoft. It's a pretty neat theming system using modern web-component technology.</p>
-  <p>What you see on this page is an experiment to build an extended version of the FAST frame design system provided by FAST.</p>
+  <p>You might have heard of <a href="https://fast.design">fast.design</a> developed by Microsoft. Their idea is to provide a set of packages to allow developer to quickly create design systems using web-components.</p>
+  <p>What you see on this page is an experiment to build such an extended design system.</p>
 </ecos-section>
 
 <ecos-section centerwidth="70ch">
@@ -47,12 +47,10 @@
   <p>Make sure you have a Design System Provider encapsulating all the ecos components in the DOM. A common practice is to place it right after the body tag</p>
   <au-snippet class="mobile-full-bleed">
     <div language="html">
-      <body>
-        <ecos-design-system-provider use-defaults apply-background-to-body>
-          <!-- `use-defaults` is only required on the top level design-system-provider -->
-          <!-- code continues here -->
-        </ecos-design-system-provider>
-      </body>
+      <ecos-design-system-provider use-defaults apply-background-to-body>
+        <!-- `use-defaults` is only required on the top level design-system-provider -->
+        <!-- code continues here -->
+      </ecos-design-system-provider>
     </div>
   </au-snippet>
 

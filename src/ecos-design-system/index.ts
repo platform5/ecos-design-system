@@ -4,6 +4,7 @@ export * from './anchor';
 export * from './article';
 export * from './article-list';
 export * from './badge';
+export * from './breadcrumb';
 export * from './button';
 export * from './button-3d';
 export * from './card';

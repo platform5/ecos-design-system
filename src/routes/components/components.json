@@ -18,6 +18,12 @@
     "badges": ["FAST", "Extended"]
   },
   {
+    "name": "Breadcrumb",
+    "load": "breadcrumb",
+    "description": "To aid with navigation",
+    "badges": ["FAST"]
+  },
+  {
     "name": "Button",
     "load": "button",
     "description": "You probably knows what a button is",
@@ -54,9 +60,57 @@
     "badges": ["FAST", "Extended"]
   },
   {
+    "name": "Form",
+    "load": "form",
+    "description": "Form and form-row aid for displaying nice looking forms",
+    "badges": ["New"]
+  },
+  {
+    "name": "Icon",
+    "load": "icon",
+    "description": "The icon component is an SVG wrapper to display all sorts of icons",
+    "badges": ["New"]
+  },
+  {
+    "name": "Navbar",
+    "load": "navbar",
+    "description": "Components to present a responsive navbar",
+    "badges": ["New"]
+  },
+  {
+    "name": "Section",
+    "load": "section",
+    "description": "Use this component to create a section of content in a page",
+    "badges": ["New"]
+  },
+  {
+    "name": "Select",
+    "load": "Select",
+    "description": "Web-component implementation of an HTML select element",
+    "badges": ["FAST"]
+  },
+  {
     "name": "Slider",
     "load": "slider",
     "description": "Input component to select a numeric value",
     "badges": ["FAST"]
+  },
+  {
+    "name": "Stack",
+    "load": "stack",
+    "description": "A flow container to handle nice margin between blocks",
+    "badges": ["New"]
+  },
+  {
+    "name": "Text Field",
+    "load": "text-field",
+    "description": "Web-component implementation of an HTML input element",
+    "badges": ["FAST"]
+  },
+  {
+    "name": "Two",
+    "load": "two",
+    "description": "Use this component to display two blocks next to each other in a responsive way",
+    "badges": ["New"]
   }
 ]

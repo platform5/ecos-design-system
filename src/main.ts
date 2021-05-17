@@ -7,6 +7,8 @@ import {
   EcosArticle, 
   EcosArticleList, 
   EcosBadge, 
+  EcosBreadcrumb,
+  EcosBreadcrumbItem,
   EcosButton, 
   EcosButton3D,
   EcosCard,
@@ -29,7 +31,6 @@ import {
 import Aurelia from 'aurelia';
 import { LoggerConfiguration, LogLevel, ConsoleSink, ColorOptions } from 'aurelia';
 import { RouterConfiguration } from 'aurelia-direct-router';
-import { SVGAnalyzerRegistration } from '@aurelia/runtime-html';
 import { EcosApp } from './ecos-app';
 import * as routes from './routes';
 
@@ -49,6 +50,8 @@ EcosAnchor;
 EcosArticle;
 EcosArticleList;
 EcosBadge;
+EcosBreadcrumb;
+EcosBreadcrumbItem;
 EcosButton;
 EcosButton3D;
 EcosCard;
@@ -96,7 +99,6 @@ Aurelia
   .register(AureliaEcosAdapter)
   .register(EcosSettings)
   .register(AuSnippet)
-  .register(SVGAnalyzerRegistration)
   // To use HTML5 pushState routes, replace previous line with the following
   // customized router config.
   // .register(RouterConfiguration.customize({ useUrlFragmentHash: false }))
