@@ -13,6 +13,7 @@
     "@microsoft/fast-components": "^1.19.1",
     "@microsoft/fast-element": "^1.0.1",
     "lodash-es": "^4.17.21",
+    "modern-css-reset": "^1.4.0",
     "modular-scale": "^5.1.0"
   },
   "devDependencies": {
@@ -34,7 +35,6 @@
     "gulp": "^4.0.2",
     "html-webpack-plugin": "^5.3.1",
     "htmlhint": "^0.14.2",
-    "modern-css-reset": "^1.4.0",
     "postcss": "^8.2.8",
     "postcss-loader": "^5.2.0",
     "prismjs": "^1.23.0",
