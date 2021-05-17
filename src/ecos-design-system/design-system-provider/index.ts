@@ -15,8 +15,8 @@ import { setTypeRamp } from './modular-type';
 })
 export class EcosDesignSystemProvider extends FASTDesignSystemProvider {
 
-  @attr({mode: 'boolean'})
-  public applybackgroundtobody = false;
+  @attr({mode: 'boolean', attribute: 'apply-background-to-body'})
+  public applyBackgroundToBody = false;
 
   public accentBaseColorChanged(oldValue: string, newValue: string): void {
     if (newValue !== oldValue) {
@@ -48,7 +48,7 @@ export class EcosDesignSystemProvider extends FASTDesignSystemProvider {
       this.neutralPalette = createColorPalette(parsedColor);
     }
     this.setBackgroundTeintedColor();
-    if (this.applybackgroundtobody) {
+    if (this.applyBackgroundToBody) {
       document.body.style.setProperty('background-color', parsedColor.toStringHexRGB());
     }
   }
