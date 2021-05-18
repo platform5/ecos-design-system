@@ -78,6 +78,13 @@
   padding-right: var(--spacing-unit);
 }
 
+.text-center {
+  text-align: center;
+}
+.teinted-text {
+  color: var(--accent-light-100);
+}
+
 
 /* The shift-[x/y]-[value] utilities allow for pixel perfect adjustements */
 .shift-x-1 {

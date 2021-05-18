@@ -40,6 +40,8 @@ import { Adjustments as OutlineAdjustments } from './ecos-design-system/icons/ou
 import { Adjustments as SolidAdjustments } from './ecos-design-system/icons/solid';
 import { ArrowNarrowRight as OutlineArrowNarrowRight } from './ecos-design-system/icons/outline';
 import { ArrowNarrowRight as SolidArrowNarrowRight } from './ecos-design-system/icons/solid';
+import { ArrowCircleRight as OutlineArrowCircleRight } from './ecos-design-system/icons/outline';
+import { ArrowCircleRight as SolidArrowCircleRight } from './ecos-design-system/icons/solid';
 import { X as OutlineX } from './ecos-design-system/icons/outline';
 import { X as SolidX } from './ecos-design-system/icons/solid';
 
@@ -77,6 +79,8 @@ EcosIcon.outline['Adjustments'] = OutlineAdjustments;
 EcosIcon.solid['Adjustments'] = SolidAdjustments;
 EcosIcon.outline['ArrowNarrowRight'] = OutlineArrowNarrowRight;
 EcosIcon.solid['ArrowNarrowRight'] = SolidArrowNarrowRight;
+EcosIcon.outline['ArrowCircleRight'] = OutlineArrowCircleRight;
+EcosIcon.solid['ArrowCircleRight'] = SolidArrowCircleRight;
 EcosIcon.outline['X'] = OutlineX;
 EcosIcon.solid['X'] = SolidX;
 

@@ -20,6 +20,12 @@ export const extendedBadgeStyles = css`
     background: ${accentLight100Behavior.var};
     color: ${accentForegroundCutRestBehavior.var};
   }
+  :host([appearance=outline]) .control {
+    background: transparent;
+    color: ${neutralForegroundRestBehavior.var};
+    border: calc(var(--outline-width) * 1px) solid ${neutralForegroundRestBehavior.var};
+    border-radius: calc(var(--corner-radius) * 1px);
+  }
 `.withBehaviors(
   neutralFillRestBehavior,
   neutralForegroundRestBehavior,

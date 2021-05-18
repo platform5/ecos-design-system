@@ -7,6 +7,7 @@ export class EcosSettings {
   public designUnit = 4;
   public density = 0;
   public cornerRadius = 5;
+  public outlineWidth = 1;
   public typeRampBaseFontSize = 16;
   public typeRampRatio = 1.25;
   public lineHeightRatio = 1.2;
@@ -31,6 +32,7 @@ export class EcosSettings {
     this.provider.designUnit = this.designUnit;
     this.provider.density = this.density;
     this.provider.cornerRadius = this.cornerRadius;
+    this.provider.outlineWidth = this.outlineWidth;
     this.provider.typeRampBaseFontSize = `${this.typeRampBaseFontSize}px`;
     this.provider.typeRampRatio = this.typeRampRatio;
     this.provider.lineHeightRatio = this.lineHeightRatio;

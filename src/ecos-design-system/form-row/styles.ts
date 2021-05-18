@@ -8,4 +8,7 @@ export const FormStyles = css`
     contain: content;
     flex-direction: column;
   }
+  ::slotted(label) {
+    margin-bottom: 4px;
+  }
 `;
