@@ -36,7 +36,5 @@ export class EcosSettings {
     this.provider.typeRampBaseFontSize = `${this.typeRampBaseFontSize}px`;
     this.provider.typeRampRatio = this.typeRampRatio;
     this.provider.lineHeightRatio = this.lineHeightRatio;
-
-    this.provider.backgroundColorChanged2();
   }
 }

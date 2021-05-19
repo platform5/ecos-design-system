@@ -4,8 +4,8 @@ import {
   defineDesignSystemProvider,
   DesignSystemProviderTemplate as template,
 } from "@microsoft/fast-foundation";
-import { attr, css } from '@microsoft/fast-element';
-import { parseColor, ColorRGBA64, darkenViaLAB, blendLighten, blendDarken, blendColor } from "@microsoft/fast-colors";
+import { attr, css, Observable } from '@microsoft/fast-element';
+import { parseColor, blendColor } from "@microsoft/fast-colors";
 import { setTypeRamp } from './modular-type';
 
 @defineDesignSystemProvider({
@@ -17,6 +17,22 @@ export class EcosDesignSystemProvider extends FASTDesignSystemProvider {
 
   @attr({mode: 'boolean', attribute: 'apply-background-to-body'})
   public applyBackgroundToBody = false;
+
+  public connectedCallback(): void {
+    super.connectedCallback();
+    Observable.getNotifier(this).subscribe(this, 'backgroundColor');
+  }
+
+  public disconnectedCallback(): void {
+    super.disconnectedCallback();
+    Observable.getNotifier(this).unsubscribe(this, 'backgroundColor');
+  }
+
+  public handleChange(source: HTMLElement, name: string): void {
+    if (name === 'backgroundColor' && this.backgroundColor !== undefined) {
+      this.backgroundColorChanged2();
+    }
+  }
 
   public accentBaseColorChanged(oldValue: string, newValue: string): void {
     if (newValue !== oldValue) {
