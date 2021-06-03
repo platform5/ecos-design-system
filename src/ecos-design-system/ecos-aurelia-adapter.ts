@@ -7,7 +7,7 @@ export class AureliaEcosAdapter {
   }
 
   private static extendTemplatingSyntax(container: IContainer): void {
-    AppTask.with(IContainer).beforeCreate().call(container => {
+    AppTask.beforeCreate(IContainer, container => {
       const attrSyntaxTransformer = container.get(IAttrSyntaxTransformer);
       const nodeObserverLocator = container.get(NodeObserverLocator);
       attrSyntaxTransformer.useTwoWay((el, property) => {
