@@ -1,4 +1,169 @@
 <ecos-section>
-  <h1>Demo of an Admin Dashboard</h1>
-  <ecos-button load="../use-cases-list">Close</ecos-button>
+  <ecos-card-row>
+    
+    <h2>
+      Dashboard Menu</h2>
+    <ecos-anchor appearance="lightweight" load="../use-cases-list">
+      <ecos-icon icon="X" weight="2"></ecos-icon>
+    </ecos-anchor>
+    </ecos-card-row>
+  <ecos-stack>
+    <ecos-card>
+      <ecos-menu>
+        <ecos-menu-item role="menuitemradio" checked.bind="view['cards']">Cards</ecos-menu-item>
+        <ecos-menu-item role="menuitemradio" checked.bind="view['menu']">Menu</ecos-menu-item>
+        <ecos-menu-item role="menuitemradio" checked.bind="view['list']">List</ecos-menu-item>
+        <ecos-menu-item role="menuitemradio" checked.bind="view['dialog']">Dialogs</ecos-menu-item>
+      </ecos-menu>
+    </ecos-card>
+  </ecos-stack>
 </ecos-section>
+
+<ecos-section if.bind="view['cards']">
+  <h3>Cards exemples</h3>
+  <ecos-card>
+    <ecos-card-row>
+      <h3>210 Fusibles</h3>
+      <ecos-button appearance="lightweight">
+        <ecos-icon icon="Pencil" slot="start"></ecos-icon>
+        Editer
+      </ecos-button>
+    </ecos-card-row>
+  </ecos-card>
+  <ecos-card>
+    <ecos-card-row>
+      <h3>210 Fusibles</h3>
+    </ecos-card-row>
+    <ecos-card-content separator>
+      <p>Here is the content of the card</p>
+    </ecos-card-content>
+    <ecos-card-row>
+      <ecos-inline-group ecos-card-row--right>
+        <ecos-button appearance="lightweight">Cancel</ecos-button>
+        <ecos-button appearance="accent">Save</ecos-button>
+      </ecos-inline-group>
+    </ecos-card-row>
+  </ecos-card>
+  <ecos-card separators>
+    <ecos-card-row>
+      <h3>210 Fusibles</h3>
+    </ecos-card-row>
+    <ecos-card-content>
+      <p>Here is the content of the card</p>
+    </ecos-card-content>
+    <ecos-card-row>
+      <ecos-inline-group ecos-card-row--right>
+        <ecos-button appearance="lightweight">Cancel</ecos-button>
+        <ecos-button appearance="accent">Save</ecos-button>
+      </ecos-inline-group>
+    </ecos-card-row>
+  </ecos-card>
+</ecos-section>
+
+<ecos-section if.bind="view['menu']">
+  <h3>Menu exemples</h3>
+  <ecos-stack>
+    <ecos-card>
+      <ecos-menu>
+        <ecos-menu-item>
+          <ecos-icon icon="User" slot="start"></ecos-icon>
+          Produits
+          <ecos-badge slot="end">1045</ecos-badge>
+        </ecos-menu-item>
+        <ecos-menu-item>
+          <ecos-icon icon="User" slot="start"></ecos-icon>
+          Options
+          <ecos-badge slot="end">140</ecos-badge>
+        </ecos-menu-item>
+        <ecos-menu-item>
+          <ecos-icon icon="User" slot="start"></ecos-icon>
+          Eléments de stock
+          <ecos-badge slot="end">18415</ecos-badge>
+        </ecos-menu-item>
+        <ecos-menu-item>
+          <ecos-icon icon="User" slot="start"></ecos-icon>
+          Fournisseurs
+          <ecos-badge slot="end">35</ecos-badge>
+        </ecos-menu-item>
+        <ecos-menu-item>
+          <ecos-icon icon="User" slot="start"></ecos-icon>
+          Réapprovisonnement
+          <ecos-badge slot="end">48</ecos-badge>
+        </ecos-menu-item>
+        <ecos-menu-item>
+          <ecos-icon icon="User" slot="start"></ecos-icon>
+          Commandes fournisseur
+          <ecos-badge slot="end">475</ecos-badge>
+        </ecos-menu-item>
+      </ecos-menu>
+    </ecos-card>
+    <ecos-card>
+      <ecos-menu>
+        <ecos-menu-item>
+          <ecos-icon icon="User" slot="start"></ecos-icon>
+          Clients
+          <ecos-badge slot="end">235</ecos-badge>
+        </ecos-menu-item>
+        <ecos-menu-item>
+          <ecos-icon icon="User" slot="start"></ecos-icon>
+          Commandes
+          <ecos-badge slot="end">1423</ecos-badge>
+        </ecos-menu-item>
+        <ecos-menu-item>
+          <ecos-icon icon="User" slot="start"></ecos-icon>
+          Livraisons
+          <ecos-badge slot="end">1230</ecos-badge>
+        </ecos-menu-item>
+      </ecos-menu>
+    </ecos-card>
+  </ecos-stack>
+</ecos-section>
+
+<ecos-section if.bind="view['list']" centerwidth="100%" nocontain>
+  <h3>List data exemple</h3>
+  <p>
+    <ecos-button appearance="outline" click.delegate="listKeysDialogOpened = !listKeysDialogOpened">Choose listing keys</ecos-button>
+  </p>
+  
+  <ecos-table separators>
+    <ecos-table-row repeat.for="row of data">
+      <ecos-icon icon="User" slot="start" if.bind="listingKeys.icon"></ecos-icon>
+      <ecos-table-item if.bind="listingKeys.name">
+        ${row.name}
+      </ecos-table-item>
+      <ecos-table-item meta if.bind="listingKeys.address">
+        <span slot="label">Address</span>
+        ${row.address}
+      </ecos-table-item>
+      <ecos-table-item meta if.bind="listingKeys.email">
+        <span slot="label">Email</span>
+        ${row.email}
+      </ecos-table-item>
+      <ecos-table-item meta small if.bind="listingKeys.age">
+        <span slot="label">Age</span>
+        ${row.age}
+      </ecos-table-item>
+      <ecos-table-item meta small if.bind="listingKeys.eyeColor">
+        <span slot="label">Eye color</span>
+        ${row.eyeColor}
+      </ecos-table-item>
+      <ecos-button slot="end" if.bind="listingKeys.button">Open</ecos-button>
+    </ecos-table-row>
+  </ecos-table>
+</ecos-section>
+
+<ecos-dialog hidden.bind="!listKeysDialogOpened" class="ecos-dialog--fading" style="--dialog-height: auto; --dialog-width: 300px;">
+    <ecos-menu>
+      <ecos-menu-item role="menuitemcheckbox" checked.bind="listingKeys['name']">Name</ecos-menu-item>
+      <ecos-menu-item role="menuitemcheckbox" checked.bind="listingKeys['address']">Address</ecos-menu-item>
+      <ecos-menu-item role="menuitemcheckbox" checked.bind="listingKeys['email']">Email</ecos-menu-item>
+      <ecos-menu-item role="menuitemcheckbox" checked.bind="listingKeys['age']">Age</ecos-menu-item>
+      <ecos-menu-item role="menuitemcheckbox" checked.bind="listingKeys['eyeColor']">Eye Color</ecos-menu-item>
+      <ecos-menu-item role="menuitemcheckbox" checked.bind="listingKeys['icon']">Icon</ecos-menu-item>
+      <ecos-menu-item role="menuitemcheckbox" checked.bind="listingKeys['button']">Button</ecos-menu-item>
+    </ecos-menu>
+  
+    <ecos-inline-group ecos-card-row--right style="justify-content: flex-end;">
+      <ecos-button click.delegate="listKeysDialogOpened = !listKeysDialogOpened" appearance="text">Fermer</ecos-button>
+    </ecos-inline-group>
+</ecos-dialog>

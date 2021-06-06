@@ -12,6 +12,8 @@ import {
   EcosButton, 
   EcosButton3D,
   EcosCard,
+  EcosCardContent,
+  EcosCardRow,
   EcosCollection,
   EcosColorize,
   EcosDesignSystemProvider, 
@@ -19,12 +21,18 @@ import {
   EcosForm, 
   EcosFormRow, 
   EcosIcon,
+  EcosInlineGroup,
+  EcosMenu,
+  EcosMenuItem,
   EcosNavbar,
   EcosOption,
   EcosSection,
   EcosSelect,
   EcosSlider,
   EcosStack,
+  EcosTable,
+  EcosTableItem,
+  EcosTableRow,
   EcosTextField,
   EcosTwo,
 } from './ecos-design-system';
@@ -36,6 +44,8 @@ import * as routes from './routes';
 
 import { User as OutlineUser } from './ecos-design-system/icons/outline';
 import { User as SolidUser } from './ecos-design-system/icons/solid';
+import { Pencil as OutlinePencil } from './ecos-design-system/icons/outline';
+import { Pencil as SolidPencil } from './ecos-design-system/icons/solid';
 import { Adjustments as OutlineAdjustments } from './ecos-design-system/icons/outline';
 import { Adjustments as SolidAdjustments } from './ecos-design-system/icons/solid';
 import { ArrowNarrowRight as OutlineArrowNarrowRight } from './ecos-design-system/icons/outline';
@@ -57,6 +67,8 @@ EcosBreadcrumbItem;
 EcosButton;
 EcosButton3D;
 EcosCard;
+EcosCardContent;
+EcosCardRow;
 EcosCollection;
 EcosColorize;
 EcosDesignSystemProvider;
@@ -64,17 +76,25 @@ EcosDialog;
 EcosForm;
 EcosFormRow;
 EcosIcon;
+EcosInlineGroup;
+EcosMenu;
+EcosMenuItem;
 EcosNavbar;
 EcosOption;
 EcosSection;
 EcosSelect;
 EcosSlider;
 EcosStack;
+EcosTable;
+EcosTableItem;
+EcosTableRow;
 EcosTextField;
 EcosTwo;
 
 EcosIcon.outline['User'] = OutlineUser;
 EcosIcon.solid['User'] = SolidUser;
+EcosIcon.outline['Pencil'] = OutlinePencil;
+EcosIcon.solid['Pencil'] = SolidPencil;
 EcosIcon.outline['Adjustments'] = OutlineAdjustments;
 EcosIcon.solid['Adjustments'] = SolidAdjustments;
 EcosIcon.outline['ArrowNarrowRight'] = OutlineArrowNarrowRight;
