@@ -123,3 +123,6 @@
 .shift-y--3 {
   transform: translateY(-3px);
 }
+ecos-card-row > [ecos-card-row--right] {
+  grid-column: 2;
+}

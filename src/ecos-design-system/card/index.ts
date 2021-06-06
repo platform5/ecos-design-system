@@ -8,9 +8,12 @@ import { CardTemplate as template } from '@microsoft/fast-foundation';
 // generate satisfying result
 // I also created a PR (not submitted) here: https://github.com/ben-girardet/fast/tree/fix-card-color
 
+// the min-content below ensure that the card, when used in a context of a stack
+// correctly "ends" its content towards the bottom
 export const fixedColorStyles = css`
   :host {
-    color: ${neutralForegroundRestBehavior.var}
+    color: ${neutralForegroundRestBehavior.var};
+    height: min-content;
   }
 `.withBehaviors(neutralForegroundRestBehavior);
 

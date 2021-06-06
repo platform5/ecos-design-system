@@ -16,3 +16,19 @@ ecos-navbar > ecos-anchor:hover {
   --outline-width: 0;
   color: var(--accent-foreground-hover);
 }
+
+/* TODO: color here should be set from design system */
+ecos-card[separators] > * + ecos-card-content,
+ecos-card[separators] > * + ecos-card-row,
+ecos-card > * + ecos-card-content[separator],
+ecos-card > * + ecos-card-row[separator] {
+  border-top: solid #ccc 1px;
+}
+
+ecos-card > ecos-menu,
+ecos-card > ecos-stack > ecos-menu {
+  max-width: none;
+}
+ecos-table[separators] > ecos-table-row + ecos-table-row {
+  border-top: solid #ccc 1px;
+}

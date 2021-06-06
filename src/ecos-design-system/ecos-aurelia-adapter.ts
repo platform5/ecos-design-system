@@ -20,6 +20,7 @@ export class AureliaEcosAdapter {
           case 'ECOS-CHECKBOX':
           case 'ECOS-RADIO':
           case 'ECOS-RADIO-GROUP':
+          case 'ECOS-MENU-ITEM':
           case 'ECOS-SWITCH':
             return property === 'checked';
           case 'ECOS-TABS':
@@ -45,6 +46,9 @@ export class AureliaEcosAdapter {
         },
         'ECOS-SLIDER': {
           value: valuePropertyConfig
+        },
+        'ECOS-MENU-ITEM': {
+          checked: valuePropertyConfig
         },
         'ECOS-SWITCH': {
           checked: valuePropertyConfig

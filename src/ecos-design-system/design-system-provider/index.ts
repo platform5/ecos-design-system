@@ -4,7 +4,7 @@ import {
   defineDesignSystemProvider,
   DesignSystemProviderTemplate as template,
 } from "@microsoft/fast-foundation";
-import { attr, css, Observable } from '@microsoft/fast-element';
+import { attr, css, Observable, DOM, nullableNumberConverter } from '@microsoft/fast-element';
 import { parseColor, blendColor } from "@microsoft/fast-colors";
 import { setTypeRamp } from './modular-type';
 
@@ -111,6 +111,82 @@ export class EcosDesignSystemProvider extends FASTDesignSystemProvider {
       this.backgroundTeintedColor = blend1;
     } else {
       this.backgroundTeintedColor = blendColor(accent, background).toStringHexRGB();
+    }
+  }
+
+  /**
+   * The grid-unit that UI dimensions are derived from in pixels.
+   *
+   * @remarks
+   * HTML attribute: base-unit
+   *
+   * CSS custom property: --base-unit
+   */
+      @designSystemProperty({
+      attribute: "base-unit",
+      converter: nullableNumberConverter,
+      default: 8,
+  })
+  public baseUnit: number;
+
+  public baseUnitChanged(): void {
+    if (typeof this.baseUnit === 'number') {
+      this.designUnit = this.baseUnit / 2;
+    }
+  }
+
+  /**
+   * The number of designUnits used for component height at the base density.
+   *
+   * @remarks
+   * HTML attribute: base-unit
+   *
+   * CSS custom property: --base-unit
+   */
+  @designSystemProperty({
+    attribute: "base-h-multiplier",
+    converter: nullableNumberConverter,
+    default: 5,
+  })
+  public baseHMultiplier: number;
+
+  public baseHMultiplierChanged(): void {
+    if (typeof this.baseHMultiplier === 'number') {
+      this.baseHeightMultiplier = this.baseHMultiplier * 2;
+    }
+  }
+
+  /**
+   * The number of designUnits used for horizontal spacing at the base density.
+   *
+   * @remarks
+   * HTML attribute: base-unit
+   *
+   * CSS custom property: --base-unit
+   */
+  @designSystemProperty({
+    attribute: "base-spacing-multiplier",
+    converter: nullableNumberConverter,
+    default: 1.5,
+  })
+  public baseSpacingMultiplier: number;
+
+  public baseSpacingMultiplierChanged(): void {
+    if (typeof this.baseSpacingMultiplier === 'number') {
+      this.baseHorizontalSpacingMultiplier = this.baseSpacingMultiplier * 2;
+    }
+  }
+
+  @attr({mode: 'boolean'})
+  densify = false;
+  public densifyChanged(): void {
+    if (this.densify) {
+      DOM.queueUpdate(() => {
+        const parentProvider = EcosDesignSystemProvider.findProvider(this);
+        if (parentProvider instanceof EcosDesignSystemProvider) {
+          this.density = parentProvider.density + 1;
+        }
+      });
     }
   }
 
