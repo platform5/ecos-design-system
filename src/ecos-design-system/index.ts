@@ -1,6 +1,7 @@
 import 'modern-css-reset';
 
 export * from './anchor';
+export * from './anchored-region';
 export * from './article';
 export * from './article-list';
 export * from './badge';

@@ -117,6 +117,19 @@
       </ecos-menu>
     </ecos-card>
   </ecos-stack>
+  <h3>Context Menu exemples</h3>
+  <p>
+    <ecos-button id="anchor" click.delegate="displayContextMenu = !displayContextMenu">
+      <ecos-icon icon="DotsHorizontal" slot="start"></ecos-icon>
+      Actions
+    </ecos-button>
+    <p>
+      The FASTAnchoredRegion component used for the context menu here seems to be very much "in progress". Not much effort has been made yet to ensure a great experience with the ECOS component as we prefer to wait for a stronger version from FAST first.
+    </p>
+    <p style="height: 800px;">
+      
+    </p>
+  </p>
 </ecos-section>
 
 <ecos-section if.bind="view['list']" centerwidth="100%" nocontain>
@@ -152,18 +165,49 @@
   </ecos-table>
 </ecos-section>
 
-<ecos-dialog hidden.bind="!listKeysDialogOpened" class="ecos-dialog--fading" style="--dialog-height: auto; --dialog-width: 300px;">
-    <ecos-menu>
-      <ecos-menu-item role="menuitemcheckbox" checked.bind="listingKeys['name']">Name</ecos-menu-item>
-      <ecos-menu-item role="menuitemcheckbox" checked.bind="listingKeys['address']">Address</ecos-menu-item>
-      <ecos-menu-item role="menuitemcheckbox" checked.bind="listingKeys['email']">Email</ecos-menu-item>
-      <ecos-menu-item role="menuitemcheckbox" checked.bind="listingKeys['age']">Age</ecos-menu-item>
-      <ecos-menu-item role="menuitemcheckbox" checked.bind="listingKeys['eyeColor']">Eye Color</ecos-menu-item>
-      <ecos-menu-item role="menuitemcheckbox" checked.bind="listingKeys['icon']">Icon</ecos-menu-item>
-      <ecos-menu-item role="menuitemcheckbox" checked.bind="listingKeys['button']">Button</ecos-menu-item>
-    </ecos-menu>
-  
-    <ecos-inline-group ecos-card-row--right style="justify-content: flex-end;">
-      <ecos-button click.delegate="listKeysDialogOpened = !listKeysDialogOpened" appearance="text">Fermer</ecos-button>
-    </ecos-inline-group>
+<ecos-dialog dismiss.delegate="listKeysDialogOpened = false" hidden.bind="!listKeysDialogOpened" class="ecos-dialog--fading" style="--dialog-height: auto; --dialog-width: 300px;">
+  <ecos-menu>
+    <ecos-menu-item role="menuitemcheckbox" checked.bind="listingKeys['name']">Name</ecos-menu-item>
+    <ecos-menu-item role="menuitemcheckbox" checked.bind="listingKeys['address']">Address</ecos-menu-item>
+    <ecos-menu-item role="menuitemcheckbox" checked.bind="listingKeys['email']">Email</ecos-menu-item>
+    <ecos-menu-item role="menuitemcheckbox" checked.bind="listingKeys['age']">Age</ecos-menu-item>
+    <ecos-menu-item role="menuitemcheckbox" checked.bind="listingKeys['eyeColor']">Eye Color</ecos-menu-item>
+    <ecos-menu-item role="menuitemcheckbox" checked.bind="listingKeys['icon']">Icon</ecos-menu-item>
+    <ecos-menu-item role="menuitemcheckbox" checked.bind="listingKeys['button']">Button</ecos-menu-item>
+  </ecos-menu>
+
+  <ecos-inline-group ecos-card-row--right style="justify-content: flex-end;">
+    <ecos-button click.delegate="listKeysDialogOpened = !listKeysDialogOpened" appearance="text">Fermer</ecos-button>
+  </ecos-inline-group>
 </ecos-dialog>
+
+<ecos-anchored-region
+    if.bind="displayContextMenu"
+    anchor="anchor"
+    auto-update-mode="auto"
+    vertical-positioning-mode="locktodefault"
+    vertical-threshold="100"
+    vertical-default-position="bottom"
+    horizontal-default-position="right"
+    horizontal-inset="true"
+    horizontal-positioning-mode="locktodefault">
+  <ecos-card>
+    <ecos-menu>
+      <ecos-menu-item>
+        <ecos-icon icon="User" slot="start"></ecos-icon>
+        Clients
+        <ecos-badge slot="end">235</ecos-badge>
+      </ecos-menu-item>
+      <ecos-menu-item>
+        <ecos-icon icon="User" slot="start"></ecos-icon>
+        Commandes
+        <ecos-badge slot="end">1423</ecos-badge>
+      </ecos-menu-item>
+      <ecos-menu-item>
+        <ecos-icon icon="User" slot="start"></ecos-icon>
+        Livraisons
+        <ecos-badge slot="end">1230</ecos-badge>
+      </ecos-menu-item>
+    </ecos-menu>
+  </ecos-card>
+</ecos-anchored-region>

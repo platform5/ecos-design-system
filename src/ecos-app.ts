@@ -1,7 +1,8 @@
-import { ICustomElementViewModel, customElement, Key } from 'aurelia';
+import { ICustomElementViewModel, customElement } from 'aurelia';
 import { IRouterConfiguration, Navigation, RoutingInstruction, IRouter } from 'aurelia-direct-router';
 import template from './ecos-app.html';
 import components from './routes/components/components.json';
+import { AureliaEcosIconLoader } from './ecos-icons';
 
 @customElement({name: 'ecos-app', template})
 export class EcosApp implements ICustomElementViewModel {
@@ -12,8 +13,10 @@ export class EcosApp implements ICustomElementViewModel {
 
   public constructor(
     @IRouterConfiguration private routerConfiguration: IRouterConfiguration,
-    @IRouter private router: IRouter
+    @IRouter private router: IRouter,
+    private iconLoader: AureliaEcosIconLoader
     ) {
+      this.initIcons();
       this.handleUrlRoutes();
     this.routerConfiguration.addHook((instructions: RoutingInstruction[], navigation: Navigation) => {
       // when routing we want to scroll the viewport up again
@@ -57,6 +60,16 @@ export class EcosApp implements ICustomElementViewModel {
     } else {
       document.body.classList.remove('use-cases-on');
     }
+  }
+
+  public async initIcons(): Promise<void> {
+    this.iconLoader.load('User', import('./ecos-design-system/icons/outline/User'), import('./ecos-design-system/icons/solid/User'));
+    this.iconLoader.load('Pencil', import('./ecos-design-system/icons/outline/Pencil'), import('./ecos-design-system/icons/solid/Pencil'));
+    this.iconLoader.load('Adjustments', import('./ecos-design-system/icons/outline/Adjustments'), import('./ecos-design-system/icons/solid/Adjustments'));
+    this.iconLoader.load('ArrowNarrowRight', import('./ecos-design-system/icons/outline/ArrowNarrowRight'), import('./ecos-design-system/icons/solid/ArrowNarrowRight'));
+    this.iconLoader.load('ArrowCircleRight', import('./ecos-design-system/icons/outline/ArrowCircleRight'), import('./ecos-design-system/icons/solid/ArrowCircleRight'));
+    this.iconLoader.load('X', import('./ecos-design-system/icons/outline/X'), import('./ecos-design-system/icons/solid/X'));
+    this.iconLoader.load('DotsHorizontal', import('./ecos-design-system/icons/outline/DotsHorizontal'), import('./ecos-design-system/icons/solid/DotsHorizontal'));
   }
 
 }

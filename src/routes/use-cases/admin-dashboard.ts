@@ -6,7 +6,7 @@ import fakeData from './fake-data.json';
 export class AdminDashboard implements ICustomElementViewModel {
 
   private element: HTMLElement;
-  public view = {cards: false, dialog: false, list: true};
+  public view = {cards: false, dialog: false, menu: true, list: false};
   public listingKeys = {name: true, address: true, icon: true, button: true};
   public data = fakeData;
 

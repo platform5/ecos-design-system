@@ -1,10 +1,28 @@
 import { attr } from "@microsoft/fast-element";
-import { FASTElement, customElement } from '@microsoft/fast-element';
+import { FASTElement, customElement, Observable } from '@microsoft/fast-element';
 import { IconTemplate as template } from './template';
 import { IconStyles as styles } from './styles';
 
 @customElement({name: 'ecos-icon', template, styles})
 export class EcosIcon extends FASTElement {
+
+  public connectedCallback(): void {
+    super.connectedCallback();
+    Observable.getNotifier(EcosIcon).subscribe(this, 'solid');
+    Observable.getNotifier(EcosIcon).subscribe(this, 'outline');
+  }
+
+  public disconnectedCallback(): void {
+    super.disconnectedCallback();
+    Observable.getNotifier(EcosIcon).unsubscribe(this, 'solid');
+    Observable.getNotifier(EcosIcon).unsubscribe(this, 'outline');
+  }
+
+  public handleChange(_source: typeof EcosIcon, prop: string): void {
+    if (prop === this.type) {
+      this.setIcon();
+    }
+  }
 
   @attr({ mode: 'boolean' })
   public button = false;
@@ -40,9 +58,10 @@ export class EcosIcon extends FASTElement {
         this.setIcon();
         return;
       }
-      this.shadowRoot.querySelector('span').innerHTML = this.type === 'solid'
-        ? EcosIcon.solid[this.icon]
-        : EcosIcon.outline[this.icon];
+      const iconSvgContent = this.type === 'solid'
+      ? EcosIcon.solid[this.icon] || ''
+      : EcosIcon.outline[this.icon] || '';
+      this.shadowRoot.querySelector('span').innerHTML = iconSvgContent;
       const svg = this.shadowRoot.querySelector('svg');
       if (svg instanceof SVGElement) {
         svg.setAttribute('part', 'svg');
