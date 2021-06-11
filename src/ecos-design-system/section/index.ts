@@ -4,11 +4,12 @@ import { customElement, FASTElement, attr } from '@microsoft/fast-element';
 import { SectionStyles as styles } from './styles';
 import { SectionTemplate as template } from './template';
 import { StackStyles as stackStyles } from '../stack/styles';
+import '../stack/styles.css';
+import './styles.css';
 
 @customElement({
   name: 'ecos-section',
   template,
-  styles: [stackStyles, styles] ,
   shadowOptions: null
 })
 export class EcosSection extends FASTElement {

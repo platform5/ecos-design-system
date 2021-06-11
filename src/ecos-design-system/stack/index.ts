@@ -4,8 +4,7 @@ import { StackTemplate as template } from './template';
 
 @customElement({
   name: 'ecos-stack',
-  template,
-  styles
+  template
 })
 export class EcosStack extends FASTElement {
 
