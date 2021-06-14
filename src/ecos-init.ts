@@ -1,8 +1,7 @@
 import { 
   EcosAnchor, 
   EcosAnchoredRegion, 
-  EcosArticle, 
-  EcosArticleList, 
+  EcosArticle,
   EcosBadge, 
   EcosBreadcrumb,
   EcosBreadcrumbItem,
@@ -37,7 +36,6 @@ import {
 EcosAnchor;
 EcosAnchoredRegion;
 EcosArticle;
-EcosArticleList;
 EcosBadge;
 EcosBreadcrumb;
 EcosBreadcrumbItem;
