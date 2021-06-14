@@ -8,6 +8,7 @@ export * from './button-component';
 export * from './card-component';
 export * from './collection-component';
 export * from './colorize-component';
+export * from './content-component';
 export * from './components-index';
 export * from './components-list';
 export * from './dialog-component';

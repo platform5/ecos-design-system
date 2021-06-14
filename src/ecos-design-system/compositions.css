@@ -18,9 +18,9 @@ ecos-navbar > ecos-anchor:hover {
 }
 
 /* TODO: color here should be set from design system */
-ecos-card[separators] > * + ecos-card-content,
+ecos-card[separators] > * + ecos-content,
 ecos-card[separators] > * + ecos-card-row,
-ecos-card > * + ecos-card-content[separator],
+ecos-card > * + ecos-content[separator],
 ecos-card > * + ecos-card-row[separator] {
   border-top: solid #ccc 1px;
 }

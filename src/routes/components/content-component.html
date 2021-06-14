@@ -1,0 +1,18 @@
+<ecos-section>
+  <ecos-breadcrumb>
+    <ecos-breadcrumb-item load="../components-list">Components</ecos-breadcrumb-item>
+    <ecos-breadcrumb-item>Content</ecos-breadcrumb-item>
+  </ecos-breadcrumb>
+  <h1>Content</h1>
+  <p>The content component adds padding to a container so that the slotted content is nicely displayed on the surface it is applied to.</p>
+  <p>It is mostly used in context such as ecos-card where the slotted content of the card do not have any padding. The goal of a card surface is not to determine if the content should be padded or not but create the card display and provide the whole surface for any content. The consumer can then place an `ecos-content` component inside.</p>
+  <au-snippet class="larger mobile-full-bleed" enable-output.bind="true">
+    <div language="html">
+      <ecos-card>
+        <ecos-content>
+          <p>I am a padded content inside the card</p>
+        </ecos-content>
+      </ecos-card>
+    </div>
+  </au-snippet>
+</ecos-section>

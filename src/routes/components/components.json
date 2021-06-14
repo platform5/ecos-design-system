@@ -54,6 +54,12 @@
     "badges": ["New"]
   },
   {
+    "name": "Content",
+    "load": "content",
+    "description": "Add padding around the slotted content so that its nicely displayed on a surface such as a card",
+    "badges": ["New"]
+  },
+  {
     "name": "Dialog",
     "load": "dialog",
     "description": "Dialog component",

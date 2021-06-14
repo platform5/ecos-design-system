@@ -8,10 +8,10 @@ import {
   EcosButton, 
   EcosButton3D,
   EcosCard,
-  EcosCardContent,
   EcosCardRow,
   EcosCollection,
   EcosColorize,
+  EcosContent,
   EcosDesignSystemProvider, 
   EcosDialog,
   EcosForm, 
@@ -42,10 +42,10 @@ EcosBreadcrumbItem;
 EcosButton;
 EcosButton3D;
 EcosCard;
-EcosCardContent;
 EcosCardRow;
 EcosCollection;
 EcosColorize;
+EcosContent;
 EcosDesignSystemProvider;
 EcosDialog;
 EcosForm;
