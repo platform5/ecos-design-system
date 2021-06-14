@@ -145,6 +145,18 @@ export class AuSnippet implements ICustomElementViewModel {
     }
     
     const stylesElement = this.element.shadowRoot.querySelector('.styles-content > div');
+
+    const styles = document.querySelectorAll('style');
+    for (const style of styles) {
+      const content = style.innerHTML;
+      if (content.indexOf('*,*::before,*::after{') === 0) {
+        const resetStyleElement = document.createElement('style');
+        resetStyleElement.innerHTML = content;
+        this.element.shadowRoot.appendChild(resetStyleElement);
+        break;
+      }
+    }
+
     if (stylesElement) {
       const styles = stylesElement.innerHTML;
       const styleElement = document.createElement('style');
