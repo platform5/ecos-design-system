@@ -2,7 +2,7 @@ import { css } from '@microsoft/fast-element';
 
 export const TwoStyles = css`
 
-  .ecos-two {
+  :host {
     display: grid;
     contain: content;
     grid-gap: var(--spacing-unit);
@@ -11,16 +11,16 @@ export const TwoStyles = css`
   }
 
   @media screen and (min-width: 732px) {
-    .ecos-two {
+    :host {
       grid-template-columns: 1fr 1fr;
       align-items: center;
       text-align: inherit;
     }
-    .ecos-two.rightleft > :nth-child(1) {
+    :host([rightleft]) ::slotted(:nth-child(1)) {
       grid-column: 2;
       grid-row: 1;
     }
-    .ecos-two.rightleft > :nth-child(2) {
+    :host([rightleft]) ::slotted(:nth-child(2)) {
       grid-row: 1;
       grid-column: 1;
     }

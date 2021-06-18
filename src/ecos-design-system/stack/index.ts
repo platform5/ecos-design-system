@@ -1,20 +1,30 @@
-import { attr, customElement, FASTElement } from '@microsoft/fast-element';
+import { customElement, FASTElement, observable } from '@microsoft/fast-element';
 import { StackStyles as styles } from './styles';
 import { StackTemplate as template } from './template';
+import './stack-item.css';
 
 @customElement({
   name: 'ecos-stack',
-  template
+  template,
+  styles,
+  shadowOptions: {
+    mode: 'open'
+  }
 })
 export class EcosStack extends FASTElement {
 
-  @attr({mode: 'boolean'})
-  small = false;
+  @observable nodes: Node[];
 
-  @attr({mode: 'boolean'})
-  large = false;
-
-  @attr({mode: 'boolean'})
-  inline = false;
+  public nodesChanged(): void {
+    let foundOne = false;
+    this.nodes.forEach((node) => {
+      if (node instanceof HTMLElement) {
+        if (foundOne) {
+          node.classList.add('stack-item');
+        }
+        foundOne = true;
+      }
+    });
+  }
 
 }

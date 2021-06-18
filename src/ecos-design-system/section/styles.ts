@@ -2,52 +2,52 @@ import { css } from '@microsoft/fast-element';
 
 export const SectionStyles = css`
 
-  .ecos-section {
+  :host {
     display: grid;
     contain: content;
     --ecos-section-center-width: 60ch;
   }
-  .ecos-section[nocontain] {
+  :host([nocontain]) {
     contain: inherit;
   }
 
-  .ecos-section {
+  :host {
     grid-template-columns: 1fr min(var(--ecos-section-center-width), calc(100% - 2 * var(--spacing-unit))) 1fr;
     grid-column-gap: var(--spacing-unit);
   }
 
-  .ecos-section:not(.no-vertical-padding) {
+  :host(:not([no-vertical-padding])) {
     padding-top: var(--spacing-unit);
     padding-bottom: var(--spacing-unit);
   }
-  .ecos-section.largev:not(.no-vertical-padding) {
+  :host([largev]) {
     padding-top: calc(var(--spacing-unit) * 2);
     padding-bottom: calc(var(--spacing-unit) * 2);
   }
 
-  .ecos-section > * {
+  ::slotted(.section-item) {
     grid-column: 2;
     /* this prevent content of the grid item from growing */
     /* https://stackoverflow.com/questions/43311943/prevent-content-from-expanding-grid-items */
     min-width: 0; 
   }
-  .ecos-section > .full-bleed {
+  ::slotted(.full-bleed) {
     grid-column: 1 / -1;
     width: 100%;
   }
   @media screen and (max-width: 732px) {
-    .ecos-section > .mobile-full-bleed {
+    ::slotted(.mobile-full-bleed) {
       grid-column: 1 / -1;
       width: 100%;
     }
   }
-  .ecos-section > .padded-full-bleed {
+  ::slotted(.padded-full-bleed) {
     grid-column: 1 / -1;
     width: 100%;
     padding-left: var(--spacing-unit);
     padding-right: var(--spacing-unit);
   }
-  .ecos-section > .larger {
+  ::slotted(.larger) {
     grid-column: 1 / -1;
     max-width: 900px;
     margin-left: auto;

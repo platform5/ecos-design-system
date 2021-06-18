@@ -6,11 +6,10 @@ import { TwoTemplate as template } from './template';
   name: 'ecos-two',
   template,
   styles,
-  shadowOptions: null
+  shadowOptions: {
+    mode: 'open'
+  }
 })
 export class EcosTwo extends FASTElement {
-
-  @attr({mode: 'boolean'})
-  rightleft = false;
 
 }
