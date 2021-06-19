@@ -84,6 +84,12 @@
     "badges": ["New"]
   },
   {
+    "name": "Next",
+    "load": "next",
+    "description": "Create related screens that navigates left/right as you go deeper. Similar to settings screens on mobile apps",
+    "badges": ["New"]
+  },
+  {
     "name": "Section",
     "load": "section",
     "description": "Use this component to create a section of content in a page",
@@ -105,6 +111,12 @@
     "name": "Stack",
     "load": "stack",
     "description": "A flow container to handle nice margin between blocks",
+    "badges": ["New"]
+  },
+  {
+    "name": "Table",
+    "load": "table",
+    "description": "Display data in a table fashion. Uses also table-row and table-item",
     "badges": ["New"]
   },
   {

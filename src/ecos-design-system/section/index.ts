@@ -30,7 +30,6 @@ export class EcosSection extends FASTElement {
   }
 
   public nodesChanged(): void {
-    console.log('section nodesChanged', this.nodes);
     this.setStackItems();
   }
 

@@ -20,6 +20,7 @@ import {
   EcosInlineGroup,
   EcosMenu,
   EcosMenuItem,
+  EcosNext,
   EcosNavbar,
   EcosOption,
   EcosSection,
@@ -54,6 +55,7 @@ EcosIcon;
 EcosInlineGroup;
 EcosMenu;
 EcosMenuItem;
+EcosNext;
 EcosNavbar;
 EcosOption;
 EcosSection;

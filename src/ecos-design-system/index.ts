@@ -20,6 +20,7 @@ export * from './icon';
 export * from './inline-group';
 export * from './menu';
 export * from './menu-item';
+export * from './next';
 export * from './navbar';
 export * from './section';
 export * from './select';

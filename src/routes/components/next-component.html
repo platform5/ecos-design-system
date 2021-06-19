@@ -1,0 +1,29 @@
+<ecos-section>
+  <ecos-breadcrumb>
+    <ecos-breadcrumb-item load="../components-list">Components</ecos-breadcrumb-item>
+    <ecos-breadcrumb-item>Next</ecos-breadcrumb-item>
+  </ecos-breadcrumb>
+  <h1>Next</h1>
+  <p>Documentation in progress</p>
+
+  <div style="width: 100%; max-width: 500px; height: 600px; margin-left: auto; margin-right: auto;">
+    <ecos-next ref="nextElement">
+      <ecos-next-item id="first">
+        <h1>Je suis le premier élément</h1>
+        <ecos-button click.delegate="next()">Next</ecos-button>
+        <ecos-button click.delegate="goto('third', 'prev')">Go to third with prev</ecos-button>
+      </ecos-next-item>
+      <ecos-next-item id="second">
+        <h1>Je suis le deuxième élément</h1>
+        <ecos-button click.delegate="prev()">Prev</ecos-button>
+        <ecos-button click.delegate="next()">Next</ecos-button>
+      </ecos-next-item>
+      <ecos-next-item id="third">
+        <h1>Je suis le troisième élément</h1>
+        <ecos-button click.delegate="prev()">Prev</ecos-button>
+      </ecos-next-item>
+    </ecos-next>
+  </div>
+
+  <ecos-button click.delegate="nextElement.back()">Back</ecos-button>
+</ecos-section>
