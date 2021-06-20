@@ -24,6 +24,8 @@ import { NextTemplate as template } from './template';
 })
 export class EcosNext extends FASTElement {
 
+  public hasHistory = false;
+
   @attr
   public autodetectback = true;
 
@@ -168,7 +170,7 @@ export class EcosNext extends FASTElement {
     if (direction === 'next' || !isPreviousId) {
       // if the direction is "next" => we consider that it's not a "back" operation that should
       // be auto detected
-      if (trackOperation) {
+      if (trackOperation && this.activeid) {
         this.previousOperations.push({id: this.activeid, direction});
       }
     } else if (this.autodetectback) {
@@ -176,6 +178,8 @@ export class EcosNext extends FASTElement {
       // displayed element. Then, we can autodetect a back operation
       this.previousOperations.pop();
     }
+
+    this.hasHistory = this.previousOperations.length > 0;
 
     const oppositeDirection = direction === 'next' ? 'prev' : 'next';
 

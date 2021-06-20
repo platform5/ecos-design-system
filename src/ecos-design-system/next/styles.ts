@@ -2,16 +2,29 @@ import { css } from '@microsoft/fast-element';
 import { display } from "@microsoft/fast-foundation";
 
 export const NextStyles = css`
-  ${display("block")}
+  ${display("grid")}
 
   :host {
-    position: relative;
-    width: 100%;
-    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
     overflow: hidden;
   }
 
+  :host([fixed]) {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block
+  }
+
   ::slotted(.next-item) {
+    grid-row: 1;
+    grid-column: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  :host([fixed]) ::slotted(.next-item) {
     display: block;
     position: absolute;
     top: 0;
@@ -20,8 +33,6 @@ export const NextStyles = css`
     right: 0;
     overflow-x: hidden;
     overflow-y: auto;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
     z-index: 1;
   }
 
@@ -43,13 +54,6 @@ export const NextStyles = css`
   ::slotted(.next-item.animate.current) {
     z-index: 2;
     transition-timing-function: var(--aurelia-ux--ar-next-animation-enter-function, ease-in)
-  }
-
-
-
-  /* (desktop) mode */
-  @media screen and (min-width: 732px) {
-    
   }
 `.withBehaviors(
   

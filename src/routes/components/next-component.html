@@ -5,25 +5,61 @@
   </ecos-breadcrumb>
   <h1>Next</h1>
   <p>Documentation in progress</p>
+  <p>The Next component offers the possibility to create several "screens" that can be navigated to with "previous" and "next" effect.</p>
+  <p>This kind of effect is often used in settings screens and such.</p>
+  <h2>Navigation options</h2>
+  <ul>
+    <li>next() : go to the next screen according to the DOM order</li>
+    <li>prev() : go to the prev screen according to the DOM order</li>
+    <li>back() : navigate back to the previously displayed item (if any)</li>
+    <li>goToId(id: string, direction: 'prev' | 'next' | 'auto') : go to a specific DOM id</li>
+    <li>hasHistory: boolean saying if the Next element has an item to go back to</li>
+  </ul>
+
+  <h2>Fixed usage</h2>
+  <p>The fixed usage creates a Next element that will completely fill the available space (100% width and 100% height)</p>
 
   <div style="width: 100%; max-width: 500px; height: 600px; margin-left: auto; margin-right: auto;">
-    <ecos-next ref="nextElement">
+    <ecos-next ref="nextElement" fixed>
       <ecos-next-item id="first">
         <h1>Je suis le premier élément</h1>
-        <ecos-button click.delegate="next()">Next</ecos-button>
-        <ecos-button click.delegate="goto('third', 'prev')">Go to third with prev</ecos-button>
+        <ecos-button click.delegate="nextElement.next()">Next</ecos-button>
+        <ecos-button click.delegate="nextElement.goToId('third', 'prev')">Go to third with prev</ecos-button>
       </ecos-next-item>
       <ecos-next-item id="second">
         <h1>Je suis le deuxième élément</h1>
-        <ecos-button click.delegate="prev()">Prev</ecos-button>
-        <ecos-button click.delegate="next()">Next</ecos-button>
+        <ecos-button click.delegate="nextElement.prev()">Prev</ecos-button>
+        <ecos-button click.delegate="nextElement.next()">Next</ecos-button>
       </ecos-next-item>
       <ecos-next-item id="third">
         <h1>Je suis le troisième élément</h1>
-        <ecos-button click.delegate="prev()">Prev</ecos-button>
+        <ecos-button click.delegate="nextElement.prev()">Prev</ecos-button>
       </ecos-next-item>
     </ecos-next>
   </div>
 
   <ecos-button click.delegate="nextElement.back()">Back</ecos-button>
+
+  <h2>Default usage</h2>
+  <p>The default usage create a Next element that is "as big as necessary". In order to control a width or height, it can be attributed by styling either the `ecos-next` element or its children.</p>
+
+  <ecos-next ref="nextElement2">
+    <ecos-next-item id="first1">
+      <h1>Je suis le premier élément</h1>
+      <ecos-button click.delegate="nextElement2.next()">Next</ecos-button>
+      <ecos-button click.delegate="nextElement2.goToId('third3', 'prev')">Go to third with prev</ecos-button>
+    </ecos-next-item>
+    <ecos-next-item id="second2">
+      <h1>Je suis le deuxième élément</h1>
+      <p>Et j'ai un peu plus de contenu</p>
+      <p>Ce qui augmente naturellement la taille du composant parent</p>
+      <ecos-button click.delegate="nextElement2.prev()">Prev</ecos-button>
+      <ecos-button click.delegate="nextElement2.next()">Next</ecos-button>
+    </ecos-next-item>
+    <ecos-next-item id="third3">
+      <h1>Je suis le troisième élément</h1>
+      <ecos-button click.delegate="nextElement2.prev()">Prev</ecos-button>
+    </ecos-next-item>
+  </ecos-next>
+  <ecos-button click.delegate="nextElement2.back()">Back</ecos-button>
 </ecos-section>
