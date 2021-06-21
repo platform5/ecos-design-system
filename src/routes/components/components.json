@@ -54,6 +54,12 @@
     "badges": ["New"]
   },
   {
+    "name": "Checkbox",
+    "load": "checkbox",
+    "description": "Web-component implementation of an HTML input[type=checkbox] element",
+    "badges": ["FAST"]
+  },
+  {
     "name": "Collection",
     "load": "collection",
     "description": "Display a list of content around something like a responsive grid",
@@ -102,6 +108,12 @@
     "badges": ["New"]
   },
   {
+    "name": "Radio",
+    "load": "radio",
+    "description": "Web-component implementation of an HTML input[type=radio] element, including ecos-radio-group",
+    "badges": ["FAST"]
+  },
+  {
     "name": "Section",
     "load": "section",
     "description": "Use this component to create a section of content in a page",
@@ -126,6 +138,12 @@
     "badges": ["New"]
   },
   {
+    "name": "Switch",
+    "load": "switch",
+    "description": "An implementation of a switch as a form-connected web-component",
+    "badges": ["FAST"]
+  },
+  {
     "name": "Table",
     "load": "table",
     "description": "Display data in a table fashion. Uses also table-row and table-item",
@@ -135,6 +153,12 @@
     "name": "Text Field",
     "load": "text-field",
     "description": "Web-component implementation of an HTML input element",
+    "badges": ["FAST"]
+  },
+  {
+    "name": "Text Area",
+    "load": "text-area",
+    "description": "Web-component implementation of an HTML textarea element",
     "badges": ["FAST"]
   },
   {
