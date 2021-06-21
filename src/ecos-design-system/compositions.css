@@ -21,7 +21,9 @@ ecos-navbar > ecos-anchor:hover {
 ecos-card[separators] > * + ecos-content,
 ecos-card[separators] > * + ecos-card-row,
 ecos-card > * + ecos-content[separator],
-ecos-card > * + ecos-card-row[separator] {
+ecos-card > * + ecos-card-row[separator],
+ecos-card-dialog[separators][has-header]::part(content),
+ecos-card-dialog[separators]::part(footer) {
   border-top: solid #ccc 1px;
 }
 
@@ -31,4 +33,30 @@ ecos-card > ecos-stack > ecos-menu {
 }
 ecos-table[separators] > ecos-table-row + ecos-table-row {
   border-top: solid #ccc 1px;
+}
+ecos-dialog.auto-height {
+  --dialog-height: min-content;
+}
+ecos-dialog.auto-height ecos-card-dialog {
+  max-height: 100%;
+}
+ecos-dialog.auto-height ecos-card-dialog::part(card) {
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+ecos-dialog.auto-height ecos-card-dialog::part(header) {
+  flex-shrink: 0;
+}
+ecos-dialog.auto-height ecos-card-dialog::part(footer) {
+  flex-shrink: 0;
+}
+ecos-dialog.auto-height ecos-card-dialog::part(content) {
+  flex-shrink: 1;
+  overflow-y: auto;
+}
+@media screen and (min-width: 732px) {
+  ecos-dialog.auto-height ecos-card-dialog::part(card) {
+    max-height: 80vh;
+  }
 }

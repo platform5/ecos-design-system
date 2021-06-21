@@ -58,6 +58,18 @@
       </ecos-inline-group>
     </ecos-card-row>
   </ecos-card>
+
+  <ecos-card-dialog separators>
+    <h3 slot="header">210 Fusibles</h3>
+    <ecos-button appearance="lightweight" slot="header">
+      <ecos-icon icon="Pencil" slot="start"></ecos-icon>
+      Editer
+    </ecos-button>
+    <p>Here is the content of the card</p>
+    <ecos-button appearance="lightweight" slot="footer-left">Learn more</ecos-button>
+    <ecos-button appearance="lightweight" slot="footer">Cancel</ecos-button>
+    <ecos-button appearance="accent" slot="footer">Save</ecos-button>
+  </ecos-card-dialog>
 </ecos-section>
 
 <ecos-section if.bind="view['menu']">

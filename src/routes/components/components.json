@@ -42,6 +42,18 @@
     "badges": ["FAST"]
   },
   {
+    "name": "Card Dialog",
+    "load": "card-dialog",
+    "description": "An opinionated implementation of a card, especially designed to be used as Dialog",
+    "badges": ["New"]
+  },
+  {
+    "name": "Card Row",
+    "load": "card-row",
+    "description": "Use this component to display content in a card-row. The first item will be place on the left and the second on the right.",
+    "badges": ["New"]
+  },
+  {
     "name": "Collection",
     "load": "collection",
     "description": "Display a list of content around something like a responsive grid",

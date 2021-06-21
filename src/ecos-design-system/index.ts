@@ -8,6 +8,7 @@ export * from './breadcrumb';
 export * from './button';
 export * from './button-3d';
 export * from './card';
+export * from './card-dialog';
 export * from './card-row';
 export * from './collection';
 export * from './colorize';

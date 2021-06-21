@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { EcosDialogRenderer } from './routes/ecos-dialog-renderer';
 import { AnimatedSVG2 } from './custom-elements/animated-svg2/index';
 AnimatedSVG2;
 import { AureliaEcosAdapter} from './ecos-design-system';
@@ -12,8 +14,14 @@ import './ecos-init';
 import './ecos-icons';
 import { AureliaEcosIconLoader } from './ecos-icons';
 
+import { DialogConfiguration, DialogService, DefaultDialogGlobalSettings } from '@aurelia/runtime-html';
+
 Aurelia
   .register(routes)
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  .register(DialogConfiguration.customize(settings => {
+    settings.startingZIndex = 3;
+  }, [DialogService, EcosDialogRenderer, DefaultDialogGlobalSettings]))
   .register(LoggerConfiguration.create({
     level: LogLevel.debug,
     sinks: [ConsoleSink],

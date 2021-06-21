@@ -1,6 +1,6 @@
 import { FASTCard, CardStyles as styles, neutralForegroundRestBehavior } from '@microsoft/fast-components';
 import { customElement, css } from '@microsoft/fast-element';
-import { CardTemplate as template } from '@microsoft/fast-foundation';
+import { CardTemplate as template, DesignSystemProvider } from '@microsoft/fast-foundation';
 
 // Current implementation of Fast Card do not correctly set the color to the card content
 // this is due to performance. The issue to follow about this is: https://github.com/microsoft/fast/issues/3987
@@ -22,4 +22,17 @@ export const fixedColorStyles = css`
   template,
   styles: [styles, fixedColorStyles]
 })
-export class EcosCard extends FASTCard {}
+export class EcosCard extends FASTCard {
+  connectedCallback(): void {
+    if (!this.provider?.designSystem) {
+      const closest = this.closest('ecos-design-system-provider');
+      if (closest) {
+        this.provider = closest as DesignSystemProvider;
+      } else {
+        const first = document.querySelector('ecos-design-system-provider');
+        this.provider = first as DesignSystemProvider;
+      }
+    }
+    super.connectedCallback();
+  }
+}

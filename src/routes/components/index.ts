@@ -6,6 +6,8 @@ export * from './breadcrumb-component';
 export * from './button-3d-component';
 export * from './button-component';
 export * from './card-component';
+export * from './card-row-component';
+export * from './card-dialog-component';
 export * from './collection-component';
 export * from './colorize-component';
 export * from './content-component';

@@ -28,7 +28,7 @@ export class EcosDesignSystemProvider extends FASTDesignSystemProvider {
     Observable.getNotifier(this).unsubscribe(this, 'backgroundColor');
   }
 
-  public handleChange(source: HTMLElement, name: string): void {
+  public handleChange(source: HTMLElement, name: string): void {
     if (name === 'backgroundColor' && this.backgroundColor !== undefined) {
       this.backgroundColorChanged2();
     }

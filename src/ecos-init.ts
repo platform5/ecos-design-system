@@ -8,6 +8,7 @@ import {
   EcosButton, 
   EcosButton3D,
   EcosCard,
+  EcosCardDialog,
   EcosCardRow,
   EcosCollection,
   EcosColorize,
@@ -43,6 +44,7 @@ EcosBreadcrumbItem;
 EcosButton;
 EcosButton3D;
 EcosCard;
+EcosCardDialog;
 EcosCardRow;
 EcosCollection;
 EcosColorize;
