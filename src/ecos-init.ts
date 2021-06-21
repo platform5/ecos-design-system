@@ -10,6 +10,7 @@ import {
   EcosCard,
   EcosCardDialog,
   EcosCardRow,
+  EcosCheckbox,
   EcosCollection,
   EcosColorize,
   EcosContent,
@@ -24,10 +25,12 @@ import {
   EcosNext,
   EcosNavbar,
   EcosOption,
+  EcosRadio,
   EcosSection,
   EcosSelect,
   EcosSlider,
   EcosStack,
+  EcosSwitch,
   EcosTable,
   EcosTableItem,
   EcosTableRow,
@@ -46,6 +49,7 @@ EcosButton3D;
 EcosCard;
 EcosCardDialog;
 EcosCardRow;
+EcosCheckbox;
 EcosCollection;
 EcosColorize;
 EcosContent;
@@ -60,10 +64,12 @@ EcosMenuItem;
 EcosNext;
 EcosNavbar;
 EcosOption;
+EcosRadio;
 EcosSection;
 EcosSelect;
 EcosSlider;
 EcosStack;
+EcosSwitch;
 EcosTable;
 EcosTableItem;
 EcosTableRow;
