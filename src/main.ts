@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { EcosDialogRenderer } from './routes/ecos-dialog-renderer';
 import { AnimatedSVG2 } from './custom-elements/animated-svg2/index';
 AnimatedSVG2;
 import { AureliaEcosAdapter} from './aurelia2/ecos-aurelia-adapter';
@@ -12,6 +11,7 @@ import { EcosSettings } from './custom-elements/ecos-settings/ecos-settings';
 import { AuSnippet } from './custom-elements/au-snippet/au-snippet';
 import './ecos-init';
 import './ecos-icons';
+import { EcosDialogRenderer } from './routes/ecos-dialog-renderer';
 import { AureliaEcosIconLoader } from './ecos-icons';
 
 import { DialogConfiguration, DialogService, DefaultDialogGlobalSettings } from '@aurelia/runtime-html';

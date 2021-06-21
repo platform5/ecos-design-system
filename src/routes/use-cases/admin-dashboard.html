@@ -177,6 +177,13 @@
   </ecos-table>
 </ecos-section>
 
+<ecos-section if.bind="view['dialog']" centerwidth="100%">
+  <h3>Dialogs</h3>
+  <p>See the <a load="../components-index/dialog-component">dialog component</a> for a quick look at the Ecos Dialog on its own.</p>
+  <p>This webpage runs with Aurelia 2 which provided a nice Dialog Service. You can find an experimentation of this dialog service linked with Ecos Dialog <a load="../../dialog-service-page">on this page</a>.</p>
+  dialog-service-page
+</ecos-section>
+
 <ecos-dialog dismiss.delegate="listKeysDialogOpened = false" hidden.bind="!listKeysDialogOpened" class="ecos-dialog--fading" style="--dialog-height: auto; --dialog-width: 300px;">
   <ecos-menu>
     <ecos-menu-item role="menuitemcheckbox" checked.bind="listingKeys['name']">Name</ecos-menu-item>
