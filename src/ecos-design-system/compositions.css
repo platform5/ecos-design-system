@@ -42,6 +42,7 @@ ecos-dialog.auto-height ecos-card-dialog {
 }
 ecos-dialog.auto-height ecos-card-dialog::part(card) {
   max-height: 100vh;
+  max-height: calc(100vh - env(safe-area-inset-bottom, 20px));
   display: flex;
   flex-direction: column;
 }
