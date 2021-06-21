@@ -33,7 +33,6 @@ export * from './table-row';
 export * from './text-field';
 export * from './two';
 
-export * from './ecos-aurelia-adapter';
 import './typography.css';
 import './utilities.css';
 import './compositions.css';

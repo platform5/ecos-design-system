@@ -37,8 +37,8 @@ export const NextStyles = css`
   }
 
   ::slotted(.next-item.animate) {
-    -webkit-transition: transform var(--aurelia-ux--ar-next-animation-duration, 400ms) var(--aurelia-ux--ar-next-animation-leave-function, ease-in);
-    transition: transform var(--aurelia-ux--ar-next-animation-duration, 400ms) var(--aurelia-ux--ar-next-animation-leave-function, ease-in);
+    -webkit-transition: transform var(--next-animation-duration, 400ms) var(--next-animation-leave-function, ease-in);
+    transition: transform var(--next-animation-duration, 400ms) var(--next-animation-leave-function, ease-in);
   }
   
   ::slotted(.next-item.prev) {
@@ -53,7 +53,7 @@ export const NextStyles = css`
   
   ::slotted(.next-item.animate.current) {
     z-index: 2;
-    transition-timing-function: var(--aurelia-ux--ar-next-animation-enter-function, ease-in)
+    transition-timing-function: var(---next-animation-enter-function, ease-in)
   }
 `.withBehaviors(
   

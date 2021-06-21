@@ -2,7 +2,7 @@
 import { EcosDialogRenderer } from './routes/ecos-dialog-renderer';
 import { AnimatedSVG2 } from './custom-elements/animated-svg2/index';
 AnimatedSVG2;
-import { AureliaEcosAdapter} from './ecos-design-system';
+import { AureliaEcosAdapter} from './aurelia2/ecos-aurelia-adapter';
 import Aurelia from 'aurelia';
 import { LoggerConfiguration, LogLevel, ConsoleSink, ColorOptions } from 'aurelia';
 import { RouterConfiguration } from 'aurelia-direct-router';
