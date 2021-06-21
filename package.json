@@ -58,7 +58,7 @@
     "build:native-modules": "tsc --rootDir src/ecos-design-system --project tsconfig2.json --outDir dist/native-modules --module es2015",
     "build": "concurrently \"npm run build:commonjs\" \"npm run build:native-modules\"",
     "start": "webpack serve",
-    "build-app": "rimraf docs/**!(CNAME) && webpack --env production",
+    "build-app": "rimraf docs && webpack --env production",
     "analyze": "rimraf dist-app && webpack --env production --analyze"
   }
 }
