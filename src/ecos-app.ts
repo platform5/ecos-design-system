@@ -63,13 +63,13 @@ export class EcosApp implements ICustomElementViewModel {
   }
 
   public async initIcons(): Promise<void> {
-    this.iconLoader.load('User', import('./ecos-design-system/icons/outline/User'), import('./ecos-design-system/icons/solid/User'));
-    this.iconLoader.load('Pencil', import('./ecos-design-system/icons/outline/Pencil'), import('./ecos-design-system/icons/solid/Pencil'));
-    this.iconLoader.load('Adjustments', import('./ecos-design-system/icons/outline/Adjustments'), import('./ecos-design-system/icons/solid/Adjustments'));
-    this.iconLoader.load('ArrowNarrowRight', import('./ecos-design-system/icons/outline/ArrowNarrowRight'), import('./ecos-design-system/icons/solid/ArrowNarrowRight'));
-    this.iconLoader.load('ArrowCircleRight', import('./ecos-design-system/icons/outline/ArrowCircleRight'), import('./ecos-design-system/icons/solid/ArrowCircleRight'));
-    this.iconLoader.load('X', import('./ecos-design-system/icons/outline/X'), import('./ecos-design-system/icons/solid/X'));
-    this.iconLoader.load('DotsHorizontal', import('./ecos-design-system/icons/outline/DotsHorizontal'), import('./ecos-design-system/icons/solid/DotsHorizontal'));
+    this.iconLoader.load('User', import('./icons/outline/User'), import('./icons/solid/User'));
+    this.iconLoader.load('Pencil', import('./icons/outline/Pencil'), import('./icons/solid/Pencil'));
+    this.iconLoader.load('Adjustments', import('./icons/outline/Adjustments'), import('./icons/solid/Adjustments'));
+    this.iconLoader.load('ArrowNarrowRight', import('./icons/outline/ArrowNarrowRight'), import('./icons/solid/ArrowNarrowRight'));
+    this.iconLoader.load('ArrowCircleRight', import('./icons/outline/ArrowCircleRight'), import('./icons/solid/ArrowCircleRight'));
+    this.iconLoader.load('X', import('./icons/outline/X'), import('./icons/solid/X'));
+    this.iconLoader.load('DotsHorizontal', import('./icons/outline/DotsHorizontal'), import('./icons/solid/DotsHorizontal'));
   }
 
 }
