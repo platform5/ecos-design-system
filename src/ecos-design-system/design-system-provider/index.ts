@@ -20,6 +20,7 @@ export class EcosDesignSystemProvider extends FASTDesignSystemProvider {
 
   public connectedCallback(): void {
     super.connectedCallback();
+    this.classList.add('ecos-design-system-provider');
     Observable.getNotifier(this).subscribe(this, 'backgroundColor');
   }
 
