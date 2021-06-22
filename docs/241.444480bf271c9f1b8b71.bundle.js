@@ -1,1 +1,0 @@
-(self.webpackChunk_ecos_ecos_design_system=self.webpackChunk_ecos_ecos_design_system||[]).push([[241],{241:(e,s,l)=>{"use strict";l.r(s),l.d(s,{default:()=>n});const n='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">\n  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>\n</svg>\n'}}]);

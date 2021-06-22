@@ -1,1 +1,0 @@
-(self.webpackChunk_ecos_ecos_design_system=self.webpackChunk_ecos_ecos_design_system||[]).push([[554],{554:(s,e,n)=>{"use strict";n.r(e),n.d(e,{default:()=>t});const t='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">\n  <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"/>\n</svg>\n'}}]);
