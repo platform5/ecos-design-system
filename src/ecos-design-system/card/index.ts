@@ -25,11 +25,11 @@ export const fixedColorStyles = css`
 export class EcosCard extends FASTCard {
   connectedCallback(): void {
     if (!this.provider?.designSystem) {
-      const closest = this.closest('ecos-design-system-provider');
+      const closest = this.closest('.ecos-design-system-provider');
       if (closest) {
         this.provider = closest as DesignSystemProvider;
       } else {
-        const first = document.querySelector('ecos-design-system-provider');
+        const first = document.querySelector('.ecos-design-system-provider');
         this.provider = first as DesignSystemProvider;
       }
     }
