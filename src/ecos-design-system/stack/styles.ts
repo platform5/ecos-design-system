@@ -3,7 +3,7 @@ import { css } from '@microsoft/fast-element';
 export const StackStyles = css`
   :host {
     display: block;
-    contain: content;
+    /* contain: content; */
     --stack-margin-top: calc(var(--type-ramp-base-font-size) + ((var(--design-unit) * 2 * max(0, var(--density))) * 1px));
   }
   :host([large]) {
