@@ -8,6 +8,11 @@ export const InlineGroupStyles = css`
     contain: content;
     gap: calc(var(--spacing-unit) * 0.25);
     align-items: center;
+    flex-wrap: wrap;
+  }
+
+  :host([nowrap]) {
+    flex-wrap: nowrap;
   }
 
 
