@@ -34,6 +34,8 @@ import {
   EcosTable,
   EcosTableItem,
   EcosTableRow,
+  EcosTextArea,
+  EcosTextButton,
   EcosTextField,
   EcosTwo,
 } from './ecos-design-system';
@@ -73,5 +75,7 @@ EcosSwitch;
 EcosTable;
 EcosTableItem;
 EcosTableRow;
+EcosTextArea;
+EcosTextButton;
 EcosTextField;
 EcosTwo;
