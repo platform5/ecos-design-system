@@ -6,6 +6,9 @@ import { IconStyles as styles } from './styles';
 @customElement({name: 'ecos-icon', template, styles})
 export class EcosIcon extends FASTElement {
 
+  public static defaultWeight = 1;
+  public static defaultSize = 'lg';
+
   public connectedCallback(): void {
     super.connectedCallback();
     Observable.getNotifier(EcosIcon).subscribe(this, 'solid');
@@ -86,14 +89,14 @@ export class EcosIcon extends FASTElement {
   }
 
   @attr()
-  public weight = 1;
+  public weight = EcosIcon.defaultWeight;
 
   public weightChanged(): void {
     this.setIcon();
   }
 
   @attr()
-  public size = 'lg';
+  public size = EcosIcon.defaultSize;
 
   public sizeChanged(): void {
     this.setIcon();
