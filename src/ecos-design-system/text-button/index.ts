@@ -10,3 +10,12 @@ import { CardRowTemplate as template } from './template';
 export class EcosCardRow extends FASTElement {
   
 }
+
+@customElement({
+  name: 'ecos-text-button',
+  template,
+  styles
+})
+export class EcosTextButton extends FASTElement {
+  
+}
