@@ -16,7 +16,7 @@ export const fixedColorStyles = css`
     height: min-content;
   }
   :host([nocontain]) {
-    content: unset
+    contain: unset
   }
 `.withBehaviors(neutralForegroundRestBehavior);
 
