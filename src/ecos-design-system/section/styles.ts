@@ -8,7 +8,7 @@ export const SectionStyles = css`
     --ecos-section-center-width: 60ch;
   }
   :host([nocontain]) {
-    contain: inherit;
+    content: unset;
   }
 
   :host {

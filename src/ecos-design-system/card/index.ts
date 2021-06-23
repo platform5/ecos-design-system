@@ -15,6 +15,9 @@ export const fixedColorStyles = css`
     color: ${neutralForegroundRestBehavior.var};
     height: min-content;
   }
+  :host([nocontain]) {
+    content: unset
+  }
 `.withBehaviors(neutralForegroundRestBehavior);
 
 @customElement({
