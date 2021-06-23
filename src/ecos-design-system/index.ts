@@ -34,6 +34,7 @@ export * from './table';
 export * from './table-item';
 export * from './table-row';
 export * from './text-area';
+export * from './text-button';
 export * from './text-field';
 export * from './two';
 
