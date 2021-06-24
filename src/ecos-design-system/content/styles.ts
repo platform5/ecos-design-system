@@ -5,6 +5,6 @@ export const ContentStyles = css`
   ${display("block")}
   :host {
     contain: content;
-    padding: calc(var(--spacing-unit) * 0.5);
+    padding: var(--responsive-spacing-unit-lg);
   }
 `;

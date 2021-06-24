@@ -29,7 +29,7 @@ h3 {
 h1, .ecos-stack > :not(h1, h2, h3) + h1,
 h2:not(:first-child), .ecos-stack > :not(h1, h2, h3) + h2,
 h3:not(:first-child), .ecos-stack > :not(h1, h2, h3) + h3 {
-  margin-top: calc(2 * var(--spacing-unit));
+  margin-top: calc(2 * var(--spacing-unit-lg));
 }
 
 @media screen and (min-width: 732px) {

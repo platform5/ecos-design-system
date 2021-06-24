@@ -5,7 +5,7 @@ export const InlineGroupStyles = css`
   ${display("flex")}
 
   :host {
-    gap: calc(var(--spacing-unit) * 0.25);
+    gap: var(--spacing-unit);
     align-items: center;
     flex-wrap: wrap;
   }

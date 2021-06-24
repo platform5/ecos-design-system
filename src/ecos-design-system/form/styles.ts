@@ -6,6 +6,6 @@ export const FormStyles = css`
 
   :host {
     contain: content;
-    grid-gap: calc(var(--spacing-unit) * 0.5);
+    grid-gap: var(--spacing-unit);
   }
 `;

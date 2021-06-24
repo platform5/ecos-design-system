@@ -5,7 +5,7 @@ export const TwoStyles = css`
   :host {
     display: grid;
     contain: content;
-    grid-gap: var(--spacing-unit);
+    grid-gap: var(--spacing-unit-xl);
     justify-items: center;
     text-align: center;
   }

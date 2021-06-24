@@ -6,7 +6,7 @@ export const TableRowStyles = css`
 
   :host {
     display: flex;
-    gap: calc(var(--spacing-unit) * 0.5);
+    gap: var(--spacing-unit);
     align-items: center;
   }
 
@@ -21,7 +21,7 @@ export const TableRowStyles = css`
 
   .content {
     display: flex;
-    gap: calc(var(--spacing-unit) * 0.5);
+    gap: var(--spacing-unit);
     row-gap: 0;
     flex-wrap: wrap;
     width: 100%;
@@ -32,7 +32,7 @@ export const TableRowStyles = css`
       
     }
     .content {
-      row-gap: calc(var(--spacing-unit) * 0.25);
+      row-gap: var(--spacing-unit-sm);
     }
   }
 `;

@@ -28,6 +28,6 @@
 
 au-snippet,
 ecos-section.ecos-stack:not(.ecos-stack--inline) > * + au-snippet {
-  margin-top: calc(var(--spacing-unit) * 1.5);
-  margin-bottom: calc(var(--spacing-unit) * 1.5);
+  margin-top: calc(var(--spacing-unit-lg) * 1.5);
+  margin-bottom: calc(var(--spacing-unit-lg) * 1.5);
 }

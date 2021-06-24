@@ -8,13 +8,13 @@ export const CollectionStyles = css`
     contain: content;
     display: grid;
     justify-content: center;
-    grid-gap: var(--spacing-unit);
+    grid-gap: var(--responsive-spacing-unit-xl);
     grid-template-columns: repeat(auto-fit, minmax(var(--ecos-collection-min-item-width), 1fr));
   }
   
   @media screen and (min-width: 732px) {
     :host {
-      /* grid-template-columns: repeat(auto-fit, minmax(var(--ecos-collection-min-item-width), 1fr)); */
+      grid-template-columns: repeat(auto-fit, minmax(var(--ecos-collection-min-item-width), 1fr));
     }
   }
 `;

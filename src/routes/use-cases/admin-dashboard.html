@@ -38,7 +38,7 @@
       <p>Here is the content of the card</p>
     </ecos-content>
     <ecos-card-row>
-      <ecos-inline-group ecos-card-row--right>
+      <ecos-inline-group nowrap ecos-card-row--right>
         <ecos-button appearance="lightweight">Cancel</ecos-button>
         <ecos-button appearance="accent">Save</ecos-button>
       </ecos-inline-group>
@@ -52,7 +52,7 @@
       <p>Here is the content of the card</p>
     </ecos-content>
     <ecos-card-row>
-      <ecos-inline-group ecos-card-row--right>
+      <ecos-inline-group nowrap ecos-card-row--right>
         <ecos-button appearance="lightweight">Cancel</ecos-button>
         <ecos-button appearance="accent">Save</ecos-button>
       </ecos-inline-group>
@@ -195,7 +195,7 @@
     <ecos-menu-item role="menuitemcheckbox" checked.bind="listingKeys['button']">Button</ecos-menu-item>
   </ecos-menu>
 
-  <ecos-inline-group ecos-card-row--right style="justify-content: flex-end;">
+  <ecos-inline-group nowrap ecos-card-row--right style="justify-content: flex-end;">
     <ecos-button click.delegate="listKeysDialogOpened = !listKeysDialogOpened" appearance="text">Fermer</ecos-button>
   </ecos-inline-group>
 </ecos-dialog>

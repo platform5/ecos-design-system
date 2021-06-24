@@ -6,9 +6,9 @@ export const CardRowStyles = css`
 
   :host {
     contain: content;
-    grid-gap: calc(var(--spacing-unit) * 0.5);
+    grid-gap: var(--responsive-spacing-unit-lg);
     grid-template-columns: 1fr min-content;
-    padding: calc(var(--spacing-unit) * 0.5);
+    padding: var(--responsive-spacing-unit-lg);
     align-items: center;
   }
 `;

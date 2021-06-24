@@ -7,7 +7,7 @@ export const TableItemStyles = css`
   :host {
     flex-direction: column;
     justify-content: center;
-    padding: calc(var(--spacing-unit) * 0.25);
+    padding: var(--spacing-unit-sm);
     flex-shrink: 0;
     width: 100%;
   }

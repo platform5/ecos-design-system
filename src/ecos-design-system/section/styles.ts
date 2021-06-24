@@ -12,17 +12,17 @@ export const SectionStyles = css`
   }
 
   :host {
-    grid-template-columns: 1fr min(var(--ecos-section-center-width), calc(100% - 2 * var(--spacing-unit))) 1fr;
-    grid-column-gap: var(--spacing-unit);
+    grid-template-columns: 1fr min(var(--ecos-section-center-width), calc(100% - 2 * var(--spacing-unit-lg))) 1fr;
+    grid-column-gap: var(--spacing-unit-lg);
   }
 
   :host(:not([no-vertical-padding])) {
-    padding-top: var(--spacing-unit);
-    padding-bottom: var(--spacing-unit);
+    padding-top: var(--spacing-unit-lg);
+    padding-bottom: var(--spacing-unit-lg);
   }
   :host([largev]) {
-    padding-top: calc(var(--spacing-unit) * 2);
-    padding-bottom: calc(var(--spacing-unit) * 2);
+    padding-top: var(--spacing-unit-xxl);
+    padding-bottom: var(--spacing-unit-xxl);
   }
 
   ::slotted(.section-item) {
@@ -44,13 +44,17 @@ export const SectionStyles = css`
   ::slotted(.padded-full-bleed) {
     grid-column: 1 / -1;
     width: 100%;
-    padding-left: var(--spacing-unit);
-    padding-right: var(--spacing-unit);
+    padding-left: var(--spacing-unit-lg);
+    padding-right: var(--spacing-unit-lg);
   }
   ::slotted(.larger) {
     grid-column: 1 / -1;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+  }
+  @media screen and (min-width: 900px) {
+    ::slotted(.larger) {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 `;
