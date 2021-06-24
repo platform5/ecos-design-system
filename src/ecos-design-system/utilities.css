@@ -7,8 +7,15 @@
   --elevation4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   --elevation5: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 
-  --spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 1px);
-  --responsive-spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 0.5px);
+  --spacing-base: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)));
+  --spacing-unit: calc(var(--spacing-base) * 1px);
+  --responsive-spacing-unit: calc(var(--spacing-base) * 0.5px);
+  --spacing-unit-sm: calc(var(--spacing-base) * 0.5px);
+  --responsive-spacing-unit-sm: calc(var(--spacing-base) * 0.25px);
+  --spacing-unit-lg: calc(var(--spacing-base) * 2px);
+  --responsive-spacing-unit-lg: calc(var(--spacing-base) * 1px);
+  --spacing-unit-xl: calc(var(--spacing-base) * 4px);
+  --responsive-spacing-unit-xl: calc(var(--spacing-base) * 2px);
 
   --badge-fill-primary: var(--accent-fill-rest);
   --badge-fill-secondary: var(--neutral-fill-rest);
@@ -17,29 +24,32 @@
   --badge-color-white: var(--accent-foreground-cut-rest);
 }
 .space-small {
-  --spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 0.5px);
-  --responsive-spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 0.25px);
+  --spacing-unit: calc(var(--spacing-base) * 0.5px);
+  --responsive-spacing-unit: calc(var(--spacing-base) * 0.25px);
 }
 .space-large {
-  --spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 2px);
-  --responsive-spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 1px);
+  --spacing-unit: calc(var(--spacing-base) * 2px);
+  --responsive-spacing-unit: calc(var(--spacing-base) * 1px);
 }
 .space-extra-large {
-  --spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 4px);
-  --responsive-spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 2px);
+  --spacing-unit: calc(var(--spacing-base) * 4px);
+  --responsive-spacing-unit: calc(var(--spacing-base) * 2px);
 }
 @media screen and (min-width: 732px) {
   * {
-    --responsive-spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 1px);
+    --responsive-spacing-unit: calc(var(--spacing-base) * 1px);
+    --responsive-spacing-unit-sm: calc(var(--spacing-base) * 0.5px);
+    --responsive-spacing-unit-lg: calc(var(--spacing-base) * 2px);
+    --responsive-spacing-unit-xl: calc(var(--spacing-base) * 4px);
   }
   .space-small {
-    --responsive-spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 0.5px);
+    --responsive-spacing-unit: calc(var(--spacing-base) * 0.5px);
   }
   .space-large {
-    --responsive-spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 2px);
+    --responsive-spacing-unit: calc(var(--spacing-base) * 2px);
   }
   .space-extra-large {
-    --responsive-spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 4px);
+    --responsive-spacing-unit: calc(var(--spacing-base) * 4px);
   }
 }
 
