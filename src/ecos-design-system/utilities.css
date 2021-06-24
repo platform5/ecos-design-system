@@ -8,8 +8,7 @@
   --elevation5: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 
   --spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 1px);
-  --spacing-unit-v: var(--spacing-unit);
-  --spacing-unit-h: var(--spacing-unit);
+  --responsive-spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 0.5px);
 
   --badge-fill-primary: var(--accent-fill-rest);
   --badge-fill-secondary: var(--neutral-fill-rest);
@@ -19,18 +18,29 @@
 }
 .space-small {
   --spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 0.5px);
+  --responsive-spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 0.25px);
 }
 .space-large {
   --spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 2px);
+  --responsive-spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 1px);
 }
 .space-extra-large {
   --spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 4px);
+  --responsive-spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 2px);
 }
-.space-large-v {
-  --spacing-unit-v: calc(var(--spacing-unit) * 2);
-}
-.space-extra-large-v {
-  --spacing-unit-v: calc(var(--spacing-unit) * 4);
+@media screen and (min-width: 732px) {
+  * {
+    --responsive-spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 1px);
+  }
+  .space-small {
+    --responsive-spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 0.5px);
+  }
+  .space-large {
+    --responsive-spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 2px);
+  }
+  .space-extra-large {
+    --responsive-spacing-unit: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit)) * 4px);
+  }
 }
 
 .elevation,

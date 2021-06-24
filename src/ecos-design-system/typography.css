@@ -3,7 +3,6 @@ ecos-design-system-provider {
   line-height: var(--type-ramp-base-line-height);
 }
 
-
 h1 {
   font-size: var(--type-ramp-plus-3-font-size);
   line-height: var(--type-ramp-plus-3-line-height);
