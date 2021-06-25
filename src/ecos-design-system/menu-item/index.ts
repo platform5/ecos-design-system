@@ -4,9 +4,9 @@ import { MenuItemStyles as styles } from "@microsoft/fast-components";
 
 const template = createMenuItemTemplate("ecos");
 
-export const maxRadiusCheckboxStyles = css`
+const maxRadiusCheckboxStyles = css`
   :host .checkbox {
-    border-radius: calc(min(calc(var(--corner-radius) * 1px), 5px));
+    border-radius: calc(min(calc(var(--corner-radius) * 1px), 8px));
   }
 `
 
