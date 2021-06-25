@@ -8,6 +8,7 @@ export class AdminDashboard implements ICustomElementViewModel {
   private element: HTMLElement;
   public view = {cards: false, dialog: false, menu: true, list: false};
   public listingKeys = {name: true, address: true, icon: true, button: true};
+  public checkboxMenu = {name: true, address: true, icon: true, button: true};
   public data = fakeData;
 
   public rows = [
