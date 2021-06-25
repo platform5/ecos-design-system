@@ -6,6 +6,7 @@ export const menuSeparatedStyles = css`
 :host([separated]) {
   background: transparent;
   border: none;
+  box-shadow: none;
 }
 
 :host([separated]) ::slotted(ecos-menu-item) {
@@ -30,6 +31,7 @@ export const menuBorderedStyles = css`
 :host([bordered]) {
   background: transparent;
   border: none;
+  box-shadow: none;
 }
 
 :host([bordered]) ::slotted(ecos-menu-item) {
