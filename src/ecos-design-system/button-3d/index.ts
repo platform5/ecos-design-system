@@ -1,5 +1,5 @@
 // based on: https://www.joshwcomeau.com/animation/3d-button/#started-from-the-button-now-we-here
-import { FASTButton, ButtonStyles as styles } from '@microsoft/fast-components';
+import { Button } from '@microsoft/fast-foundation';
 import { customElement } from '@microsoft/fast-element';
 import { ButtonTemplate as template } from './template';
 import { Button3dStyles } from './styles';
@@ -12,4 +12,4 @@ import { Button3dStyles } from './styles';
       delegatesFocus: true,
   },
 })
-export class EcosButton3D extends FASTButton {}
+export class EcosButton3D extends Button {}

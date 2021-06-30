@@ -1,11 +1,11 @@
 import { css } from '@microsoft/fast-element';
 import { display, disabledCursor } from '@microsoft/fast-foundation';
 import {
-  accentFillRestBehavior,
-  accentForegroundCutRestBehavior,
-  accentForegroundRestBehavior
+  accentFillRest,
+  accentForegroundRest,
+  foregroundOnAccentRest
 } from "@microsoft/fast-components";
-import { accentDark50Behavior, accentDark100Behavior } from '../recipes';
+import { accentDark50, accentDark100 } from '../recipes';
 
 // copy from fast-components non exported variable
 export const heightNumber =
@@ -79,10 +79,10 @@ export const Button3dStyles = css`
     border-radius: 12px;
     background: linear-gradient(
       to left,
-      ${accentDark100Behavior.var} 0%,
-      ${accentDark50Behavior.var} 8%,
-      ${accentDark50Behavior.var} 92%,
-      ${accentDark100Behavior.var} 100%
+      ${accentDark100} 0%,
+      ${accentDark50} 8%,
+      ${accentDark50} 92%,
+      ${accentDark100} 100%
     );
   }
   .front {
@@ -91,8 +91,8 @@ export const Button3dStyles = css`
     padding: 12px 42px;
     border-radius: 12px;
     font-size: 1.25rem;
-    color: ${accentForegroundCutRestBehavior.var};;
-    background: ${accentFillRestBehavior.var};
+    color: ${foregroundOnAccentRest};;
+    background: ${accentFillRest};
     will-change: transform;
     transform: translateY(-4px);
     transition:
@@ -128,10 +128,4 @@ export const Button3dStyles = css`
   :host(:focus:not(:focus-visible)) {
     outline: none;
   }
-`.withBehaviors(
-  accentFillRestBehavior, 
-  accentForegroundRestBehavior,
-  accentForegroundCutRestBehavior,
-  accentDark50Behavior,
-  accentDark100Behavior,
-);
+`;

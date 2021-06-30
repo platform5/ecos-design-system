@@ -75,6 +75,7 @@
 <ecos-section if.bind="view['menu']">
   <h3>Menu exemples</h3>
   <ecos-stack>
+    <h4>Default Menus</h4>
     <ecos-card>
       <ecos-menu>
         <ecos-menu-item>
@@ -109,6 +110,7 @@
         </ecos-menu-item>
       </ecos-menu>
     </ecos-card>
+
     <ecos-card>
       <ecos-menu>
         <ecos-menu-item>
@@ -128,6 +130,7 @@
         </ecos-menu-item>
       </ecos-menu>
     </ecos-card>
+
     <ecos-card>
       <ecos-menu>
         <ecos-menu-item role="menuitemcheckbox" checked.bind="checkboxMenu['name']">Name</ecos-menu-item>
@@ -139,6 +142,8 @@
         <ecos-menu-item role="menuitemcheckbox" checked.bind="checkboxMenu['button']">Button</ecos-menu-item>
       </ecos-menu>
     </ecos-card>
+
+    <h4>Separated Menu</h4>
     <ecos-card style="background: transparent; box-shadow: none;">
       <ecos-menu separated>
         <ecos-menu-item role="menuitemcheckbox" checked.bind="checkboxMenu['name']">Name</ecos-menu-item>
@@ -150,6 +155,8 @@
         <ecos-menu-item role="menuitemcheckbox" checked.bind="checkboxMenu['button']">Button</ecos-menu-item>
       </ecos-menu>
     </ecos-card>
+
+    <h4>Bordered Menu</h4>
     <ecos-card style="background: transparent; box-shadow: none;">
       <ecos-menu bordered>
         <ecos-menu-item role="menuitemcheckbox" checked.bind="checkboxMenu['name']">Name</ecos-menu-item>

@@ -1,9 +1,10 @@
-import { ICustomElementViewModel, customElement } from 'aurelia';
+import { ICustomElementViewModel, customElement, inject } from 'aurelia';
 import { IRouterConfiguration, Navigation, RoutingInstruction, IRouter } from 'aurelia-direct-router';
 import template from './ecos-app.html';
 import components from './routes/components/components.json';
 import { AureliaEcosIconLoader } from './ecos-icons';
 
+@inject(IRouterConfiguration, IRouter, AureliaEcosIconLoader)
 @customElement({name: 'ecos-app', template})
 export class EcosApp implements ICustomElementViewModel {
 

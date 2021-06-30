@@ -49,7 +49,7 @@
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   /* border: dashed rgba(200, 0, 100, 0.2) 1px;
-  border: var(--au-snippet-outline-width, dashed rgba(200, 0, 100, 0.2) 1px); */
+  border: var(--au-snippet-stroke-width, dashed rgba(200, 0, 100, 0.2) 1px); */
   background: white;
   padding: 16px;
   border-radius: 10px;

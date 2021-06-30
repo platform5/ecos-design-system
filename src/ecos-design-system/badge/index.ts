@@ -1,14 +1,9 @@
-import { FASTBadge, BadgeStyles as styles } from '@microsoft/fast-components';
-import { attr, customElement } from '@microsoft/fast-element';
-import { BadgeTemplate as template } from '@microsoft/fast-foundation';
+import { badgeStyles as styles } from '@microsoft/fast-components';
+import { attr, css } from '@microsoft/fast-element';
+import { badgeTemplate as template, Badge, ElementDefinitionContext, FoundationElementDefinition } from '@microsoft/fast-foundation';
 import { extendedBadgeStyles } from './styles';
 
-@customElement({
-  name: "ecos-badge",
-  template,
-  styles: [styles, extendedBadgeStyles]
-})
-export class EcosBadge extends FASTBadge {
+export class EcosBadge extends Badge {
 
   @attr()
   public appearance = 'neutral';
@@ -18,3 +13,16 @@ export class EcosBadge extends FASTBadge {
     return '';
   };
 }
+
+const overrideStyles = (context: ElementDefinitionContext, definition: FoundationElementDefinition) => {
+  return css`
+    ${styles(context, definition)}
+    ${extendedBadgeStyles}
+  `
+}
+
+export const ecosBadge = EcosBadge.compose({
+  baseName: "badge",
+  template,
+  styles: overrideStyles
+});

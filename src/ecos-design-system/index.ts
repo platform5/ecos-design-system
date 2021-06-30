@@ -1,10 +1,7 @@
 import 'modern-css-reset';
 
-export * from './anchor';
-export * from './anchored-region';
 export * from './article';
 export * from './badge';
-export * from './breadcrumb';
 export * from './button';
 export * from './button-3d';
 export * from './card';
@@ -14,7 +11,6 @@ export * from './checkbox';
 export * from './collection';
 export * from './colorize';
 export * from './content';
-export * from './design-system-provider';
 export * from './dialog';
 export * from './form';
 export * from './form-row';
@@ -24,18 +20,12 @@ export * from './menu';
 export * from './menu-item';
 export * from './next';
 export * from './navbar';
-export * from './radio';
 export * from './section';
-export * from './select';
-export * from './slider';
 export * from './stack';
-export * from './switch';
 export * from './table';
 export * from './table-item';
 export * from './table-row';
-export * from './text-area';
 export * from './text-button';
-export * from './text-field';
 export * from './two';
 
 import './typography.css';

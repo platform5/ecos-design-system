@@ -28,13 +28,6 @@ export class EcosIcon extends FASTElement {
   }
 
   @attr({ mode: 'boolean' })
-  public button = false;
-
-  public buttonChanged(): void {
-    this.setIcon();
-  }
-
-  @attr({ mode: 'boolean' })
   public lightweight = false;
 
   public lightweightChanged(): void {

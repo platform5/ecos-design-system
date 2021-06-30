@@ -1,16 +1,18 @@
-import { FASTDialog, DialogStyles as styles } from '@microsoft/fast-components';
-import { attr, customElement, html } from '@microsoft/fast-element';
-import { DialogTemplate as template } from '@microsoft/fast-foundation';
+import { dialogStyles as styles } from '@microsoft/fast-components';
+import { attr, html, css } from '@microsoft/fast-element';
+import { dialogTemplate as template, Dialog, ElementDefinitionContext, FoundationElementDefinition } from '@microsoft/fast-foundation';
 import { fadingStyles } from './styles';
+
+const overrideStyles = (context: ElementDefinitionContext, definition: FoundationElementDefinition) => {
+  return css`
+    ${styles(context, definition)}
+    ${fadingStyles}
+  `
+};
 
 const template2 = html<EcosDialog>`<template class="ecos-dialog--${x => x.effect}">${template}</template>`;
 
-@customElement({
-  name: "ecos-dialog",
-  template: template2,
-  styles: [styles, fadingStyles]
-})
-export class EcosDialog extends FASTDialog {
+export class EcosDialog extends Dialog {
 
   @attr()
   public effect = '';
@@ -35,3 +37,9 @@ export class EcosDialog extends FASTDialog {
 
   // }
 }
+
+export const ecosDialog = EcosDialog.compose({
+  baseName: 'dialog',
+  template: template2,
+  styles: overrideStyles
+});
