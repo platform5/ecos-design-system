@@ -1,6 +1,6 @@
 import { DesignToken } from '@microsoft/fast-foundation';
 import { designUnit, density, fillColor, accentPalette } from '@microsoft/fast-components';
-import { parseColor, blendColor, parseColorHexRGB } from "@microsoft/fast-colors";
+import { parseColor, blendColor } from "@microsoft/fast-colors";
 
 export const typeRampRatio = DesignToken.create<number>('type-ramp-ratio').withDefault(1.25);
 export const lineHeightRatio = DesignToken.create<number>('line-height-ratio').withDefault(1.2);

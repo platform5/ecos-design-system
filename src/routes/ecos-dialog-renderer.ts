@@ -25,7 +25,7 @@ export class EcosDialogRenderer implements IDialogDomRenderer {
 
   public fastRender(dialogHost: Element, settings: IDialogLoadedSettings): IDialogDom {
     const doc = this.p.document;
-    dialogHost = dialogHost.closest('.ecos-design-system-provider') ? dialogHost : doc.querySelector('.ecos-design-system-provider');
+    // dialogHost = dialogHost.closest('.ecos-design-system-provider') ? dialogHost : doc.querySelector('.ecos-design-system-provider');
     const dialog = doc.createElement('ecos-dialog') as EcosDialog;
     dialog.setAttribute('effect', 'fading');
     dialog.toggleAttribute('hidden', true);

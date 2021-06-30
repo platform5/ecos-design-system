@@ -1,3 +1,7 @@
+body {
+  background-color: var(--fill-color);
+  color: var(--neutral-foreground-rest);
+}
 .load-active {
   background-color: lightgray;
 }

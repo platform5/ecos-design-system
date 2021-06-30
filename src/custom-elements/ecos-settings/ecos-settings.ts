@@ -16,14 +16,13 @@ export class EcosSettings {
   public typeRampRatio = 1.25;
   public lineHeightRatio = 1.2;
 
-  public provider: HTMLElement;
+  provider = document.body;
 
   public constructor(private element: HTMLElement) {
 
   }
 
   public attached(): void {
-    this.provider = document.querySelector('ecos-design-system-provider') as HTMLElement;
     baseLayerLuminance.setValueFor(this.provider, this.baseLayerLuminance);
     this.updateDesignSystem();
   }
