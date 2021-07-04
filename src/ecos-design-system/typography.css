@@ -4,26 +4,26 @@ body {
 }
 
 h1 {
-  font-size: var(--type-ramp-plus3-font-size);
-  line-height: var(--type-ramp-plus3-line-height);
+  font-size: var(--type-ramp-plus-3-font-size);
+  line-height: var(--type-ramp-plus-3-line-height);
 }
 h2 {
-  font-size: var(--type-ramp-plus2-font-size);
-  line-height: var(--type-ramp-plus2-line-height);
+  font-size: var(--type-ramp-plus-2-font-size);
+  line-height: var(--type-ramp-plus-2-line-height);
 }
 h3 {
-  font-size: var(--type-ramp-plus1-font-size);
-  line-height: var(--type-ramp-plus1-line-height);
+  font-size: var(--type-ramp-plus-1-font-size);
+  line-height: var(--type-ramp-plus-1-line-height);
 }
 
 .large-text {
-  font-size: var(--type-ramp-plus3-font-size);
-  line-height: var(--type-ramp-plus3-line-height);
+  font-size: var(--type-ramp-plus-3-font-size);
+  line-height: var(--type-ramp-plus-3-line-height);
 }
 
 .muted-text {
-  font-size: var(--type-ramp-minus1-font-size);
-  line-height: var(--type-ramp-minus1-line-height);
+  font-size: var(--type-ramp-minus-1-font-size);
+  line-height: var(--type-ramp-minus-1-line-height);
 }
 
 h1, .ecos-stack > :not(h1, h2, h3) + h1,
@@ -34,16 +34,16 @@ h3:not(:first-child), .ecos-stack > :not(h1, h2, h3) + h3 {
 
 @media screen and (min-width: 732px) {
   h1 {
-    font-size: var(--type-ramp-plus4-font-size);
-    line-height: var(--type-ramp-plus4-line-height);
+    font-size: var(--type-ramp-plus-4-font-size);
+    line-height: var(--type-ramp-plus-4-line-height);
   }
   h2 {
-    font-size: var(--type-ramp-plus3-font-size);
-    line-height: var(--type-ramp-plus3-line-height);
+    font-size: var(--type-ramp-plus-3-font-size);
+    line-height: var(--type-ramp-plus-3-line-height);
   }
   h3 {
-    font-size: var(--type-ramp-plus2-font-size);
-    line-height: var(--type-ramp-plus2-line-height);
+    font-size: var(--type-ramp-plus-2-font-size);
+    line-height: var(--type-ramp-plus-2-line-height);
   }
 }
 

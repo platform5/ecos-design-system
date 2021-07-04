@@ -10,7 +10,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@microsoft/fast-components": "2.0.0",
+    "@microsoft/fast-components": "2.0.2",
     "@microsoft/fast-element": "1.4.0",
     "lodash-es": "^4.17.21",
     "modern-css-reset": "^1.4.0",

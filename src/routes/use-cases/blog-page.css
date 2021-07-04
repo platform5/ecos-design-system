@@ -25,8 +25,8 @@
 }
 .blog-photo-credit {
   display: block;
-  font-size: var(--type-ramp-minus1-font-size);
-  line-height: var(--type-ramp-minus1-line-height);
+  font-size: var(--type-ramp-minus-1-font-size);
+  line-height: var(--type-ramp-minus-1-line-height);
 }
 .blog-explore-categories ecos-badge::part(control) {
   border-color: var(--accent-light-100);

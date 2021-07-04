@@ -15,14 +15,15 @@
   padding: 32px; 
   border-radius: calc(var(--control-corner-radius) * 1px);
   font-family: 'Orelega One', cursive;
-  font-size: var(--type-ramp-plus1-font-size);
-  line-height: var(--type-ramp-plus1-line-height);
+  font-size: var(--type-ramp-plus-1-font-size);
+  line-height: var(--type-ramp-plus-1-line-height);
+  position: relative;
 }
 @media screen and (min-width: 732px) {
   .header-text {
     margin: auto auto auto auto;
-    font-size: var(--type-ramp-plus2-font-size);
-    line-height: var(--type-ramp-plus2-line-height);
+    font-size: var(--type-ramp-plus-2-font-size);
+    line-height: var(--type-ramp-plus-2-line-height);
   }
 }
 
