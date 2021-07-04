@@ -1,4 +1,4 @@
-import { IContainer, IAttrSyntaxTransformer, NodeObserverLocator, AppTask } from 'aurelia';
+import { IContainer, IAttrMapper, NodeObserverLocator, AppTask } from 'aurelia';
 
 export class AureliaEcosAdapter {
 
@@ -8,7 +8,7 @@ export class AureliaEcosAdapter {
 
   private static extendTemplatingSyntax(container: IContainer): void {
     AppTask.beforeCreate(IContainer, container => {
-      const attrSyntaxTransformer = container.get(IAttrSyntaxTransformer);
+      const attrSyntaxTransformer = container.get(IAttrMapper);
       const nodeObserverLocator = container.get(NodeObserverLocator);
       attrSyntaxTransformer.useTwoWay((el, property) => {
         switch (el.tagName) {
