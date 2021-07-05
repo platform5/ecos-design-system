@@ -12,6 +12,7 @@
   "dependencies": {
     "@microsoft/fast-components": "2.0.2",
     "@microsoft/fast-element": "1.4.0",
+    "del-cli": "^4.0.0",
     "lodash-es": "^4.17.21",
     "modern-css-reset": "^1.4.0",
     "modular-scale": "^5.1.0"
@@ -38,7 +39,6 @@
     "postcss": "^8.2.8",
     "postcss-loader": "^5.2.0",
     "prismjs": "^1.23.0",
-    "rimraf": "^3.0.2",
     "style-loader": "^2.0.0",
     "ts-loader": "^8.0.18",
     "typescript": "^4.2.3",
@@ -52,13 +52,14 @@
     "lint:js": "eslint src test --ext .js,.ts",
     "lint:html": "htmlhint -c .htmlhintrc src",
     "lint": "npm run lint:js && npm run lint:html",
-    "prebuild": "rimraf dist",
+    "clean:docs": "del-cli docs/** !docs !docs/CNAME",
+    "prebuild": "del-cli dist",
     "postbuild": "gulp",
     "build:commonjs": "tsc --rootDir src/ecos-design-system --project tsconfig2.json --outDir dist/commonjs --module commonjs",
     "build:native-modules": "tsc --rootDir src/ecos-design-system --project tsconfig2.json --outDir dist/native-modules --module es2015",
     "build": "concurrently \"npm run build:commonjs\" \"npm run build:native-modules\"",
     "start": "webpack serve",
-    "build-app": "rimraf docs && webpack --env production",
-    "analyze": "rimraf dist-app && webpack --env production --analyze"
+    "build-app": "npm run clean:docs && webpack --env production",
+    "analyze": "npm run clean:docs && webpack --env production --analyze"
   }
 }
