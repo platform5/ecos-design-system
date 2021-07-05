@@ -36,3 +36,5 @@ import { navbarHeightNumber } from './navbar/styles';
 const navbarContentStyles = document.createElement(`style`);
 navbarContentStyles.innerHTML = `.navbar-content {padding-top: calc((${navbarHeightNumber}) * 1px)}`;
 document.head.appendChild(navbarContentStyles);
+
+export * from './design-tokens';
