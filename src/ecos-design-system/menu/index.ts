@@ -16,12 +16,3 @@ export const ecosMenu = Menu.compose({
   template,
   styles: overrideStyles
 });
-
-export class EcosMenu extends Menu {
-
-  public connectedCallback(): void {
-    super.connectedCallback();
-    // this.$fastController.addStyles();
-  }
-
-}
