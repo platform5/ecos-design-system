@@ -1,10 +1,12 @@
-import { ICustomElementViewModel } from 'aurelia';
+import { FASTDialogViewModel } from 'aurelia-fast-adapter';
 import { IDialogService } from '@aurelia/runtime-html';
 import { DialogServiceComponentLarge } from './dialog-service-component-large';
 
-export class DialogServiceComponent implements ICustomElementViewModel {
+export class DialogServiceComponent extends FASTDialogViewModel {
 
-  public constructor(@IDialogService public dialogService: IDialogService) {}
+  public constructor(@IDialogService public dialogService: IDialogService) {
+    super();
+  }
 
   public openLargeComponent(): void {
     this.dialogService.open({
@@ -13,5 +15,4 @@ export class DialogServiceComponent implements ICustomElementViewModel {
       keyboard: ['Escape', 'Enter']
     });
   }
-
 }

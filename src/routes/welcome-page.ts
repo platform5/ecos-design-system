@@ -1,10 +1,9 @@
 import { fillColor, SwatchRGB } from '@microsoft/fast-components';
 import { customElement } from 'aurelia';
-import template from './Welcome-page.html';
+import template from './welcome-page.html';
 
 @customElement({name: 'welcome-page', template})
 export class WelcomePage {
-
 
   public attached(): void {
     const element = document.querySelector('.header-text') as HTMLElement;

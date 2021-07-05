@@ -17,25 +17,6 @@ export class EcosDialog extends Dialog {
   @attr()
   public effect = '';
 
-  // public connectedCallback(): void {
-  //   super.connectedCallback();
-  //   this.addEventListener('slotchange', this);
-  // }
-
-  // public disconnectedCallback(): void {
-  //   super.disconnectedCallback();
-  //   this.removeEventListener('slotchange', this);
-  // }
-
-  // public handleEvent(): void {
-  //   console.log('handle slotchange');
-  //   const slotElement = this.shadowRoot.querySelector('slot');
-  //   console.log('slotElement', slotElement);
-  // }
-
-  // public detectEcosCardDialog(): void {
-
-  // }
 }
 
 export const ecosDialog = EcosDialog.compose({

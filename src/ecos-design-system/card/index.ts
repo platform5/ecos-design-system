@@ -28,23 +28,31 @@ export class EcosCard extends Card {
 
   public connectedCallback(): void {
     super.connectedCallback();
-    fillColor.setValueFor(this, (element) => {
-      const fill = fillColor.getValueFor(element.parentElement) as SwatchRGB;
-      const fillcolor = new ColorRGBA64(fill.r, fill.g, fill.b);
-      const newFill = lightenViaLAB(fillcolor, 1);
-      const swatch = SwatchRGB.create(newFill.r, newFill.g, newFill.b);
-      return swatch;
-    });
+    try {
+      fillColor.setValueFor(this, (element) => {
+        const fill = fillColor.getValueFor(element.parentElement) as SwatchRGB;
+        const fillcolor = new ColorRGBA64(fill.r, fill.g, fill.b);
+        const newFill = lightenViaLAB(fillcolor, 1);
+        const swatch = SwatchRGB.create(newFill.r, newFill.g, newFill.b);
+        return swatch;
+      });
+    } catch (error) {
+      console.warn('Failed to process fillColor design token', this.fillColor);
+    }
   }
   
   @attr()
   fillColor: string;
 
   public fillColorChanged(): void {
-    const color = parseColorHexRGB(this.fillColor);
-    if (color) {
-      const swatch = SwatchRGB.create(color.r, color.g, color.b);
-      fillColor.setValueFor(this, swatch);
+    try {
+      const color = parseColorHexRGB(this.fillColor);
+      if (color) {
+        const swatch = SwatchRGB.create(color.r, color.g, color.b);
+        fillColor.setValueFor(this, swatch);
+      }
+    } catch (error) {
+      console.warn('Failed to process fillColorChanged', this.fillColor)
     }
   }
 }
