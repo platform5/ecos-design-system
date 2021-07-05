@@ -13,10 +13,11 @@
   max-width: 50vw;
   min-width: min-content;
   padding: 32px; 
-  border-radius: calc(var(--corner-radius) * 1px);
+  border-radius: calc(var(--control-corner-radius) * 1px);
   font-family: 'Orelega One', cursive;
   font-size: var(--type-ramp-plus-1-font-size);
   line-height: var(--type-ramp-plus-1-line-height);
+  position: relative;
 }
 @media screen and (min-width: 732px) {
   .header-text {

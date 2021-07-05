@@ -12,7 +12,7 @@ export const EcosCardDialogTemplate = html<EcosCardDialog>`
     <ecos-inline-group>
       <slot name="footer-left" ${slotted("footerLeftNodes")}></slot>
     </ecos-inline-group>
-    <ecos-inline-group ecos-card-row--right>
+    <ecos-inline-group ecos-card-row--right nowrap>
       <slot name="footer" ${slotted("footerNodes")}></slot>
     </ecos-inline-group>
   </ecos-card-row>

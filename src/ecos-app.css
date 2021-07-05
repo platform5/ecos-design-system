@@ -1,3 +1,7 @@
+body {
+  background-color: var(--fill-color);
+  color: var(--neutral-foreground-rest);
+}
 .load-active {
   background-color: lightgray;
 }
@@ -59,7 +63,7 @@ body.use-cases-on au-viewport[name=use-cases-viewport] {
   right: 0;
   bottom: 0;
   left: 0;
-  background: var(--background-color);
+  background: var(--fill-color);
   overflow: auto;
 }
 

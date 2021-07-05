@@ -1,6 +1,5 @@
 import { css } from '@microsoft/fast-element';
 import { display } from "@microsoft/fast-foundation";
-import { neutralLayerL1Behavior, neutralLayerL4Behavior, neutralForegroundRestBehavior } from '@microsoft/fast-components';
 
 // copy from fast-components non exported variable
 const heightNumber =
@@ -14,15 +13,15 @@ export const ArticleStyles = css`
     overflow: hidden;
     cursor: pointer;
     flex-direction: column;
-    border-radius: calc(var(--corner-radius) * 1px);
+    border-radius: calc(var(--control-corner-radius) * 1px);
   }
   .image {
     position: relative;
     overflow: hidden;
     height: 0;
     padding-top: 56.25%;
-    border-bottom-left-radius: calc(var(--corner-radius) * 1px);
-    border-bottom-right-radius: calc(var(--corner-radius) * 1px);
+    border-bottom-left-radius: calc(var(--control-corner-radius) * 1px);
+    border-bottom-right-radius: calc(var(--control-corner-radius) * 1px);
   }
   .image-background {
     position: absolute;
@@ -48,8 +47,4 @@ export const ArticleStyles = css`
   .content {
     padding: calc((${heightNumber}) * 0.25px) calc((${heightNumber}) * 0.5px) calc((${heightNumber}) * 0.5px);
   }
-`.withBehaviors(
-  neutralLayerL1Behavior,
-  neutralLayerL4Behavior, 
-  neutralForegroundRestBehavior
-);
+`;

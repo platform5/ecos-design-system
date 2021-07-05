@@ -1,40 +1,52 @@
-import { EcosDesignSystemProvider } from '../../ecos-design-system';
-import { FASTDesignSystemProvider } from '@microsoft/fast-components';
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import { SwatchRGB, fillColor, PaletteRGB, accentPalette, baseLayerLuminance, density, designUnit, controlCornerRadius, strokeWidth, typeRampBaseFontSize } from '@microsoft/fast-components';
+import { parseColorHexRGB } from '@microsoft/fast-colors';
+import { lineHeightRatio, typeRampRatio } from '../../ecos-design-system/design-tokens';
+import { setTypeRamp } from '../../ecos-design-system/modular-type';
 
 export class EcosSettings {
   public color = '#FFF8F0';
   public accent = '#AD016E';
+  public baseLayerLuminance = 1;
   public designUnit = 4;
   public density = 0;
-  public cornerRadius = 5;
-  public outlineWidth = 1;
+  public controlCornerRadius = 5;
+  public strokeWidth = 1;
   public typeRampBaseFontSize = 16;
   public typeRampRatio = 1.25;
   public lineHeightRatio = 1.2;
 
-  public provider: EcosDesignSystemProvider;
+  provider = document.body;
 
   public constructor(private element: HTMLElement) {
 
   }
 
   public attached(): void {
-    this.provider = FASTDesignSystemProvider.findProvider(this.element) as EcosDesignSystemProvider;
+    baseLayerLuminance.setValueFor(this.provider, this.baseLayerLuminance);
     this.updateDesignSystem();
   }
 
   public updateDesignSystem(): void {
+    console.log('updateDesignSystem');
     if (!this.provider) {
       return;
     }
-    this.provider.backgroundColor = this.color;
-    this.provider.accentBaseColor = this.accent;
-    this.provider.designUnit = this.designUnit;
-    this.provider.density = this.density;
-    this.provider.cornerRadius = this.cornerRadius;
-    this.provider.outlineWidth = this.outlineWidth;
-    this.provider.typeRampBaseFontSize = `${this.typeRampBaseFontSize}px`;
-    this.provider.typeRampRatio = this.typeRampRatio;
-    this.provider.lineHeightRatio = this.lineHeightRatio;
+    baseLayerLuminance.setValueFor(this.provider, this.baseLayerLuminance);
+
+    const fill = parseColorHexRGB(this.color)!;
+    const fillSwatch = SwatchRGB.create(fill.r, fill.g, fill.b);
+    fillColor.setValueFor(this.provider, fillSwatch);
+    const base = parseColorHexRGB(this.accent)!;
+    const swatch = SwatchRGB.create(base.r, base.g, base.b);
+    accentPalette.setValueFor(this.provider, PaletteRGB.create(swatch));
+    designUnit.setValueFor(this.provider, this.designUnit);
+    density.setValueFor(this.provider, this.density);
+    controlCornerRadius.setValueFor(this.provider, this.controlCornerRadius);
+    strokeWidth.setValueFor(this.provider, this.strokeWidth);
+    typeRampBaseFontSize.setValueFor(this.provider, `${this.typeRampBaseFontSize}px`);
+    typeRampRatio.setValueFor(this.provider, this.typeRampRatio);
+    lineHeightRatio.setValueFor(this.provider, this.lineHeightRatio);
+    setTypeRamp(this.provider, this.typeRampRatio, this.lineHeightRatio);
   }
 }

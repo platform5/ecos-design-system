@@ -16,10 +16,10 @@
     min-width: -moz-min-content;
     min-width: min-content;
     padding: 32px;
-    border-radius: calc(var(--corner-radius) * 1px);
+    border-radius: calc(var(--control-corner-radius) * 1px);
     font-family: 'Orelega One', cursive;
-    font-size: var(--type-ramp-plus-6-font-size);
-    line-height: var(--type-ramp-plus-6-line-height);
+    font-size: var(--type-ramp-plus6-font-size);
+    line-height: var(--type-ramp-plus6-line-height);
     text-align: center;
     text-shadow: var(--elevation4);
 }

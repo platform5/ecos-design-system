@@ -1,6 +1,6 @@
 import { css } from '@microsoft/fast-element';
 import { display } from "@microsoft/fast-foundation";
-import { neutralLayerL1Behavior, neutralLayerL4Behavior, neutralForegroundRestBehavior } from '@microsoft/fast-components';
+import { neutralLayer1, neutralLayer4, neutralForegroundRest } from '@microsoft/fast-components';
 
 // copy from fast-components non exported variable
 export const heightNumber =
@@ -34,8 +34,8 @@ export const NavbarStyles = css`
     padding-left: calc(var(--design-unit) * 4px);
     padding-right: calc(var(--design-unit) * 4px);
     box-shadow: var(--elevation2);
-    background: ${neutralLayerL4Behavior.var};
-    color: ${neutralForegroundRestBehavior.var};
+    background: ${neutralLayer4};
+    color: ${neutralForegroundRest};
     transition: 500ms ease;
     transition-property: background-color, box-shadow;
   }
@@ -47,7 +47,7 @@ export const NavbarStyles = css`
     box-shadow: none;
   }
   :host(.navbar-layer-1) .navbar {
-    background: ${neutralLayerL1Behavior.var};
+    background: ${neutralLayer1};
   }
 
   .navbar-content {
@@ -100,12 +100,12 @@ export const NavbarStyles = css`
     top: calc((${navbarHeightNumber}) * 1px);
     width: 100%;
     padding: calc(var(--design-unit) * 4px);
-    background: ${neutralLayerL4Behavior.var};
-    color: ${neutralForegroundRestBehavior.var};
+    background: ${neutralLayer4};
+    color: ${neutralForegroundRest};
     box-shadow: var(--elevation2);
   }
   :host(.navbar-layer-1) .mobile-content {
-    background: ${neutralLayerL1Behavior.var};
+    background: ${neutralLayer1};
   }
   .mobile-content[hidden] {
     display: block;
@@ -151,8 +151,8 @@ export const NavbarStyles = css`
       padding: calc(var(--design-unit) * 4px);
       text-align: center;
       box-shadow: var(--elevation2);
-      background: ${neutralLayerL4Behavior.var};
-      color: ${neutralForegroundRestBehavior.var};
+      background: ${neutralLayer4};
+      color: ${neutralForegroundRest};
     }
     .secondary-content[hidden] {
       display: block;
@@ -161,14 +161,10 @@ export const NavbarStyles = css`
       pointer-events: none;
     }
     :host(.navbar-layer-1) .secondary-content {
-      background: ${neutralLayerL1Behavior.var};
+      background: ${neutralLayer1};
     }
     .toggler {
       display: none;
     }
   }
-`.withBehaviors(
-  neutralLayerL1Behavior,
-  neutralLayerL4Behavior, 
-  neutralForegroundRestBehavior
-);
+`;

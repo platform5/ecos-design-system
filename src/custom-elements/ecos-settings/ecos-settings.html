@@ -1,5 +1,5 @@
 <div>
-  <ecos-design-system-provider background-color="#222" design-unit="4" density="0">
+  <ecos-design-system-provider xfill-color="#222" design-unit="4" density="0">
     <div class="wrapper" style="padding-bottom: 150px;">
       <h3>Design settings</h3>
     
@@ -21,12 +21,12 @@
           <ecos-slider value.bind="density" min="-3" max="3" step="0.5"></ecos-slider>
         </ecos-form-row>
         <ecos-form-row>
-          <label>Corner Radius</label>
-          <ecos-slider value.bind="cornerRadius" min="0" max="20" step="0.5"></ecos-slider>
+          <label>Control Corner Radius</label>
+          <ecos-slider value.bind="controlCornerRadius" min="0" max="20" step="0.5"></ecos-slider>
         </ecos-form-row>
         <ecos-form-row>
           <label>Outline Width</label>
-          <ecos-slider value.bind="outlineWidth" min="0" max="4" step="1"></ecos-slider>
+          <ecos-slider value.bind="strokeWidth" min="0" max="4" step="1"></ecos-slider>
         </ecos-form-row>
         <ecos-form-row>
           <label>Font Size</label>

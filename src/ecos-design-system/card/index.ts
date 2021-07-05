@@ -1,41 +1,64 @@
-import { FASTCard, CardStyles as styles, neutralForegroundRestBehavior } from '@microsoft/fast-components';
-import { customElement, css } from '@microsoft/fast-element';
-import { CardTemplate as template, DesignSystemProvider } from '@microsoft/fast-foundation';
+import { cardStyles as styles, fillColor, SwatchRGB } from '@microsoft/fast-components';
+import { attr, css } from '@microsoft/fast-element';
+import { parseColorHexRGB } from '@microsoft/fast-colors';
+import { cardTemplate as template, Card, ElementDefinitionContext, FoundationElementDefinition } from '@microsoft/fast-foundation';
 
-// Current implementation of Fast Card do not correctly set the color to the card content
-// this is due to performance. The issue to follow about this is: https://github.com/microsoft/fast/issues/3987
-// Meanwhile I have a fix in the ecos implementation that is not as good perf-wise but at least 
-// generate satisfying result
-// I also created a PR (not submitted) here: https://github.com/ben-girardet/fast/tree/fix-card-color
+import { lightenViaLAB, ColorRGBA64 } from "@microsoft/fast-colors";
 
 // the min-content below ensure that the card, when used in a context of a stack
 // correctly "ends" its content towards the bottom
 export const fixedColorStyles = css`
   :host {
-    color: ${neutralForegroundRestBehavior.var};
     height: min-content;
   }
   :host([nocontain]) {
     contain: unset
   }
-`.withBehaviors(neutralForegroundRestBehavior);
+`;
 
-@customElement({
-  name: "ecos-card",
-  template,
-  styles: [styles, fixedColorStyles]
-})
-export class EcosCard extends FASTCard {
-  connectedCallback(): void {
-    if (!this.provider?.designSystem) {
-      const closest = this.closest('.ecos-design-system-provider');
-      if (closest) {
-        this.provider = closest as DesignSystemProvider;
-      } else {
-        const first = document.querySelector('.ecos-design-system-provider');
-        this.provider = first as DesignSystemProvider;
-      }
-    }
+
+const overrideStyles = (context: ElementDefinitionContext, definition: FoundationElementDefinition) => {
+  return css`
+    ${styles(context, definition)}
+    ${fixedColorStyles}
+  `
+}
+
+export class EcosCard extends Card {
+
+  public connectedCallback(): void {
     super.connectedCallback();
+    try {
+      fillColor.setValueFor(this, (element) => {
+        const fill = fillColor.getValueFor(element.parentElement) as SwatchRGB;
+        const fillcolor = new ColorRGBA64(fill.r, fill.g, fill.b);
+        const newFill = lightenViaLAB(fillcolor, 1);
+        const swatch = SwatchRGB.create(newFill.r, newFill.g, newFill.b);
+        return swatch;
+      });
+    } catch (error) {
+      console.warn('Failed to process fillColor design token', this.fillColor);
+    }
+  }
+  
+  @attr()
+  fillColor: string;
+
+  public fillColorChanged(): void {
+    try {
+      const color = parseColorHexRGB(this.fillColor);
+      if (color) {
+        const swatch = SwatchRGB.create(color.r, color.g, color.b);
+        fillColor.setValueFor(this, swatch);
+      }
+    } catch (error) {
+      console.warn('Failed to process fillColorChanged', this.fillColor)
+    }
   }
 }
+
+export const ecosCard = EcosCard.compose({
+  baseName: 'card',
+  template,
+  styles: overrideStyles
+});

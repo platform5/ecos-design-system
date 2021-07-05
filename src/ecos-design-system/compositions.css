@@ -9,11 +9,11 @@ ecos-navbar > .right {
   margin-left: auto;
 }
 ecos-navbar > ecos-anchor {
-  --outline-width: 0;
+  --stroke-width: 0;
   color: currentColor;
 }
 ecos-navbar > ecos-anchor:hover {
-  --outline-width: 0;
+  --stroke-width: 0;
   color: var(--accent-foreground-hover);
 }
 

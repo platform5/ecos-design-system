@@ -1,35 +1,29 @@
 import { css } from '@microsoft/fast-element';
 import {
-  neutralFillRestBehavior,
-  neutralForegroundRestBehavior,
-  accentFillRestBehavior,
-  accentForegroundCutRestBehavior
+  neutralFillRest,
+  neutralForegroundRest,
+  accentFillRest,
+  foregroundOnAccentRest
 } from "@microsoft/fast-components";
-import { accentLight100Behavior } from '../recipes';
+import { accentLight100 } from '../recipes';
 
 export const extendedBadgeStyles = css`
   .control {
-    background: ${neutralFillRestBehavior.var};
-    color: ${neutralForegroundRestBehavior.var};
+    background: ${neutralFillRest};
+    color: ${neutralForegroundRest};
   }
   :host([appearance=accent]) .control {
-    background: ${accentFillRestBehavior.var};
-    color: ${accentForegroundCutRestBehavior.var};
+    background: ${accentFillRest};
+    color: ${foregroundOnAccentRest};
   }
   :host([appearance=accent-light]) .control {
-    background: ${accentLight100Behavior.var};
-    color: ${accentForegroundCutRestBehavior.var};
+    background: ${accentLight100};
+    color: ${foregroundOnAccentRest};
   }
   :host([appearance=outline]) .control {
     background: transparent;
-    color: ${neutralForegroundRestBehavior.var};
-    border: calc(var(--outline-width) * 1px) solid ${neutralForegroundRestBehavior.var};
-    border-radius: calc(var(--corner-radius) * 1px);
+    color: ${neutralForegroundRest};
+    border: calc(var(--stroke-width) * 1px) solid ${neutralForegroundRest};
+    border-radius: calc(var(--control-corner-radius) * 1px);
   }
-`.withBehaviors(
-  neutralFillRestBehavior,
-  neutralForegroundRestBehavior,
-  accentFillRestBehavior, 
-  accentForegroundCutRestBehavior,
-  accentLight100Behavior
-);
+`;

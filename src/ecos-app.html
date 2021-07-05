@@ -2,36 +2,33 @@
 <import from="./app-typography.css"></import>
 <import from="./app-exceptions.css"></import>
 
+<div class="sidebar" sidebar--opened.class="sidebarOpened">
+  <ecos-settings></ecos-settings>
+</div>
+<div class="page" sidebar--opened.class="sidebarOpened">
+  <div class="main-content">
+    <ecos-navbar layer="1">
+      <ecos-colorize slot="branding" style="color: var(--accent-fill-rest)" load="welcome-page">
+        <img load="welcome-page" src="./images/Ecos.png" style="height: 30px" class="logo" />
+      </ecos-colorize>
+      <ecos-anchor slot="main" considered-active="components-index" load="components-index/components-list" appearance="lightweight">Components</ecos-anchor>
+      <ecos-anchor slot="main" considered-active="spatial-index" load="spatial-index/spatial-main" appearance="lightweight">Spatial</ecos-anchor>
+      <ecos-anchor slot="main" considered-active="use-cases-index" load="use-cases-index/use-cases-list" appearance="lightweight">Use cases</ecos-anchor>
+      <ecos-anchor slot="secondary-toggler" appearance="lightweight">More</ecos-anchor>
 
-<ecos-design-system-provider use-defaults apply-background-to-body>
-  <div class="sidebar" sidebar--opened.class="sidebarOpened">
-    <ecos-settings></ecos-settings>
-  </div>
-  <div class="page" sidebar--opened.class="sidebarOpened">
-    <div class="main-content">
-      <ecos-navbar layer="1">
-        <ecos-colorize slot="branding" style="color: var(--accent-fill-rest)" load="welcome-page">
-          <img load="welcome-page" src="./images/Ecos.png" style="height: 30px" class="logo" />
-        </ecos-colorize>
-        <ecos-anchor slot="main" considered-active="components-index" load="components-index/components-list" appearance="lightweight">Components</ecos-anchor>
-        <ecos-anchor slot="main" considered-active="spatial-index" load="spatial-index/spatial-main" appearance="lightweight">Spatial</ecos-anchor>
-        <ecos-anchor slot="main" considered-active="use-cases-index" load="use-cases-index/use-cases-list" appearance="lightweight">Use cases</ecos-anchor>
-        <ecos-anchor slot="secondary-toggler" appearance="lightweight">More</ecos-anchor>
+      <template if.bind="displayComponentsList">
+        <ecos-anchor repeat.for="component of componentsList" slot="secondary" load="components-index/${component.load}-component" appearance="lightweight">${component.name}</ecos-anchor>          
+      </template>
 
-        <template if.bind="displayComponentsList">
-          <ecos-anchor repeat.for="component of componentsList" slot="secondary" load="components-index/${component.load}-component" appearance="lightweight">${component.name}</ecos-anchor>          
-        </template>
+      <ecos-anchor slot="secondary" load="the-project" appearance="lightweight">About The Project</ecos-anchor>
+      <ecos-anchor slot="secondary" load="dialog-service-page" appearance="lightweight">Dialog Service</ecos-anchor>
+      <ecos-anchor slot="secondary" href="https://github.com/ben-girardet/ecos-design-system" appearance="lightweight">GitHub</ecos-anchor>
+    </ecos-navbar>
 
-        <ecos-anchor slot="secondary" load="the-project" appearance="lightweight">About The Project</ecos-anchor>
-        <ecos-anchor slot="secondary" load="dialog-service-page" appearance="lightweight">Dialog Service</ecos-anchor>
-        <ecos-anchor slot="secondary" href="https://github.com/ben-girardet/ecos-design-system" appearance="lightweight">GitHub</ecos-anchor>
-      </ecos-navbar>
-
-      <div class="navbar-content">
-        <au-viewport name="main" default="welcome-page" fallback="missing-page"></au-viewport>
-      </div>
+    <div class="navbar-content">
+      <au-viewport name="main" default="welcome-page" fallback="missing-page"></au-viewport>
     </div>
   </div>
+</div>
 
-  <ecos-icon button icon="Adjustments" id="design-settings-opener" click.delegate="sidebarOpened = !sidebarOpened"></ecos-icon>
-</ecos-design-system-provider>
+<ecos-icon button icon="Adjustments" id="design-settings-opener" click.delegate="sidebarOpened = !sidebarOpened"></ecos-icon>

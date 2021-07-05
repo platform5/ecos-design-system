@@ -1,81 +1,70 @@
-import { 
-  EcosAnchor, 
-  EcosAnchoredRegion, 
+import { fastAnchor, fastAnchoredRegion, fastBreadcrumb, fastBreadcrumbItem, fastOption, fastRadio, fastSelect, fastSlider, fastSwitch, fastTextArea, fastTextField, fastDesignSystemProvider } from '@microsoft/fast-components';
+import { DesignSystem } from '@microsoft/fast-foundation';
+
+DesignSystem.getOrCreate().register(fastAnchor({prefix: 'ecos'}));
+DesignSystem.getOrCreate().register(fastAnchoredRegion({prefix: 'ecos'}));
+DesignSystem.getOrCreate().register(fastBreadcrumb({prefix: 'ecos'}));
+DesignSystem.getOrCreate().register(fastBreadcrumbItem({prefix: 'ecos'}));
+DesignSystem.getOrCreate().register(fastDesignSystemProvider({prefix: 'ecos'}));
+DesignSystem.getOrCreate().register(fastOption({prefix: 'ecos'}));
+DesignSystem.getOrCreate().register(fastRadio({prefix: 'ecos'}));
+DesignSystem.getOrCreate().register(fastSelect({prefix: 'ecos'}));
+DesignSystem.getOrCreate().register(fastSlider({prefix: 'ecos'}));
+DesignSystem.getOrCreate().register(fastSwitch({prefix: 'ecos'}));
+DesignSystem.getOrCreate().register(fastTextArea({prefix: 'ecos'}));
+DesignSystem.getOrCreate().register(fastTextField({prefix: 'ecos'}));
+
+import { ecosBadge, ecosButton, ecosCheckbox, ecosCard, ecosDialog, ecosMenu, ecosMenuItem } from './ecos-design-system';
+DesignSystem.getOrCreate().register(ecosBadge({prefix: 'ecos'}));
+DesignSystem.getOrCreate().register(ecosButton({prefix: 'ecos'}));
+DesignSystem.getOrCreate().register(ecosCheckbox({prefix: 'ecos'}));
+DesignSystem.getOrCreate().register(ecosCard({prefix: 'ecos'}));
+DesignSystem.getOrCreate().register(ecosDialog({prefix: 'ecos'}));
+DesignSystem.getOrCreate().register(ecosMenu({prefix: 'ecos'}));
+DesignSystem.getOrCreate().register(ecosMenuItem({prefix: 'ecos'}));
+
+import {  
   EcosArticle,
   EcosBadge, 
-  EcosBreadcrumb,
-  EcosBreadcrumbItem,
-  EcosButton, 
   EcosButton3D,
-  EcosCard,
   EcosCardDialog,
   EcosCardRow,
-  EcosCheckbox,
   EcosCollection,
   EcosColorize,
   EcosContent,
-  EcosDesignSystemProvider, 
-  EcosDialog,
   EcosForm, 
   EcosFormRow, 
   EcosIcon,
   EcosInlineGroup,
-  EcosMenu,
-  EcosMenuItem,
   EcosNext,
   EcosNavbar,
-  EcosOption,
-  EcosRadio,
   EcosSection,
-  EcosSelect,
-  EcosSlider,
   EcosStack,
-  EcosSwitch,
   EcosTable,
   EcosTableItem,
   EcosTableRow,
-  EcosTextArea,
   EcosTextButton,
-  EcosTextField,
   EcosTwo,
 } from './ecos-design-system';
 
-EcosAnchor;
-EcosAnchoredRegion;
 EcosArticle;
 EcosBadge;
-EcosBreadcrumb;
-EcosBreadcrumbItem;
-EcosButton;
 EcosButton3D;
-EcosCard;
 EcosCardDialog;
 EcosCardRow;
-EcosCheckbox;
 EcosCollection;
 EcosColorize;
 EcosContent;
-EcosDesignSystemProvider;
-EcosDialog;
 EcosForm;
 EcosFormRow;
 EcosIcon;
 EcosInlineGroup;
-EcosMenu;
-EcosMenuItem;
 EcosNext;
 EcosNavbar;
-EcosOption;
-EcosRadio;
 EcosSection;
-EcosSelect;
-EcosSlider;
 EcosStack;
-EcosSwitch;
 EcosTable;
 EcosTableItem;
 EcosTableRow;
-EcosTextArea;
 EcosTextButton;
-EcosTextField;
 EcosTwo;

@@ -12,5 +12,5 @@
 
 /* UTILITIES */
 .header-gradient {
-  background: linear-gradient(var(--background-teinted-color), var(--background-color));
+  background: linear-gradient(var(--background-teinted-color), var(--fill-color));
 }
