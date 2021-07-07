@@ -5,7 +5,7 @@ export const CollectionStyles = css`
   ${display("grid")}
 
   :host {
-    contain: content;
+    contain: style;
     display: grid;
     justify-content: center;
     grid-gap: var(--responsive-spacing-unit-xl);

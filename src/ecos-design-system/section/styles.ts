@@ -4,11 +4,8 @@ export const SectionStyles = css`
 
   :host {
     display: grid;
-    contain: content;
+    contain: style;
     --ecos-section-center-width: 60ch;
-  }
-  :host([nocontain]) {
-    contain: unset;
   }
 
   :host {

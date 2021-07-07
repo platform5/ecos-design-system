@@ -5,7 +5,7 @@ export const FormStyles = css`
   ${display("flex")}
 
   :host {
-    contain: content;
+    contain: style;
     flex-direction: column;
   }
   ::slotted(label) {

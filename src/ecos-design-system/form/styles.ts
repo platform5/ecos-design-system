@@ -5,7 +5,7 @@ export const FormStyles = css`
   ${display("grid")}
 
   :host {
-    contain: content;
+    contain: style;
     grid-gap: var(--spacing-unit);
   }
 `;

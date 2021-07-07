@@ -71,6 +71,7 @@ export class EcosApp implements ICustomElementViewModel {
     this.iconLoader.load('ArrowCircleRight', import('./icons/outline/ArrowCircleRight'), import('./icons/solid/ArrowCircleRight'));
     this.iconLoader.load('X', import('./icons/outline/X'), import('./icons/solid/X'));
     this.iconLoader.load('DotsHorizontal', import('./icons/outline/DotsHorizontal'), import('./icons/solid/DotsHorizontal'));
+    this.iconLoader.load('ChevronRight', import('./icons/outline/ChevronRight'), import('./icons/solid/ChevronRight'));
   }
 
 }

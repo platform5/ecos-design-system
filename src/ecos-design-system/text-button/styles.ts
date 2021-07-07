@@ -5,7 +5,7 @@ export const TextButtonStyles = css`
   ${display("grid")}
 
   :host {
-    contain: content;
+    contain: style;
     grid-gap: var(--responsive-spacing-unit-lg);
     grid-template-columns: 1fr min-content;
     align-items: center;

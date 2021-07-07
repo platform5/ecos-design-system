@@ -10,9 +10,7 @@ import { lightenViaLAB, ColorRGBA64 } from "@microsoft/fast-colors";
 export const fixedColorStyles = css`
   :host {
     height: min-content;
-  }
-  :host([nocontain]) {
-    contain: unset
+    contain: style;
   }
 `;
 
