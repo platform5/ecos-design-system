@@ -26,16 +26,18 @@ export class EcosCard extends Card {
 
   public connectedCallback(): void {
     super.connectedCallback();
-    try {
-      fillColor.setValueFor(this, (element) => {
-        const fill = fillColor.getValueFor(element.parentElement) as SwatchRGB;
-        const fillcolor = new ColorRGBA64(fill.r, fill.g, fill.b);
-        const newFill = lightenViaLAB(fillcolor, 1);
-        const swatch = SwatchRGB.create(newFill.r, newFill.g, newFill.b);
-        return swatch;
-      });
-    } catch (error) {
-      console.warn('Failed to process fillColor design token', this.fillColor);
+    if (this.parentElement || this.ownerDocument.body) {
+      try {
+        fillColor.setValueFor(this, (element) => {
+          const fill = fillColor.getValueFor(element.parentElement || element.ownerDocument.body) as SwatchRGB;
+          const fillcolor = new ColorRGBA64(fill.r, fill.g, fill.b);
+          const newFill = lightenViaLAB(fillcolor, 1);
+          const swatch = SwatchRGB.create(newFill.r, newFill.g, newFill.b);
+          return swatch;
+        });
+      } catch (error) {
+        console.warn('Failed to process fillColor design token', this.fillColor);
+      }
     }
   }
   
