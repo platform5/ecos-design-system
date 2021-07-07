@@ -121,7 +121,7 @@
   },
   {
     "name": "Select",
-    "load": "Select",
+    "load": "select",
     "description": "Web-component implementation of an HTML select element",
     "badges": ["FAST"]
   },

@@ -21,6 +21,7 @@ export * from './menu-item';
 export * from './next';
 export * from './navbar';
 export * from './section';
+export * from './select';
 export * from './stack';
 export * from './table';
 export * from './table-item';
