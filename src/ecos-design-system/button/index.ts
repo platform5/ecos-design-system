@@ -6,6 +6,9 @@ export const extendPaddingWithRadiusStyles = css`
   .control {
     padding: 0 calc((10 + max(0, calc(var(--control-corner-radius) - 10)) + (var(--design-unit) * 2 * max(var(--density), 0)))  * 1px);
   }
+  :host([small]) {
+    height: calc((var(--base-height-multiplier) + var(--density)) * var(--design-unit) * 0.75px);
+  }
 `
 
 const overrideStyles = (context: ElementDefinitionContext, definition: FoundationElementDefinition) => {
@@ -18,5 +21,8 @@ const overrideStyles = (context: ElementDefinitionContext, definition: Foundatio
 export const ecosButton = Button.compose({
   baseName: 'button',
   template,
-  styles: overrideStyles
+  styles: overrideStyles,
+  shadowOptions: {
+    delegatesFocus: true,
+  },
 });
