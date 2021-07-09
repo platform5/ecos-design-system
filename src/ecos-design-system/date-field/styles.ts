@@ -1,11 +1,13 @@
-import { fillColor, accentForegroundRest, accentForegroundHover } from '@microsoft/fast-components';
+import { fillColor, accentForegroundRest, accentForegroundHover, strokeWidth, accentFillRest, neutralStrokeRest, neutralLayerFloating } from '@microsoft/fast-components';
 import { css } from '@microsoft/fast-element';
 import { display, focusVisible } from "@microsoft/fast-foundation";
+import { elevation } from '../elevation';
 
 export const DateFieldStyles = css`
   ${display("grid")}
 
   :host {
+    --elevation: 14;
     contain: style;
     grid-gap: var(--spacing-unit-sm);
   }
@@ -28,8 +30,10 @@ export const DateFieldStyles = css`
     display: none;
   }
   .picker {
+    ${elevation}
+    border: calc(${strokeWidth} * 1px) solid ${neutralStrokeRest};
     padding: var(--spacing-unit-sm);
-    background: ${fillColor};
+    background: ${neutralLayerFloating};
     border-radius: calc(var(--control-corner-radius) * 1px);
     z-index: 1;
   }

@@ -13,7 +13,9 @@ import './ecos-init';
 import './ecos-icons';
 import { AureliaEcosIconLoader } from './ecos-icons';
 import { DialogConfiguration, DialogService } from '@aurelia/runtime-html';
-import { ECOSAdapter } from './ecos-adapter';
+
+FASTAdapter.tags['CALENDAR'] = ['date', 'dates', 'from', 'end'];
+FASTAdapter.tags['DATE-FIELD'] = ['value'];
 
 Aurelia
   .register(routes)
@@ -34,7 +36,7 @@ Aurelia
   }))
   //.register(FASTAdapter.customize({withPrefix: 'ecos'}))
   .register(FASTAdapter.customize({withPrefix: 'ecos'}))
-  .register(ECOSAdapter.customize({withPrefix: 'ecos'}))
+  // .register(ECOSAdapter.customize({withPrefix: 'ecos'}))
   .register(AureliaEcosIconLoader)
   .register(EcosSettings)
   .register(AuSnippet)
