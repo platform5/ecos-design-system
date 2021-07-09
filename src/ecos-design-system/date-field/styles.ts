@@ -1,7 +1,6 @@
 import { fillColor, accentForegroundRest, accentForegroundHover } from '@microsoft/fast-components';
 import { css } from '@microsoft/fast-element';
-import { display } from "@microsoft/fast-foundation";
-import { accentLight100 } from '../recipes';
+import { display, focusVisible } from "@microsoft/fast-foundation";
 
 export const DateFieldStyles = css`
   ${display("grid")}
@@ -9,6 +8,9 @@ export const DateFieldStyles = css`
   :host {
     contain: style;
     grid-gap: var(--spacing-unit-sm);
+  }
+  :host(:${focusVisible}) {
+    outline: none;
   }
 
   :host([disabled]) .calendar-icon {

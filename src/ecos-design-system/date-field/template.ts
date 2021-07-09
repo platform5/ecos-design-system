@@ -9,7 +9,15 @@ export const DateFieldTemplate = html<EcosDateField>`
   aria-expanded="${x => x.ariaExpanded}"
   >
 
-  <ecos-text-field class="control hide-picker-indicator" part="control" type="date" :value="${x => x.value}" ?disabled="${x => x.disabled}" :appearance="${x => x.appearance}">
+  <ecos-text-field
+    class="control hide-picker-indicator"
+    part="control" 
+    type="date"
+    :value="${x => x.value}"
+    ?disabled="${x => x.disabled}"
+    :appearance="${x => x.appearance}"
+    @change="${(x, c) => x.fieldDateChanged(c.event as CustomEvent)}"
+    >
     <ecos-icon class="calendar-icon" part="calendar-icon" icon="Calendar" slot="end" @click="${x => x.togglePicker()}" ${ref('calendarIconElement')}></ecos-icon>
   </ecos-text-field>
   <ecos-anchored-region

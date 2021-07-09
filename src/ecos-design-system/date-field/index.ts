@@ -79,6 +79,9 @@ export class EcosDateField extends FASTElement {
     public ariaExpanded: "true" | "false" | undefined;
 
     @attr value = '';
+    valueChanged(): void {
+      console.log('value changed', this.value);
+    }
 
    /**
      * The appearance of the element.
@@ -127,6 +130,10 @@ export class EcosDateField extends FASTElement {
         this.year = new Date().getFullYear();
       }
     }
+  }
+
+  public fieldDateChanged(event: Event): void {
+    this.value = (event.target as any)?.value;
   }
 
   public dateChanged(event: CustomEvent): void {
