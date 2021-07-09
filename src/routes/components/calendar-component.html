@@ -1,0 +1,83 @@
+<ecos-section>
+  <ecos-breadcrumb>
+    <ecos-breadcrumb-item load="../components-list">Components</ecos-breadcrumb-item>
+    <ecos-breadcrumb-item>Calendar</ecos-breadcrumb-item>
+  </ecos-breadcrumb>
+  <h1>Calendar</h1>
+  <p>Display a monthly calendar view and allow user to pick a date</p>
+
+  <p>Left todo:</p>
+  <ul>
+    <li>Readonly mode</li>
+  </ul>
+
+  <h2>Single Mode</h2>
+  <p>In its default form, a calendar is design to represent or pick a single date.</p>
+  
+  <ecos-calendar
+    appearance="neutral" 
+    mode="single"
+  ></ecos-calendar>
+
+  <h2>Range Mode</h2>
+  <p>With `mode="range"` we can set the calendar to represent or pick a range of dates.</p>
+
+  <ecos-calendar
+    appearance="neutral" 
+    mode="range"
+  ></ecos-calendar>
+
+  <h3>Multiple Mode</h3>
+  <p>And with `mode="multiple"` it can represent or pick multiple separate dates</p>
+
+  <ecos-calendar 
+    appearance="neutral" 
+    mode="multiple"
+  ></ecos-calendar>
+
+  <h2>Min and max dates</h2>
+  <p>With `min="..."` and max="..."` the calendar will force the user to choose between these constraints. Its possible to set only `min` or only `max`.</p>
+  
+  <ecos-calendar 
+    appearance="neutral" 
+    mode.bind="mode"
+    min.bind="min"
+    max.bind="max"
+  ></ecos-calendar>
+
+  <h2>Disabled dates</h2>
+  <p>With `disabled-week-days="1,2"` its possible to disable week-days and with `disabled-dates="..."` one can disabled a list of specific dates.</p>
+  
+  <ecos-calendar 
+    appearance="neutral" 
+    mode.bind="mode"
+    disabled-week-days="1,2"
+    disabled-dates.bind="disabledDates"
+  ></ecos-calendar>
+
+  <h2>Appearance</h2>
+  <p>By default the appearance is set to `neutral` but it can be changed to `lightweight`.</p>
+
+  <ecos-calendar 
+    appearance="lightweight" 
+  ></ecos-calendar>
+
+  <h2>Set original month and year</h2>
+  <p>By default the calendar will display the current month and year, but this can be change with its respective attributes</p>
+  <ecos-calendar 
+    appearance="neutral" 
+    mode.bind="mode"
+    month="3"
+    year="2010"
+  ></ecos-calendar>
+
+  <h2>Year selector range</h2>
+  <p>By default the calendar offers a range between current year - 50 and current year + 2. This can be change with the `min-year` and `max-year` attributes.</p>
+  <ecos-calendar 
+    appearance="neutral" 
+    mode.bind="mode"
+    min-year="2010"
+    max-year="2020"
+  ></ecos-calendar>
+
+</ecos-section>

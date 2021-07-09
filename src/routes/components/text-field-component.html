@@ -8,4 +8,41 @@
   <p>
     <ecos-text-field></ecos-text-field>
   </p>
+  <p>
+    <ecos-text-field type="date" id="text-field-calendar" focusout.trigger="closeCalendar()">
+      <ecos-icon icon="Calendar" slot="end" click.trigger="openCalendar()"></ecos-icon>
+    </ecos-text-field>
+    <ecos-anchored-region
+      if.bind="displayCalendar"
+      anchor="text-field-calendar"
+      auto-update-mode="auto"
+      vertical-positioning-mode="locktodefault"
+      vertical-threshold="100"
+      vertical-default-position="bottom"
+      horizontal-default-position="right"
+      horizontal-inset="true"
+      horizontal-positioning-mode="locktodefault">
+    <ecos-card>
+
+
+      <ecos-menu>
+        <ecos-menu-item>
+          <ecos-icon icon="User" slot="start"></ecos-icon>
+          Clients
+          <ecos-badge slot="end">235</ecos-badge>
+        </ecos-menu-item>
+        <ecos-menu-item>
+          <ecos-icon icon="User" slot="start"></ecos-icon>
+          Commandes
+          <ecos-badge slot="end">1423</ecos-badge>
+        </ecos-menu-item>
+        <ecos-menu-item>
+          <ecos-icon icon="User" slot="start"></ecos-icon>
+          Livraisons
+          <ecos-badge slot="end">1230</ecos-badge>
+        </ecos-menu-item>
+      </ecos-menu>
+    </ecos-card>
+  </ecos-anchored-region>
+  </p>
 </ecos-section>

@@ -36,6 +36,12 @@
     "badges": ["New"]
   },
   {
+    "name": "Calendar",
+    "load": "calendar",
+    "description": "Display a month view calendar",
+    "badges": ["New"]
+  },
+  {
     "name": "Card",
     "load": "card",
     "description": "A visual surface to group information",
@@ -75,6 +81,12 @@
     "name": "Content",
     "load": "content",
     "description": "Add padding around the slotted content so that its nicely displayed on a surface such as a card",
+    "badges": ["New"]
+  },
+  {
+    "name": "Date Field",
+    "load": "date-field",
+    "description": "Date picker based on Text Field with an anchored region calendar view",
     "badges": ["New"]
   },
   {

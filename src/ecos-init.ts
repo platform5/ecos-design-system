@@ -11,9 +11,9 @@ DesignSystem.getOrCreate().register(fastRadio({prefix: 'ecos'}));
 DesignSystem.getOrCreate().register(fastSlider({prefix: 'ecos'}));
 DesignSystem.getOrCreate().register(fastSwitch({prefix: 'ecos'}));
 DesignSystem.getOrCreate().register(fastTextArea({prefix: 'ecos'}));
-DesignSystem.getOrCreate().register(fastTextField({prefix: 'ecos'}));
+// DesignSystem.getOrCreate().register(fastTextField({prefix: 'ecos'}));
 
-import { ecosBadge, ecosButton, ecosCheckbox, ecosCard, ecosDialog, ecosMenu, ecosMenuItem, ecosSelect } from './ecos-design-system';
+import { ecosBadge, ecosButton, ecosCard, ecosCheckbox, ecosDialog, ecosMenu, ecosMenuItem, ecosSelect, ecosTextField } from './ecos-design-system';
 DesignSystem.getOrCreate().register(ecosBadge({prefix: 'ecos'}));
 DesignSystem.getOrCreate().register(ecosButton({prefix: 'ecos'}));
 DesignSystem.getOrCreate().register(ecosCheckbox({prefix: 'ecos'}));
@@ -22,16 +22,19 @@ DesignSystem.getOrCreate().register(ecosDialog({prefix: 'ecos'}));
 DesignSystem.getOrCreate().register(ecosMenu({prefix: 'ecos'}));
 DesignSystem.getOrCreate().register(ecosMenuItem({prefix: 'ecos'}));
 DesignSystem.getOrCreate().register(ecosSelect({prefix: 'ecos'}));
+DesignSystem.getOrCreate().register(ecosTextField({prefix: 'ecos'}));
 
 import {  
   EcosArticle,
   EcosBadge, 
   EcosButton3D,
+  EcosCalendar,
   EcosCardDialog,
   EcosCardRow,
   EcosCollection,
   EcosColorize,
   EcosContent,
+  EcosDateField,
   EcosForm, 
   EcosFormRow, 
   EcosIcon,
@@ -50,11 +53,13 @@ import {
 EcosArticle;
 EcosBadge;
 EcosButton3D;
+EcosCalendar;
 EcosCardDialog;
 EcosCardRow;
 EcosCollection;
 EcosColorize;
 EcosContent;
+EcosDateField;
 EcosForm;
 EcosFormRow;
 EcosIcon;

@@ -1,8 +1,9 @@
-import { customElement, FASTElement, observable, attr } from '@microsoft/fast-element';
+import { customElement, FASTElement, observable, attr, nullableNumberConverter } from '@microsoft/fast-element';
+import { Select } from '@microsoft/fast-foundation';
 import { CalendarStyles as styles } from './styles';
 import { CalendarTemplate as template } from './template';
 import { startOfWeek, startOfMonth, isEqual, getWeek, startOfDay, isAfter, isBefore } from 'date-fns';
-
+import { dateValueConverter, datesValueConverter, numbersValueConverter } from '../value-converters';
 
 export interface EcosCalendarDay {
   number: number;
@@ -26,24 +27,27 @@ export class EcosCalendar extends FASTElement {
     super.connectedCallback();
   }
 
+  public monthSelector: Select;
+  public yearSelector: Select;
+
   @observable days: EcosCalendarDay[] = [];
 
-  @attr({attribute: 'disabled-week-days'}) disabledWeekDays: number[] = [];
+  @attr({attribute: 'disabled-week-days', converter: numbersValueConverter}) disabledWeekDays: number[] = [];
   public disabledWeekDaysChanged(): void {
     this.setDays();
   }
 
-  @attr min: Date | undefined;
+  @attr({converter: dateValueConverter}) min: Date | undefined;
   public minChanged(): void {
     this.setDays();
   }
 
-  @attr max: Date | undefined;
+  @attr({converter: dateValueConverter}) max: Date | undefined;
   public maxChanged(): void {
     this.setDays();
   }
 
-  @attr({attribute: 'disabled-dates'}) disabledDates: Date[] = [];
+  @attr({attribute: 'disabled-dates', converter: datesValueConverter}) disabledDates: Date[] = [];
   public disabledDatesChanged(): void {
     if (!Array.isArray(this.disabledDates)) {
       this.disabledDates = [];
@@ -54,13 +58,35 @@ export class EcosCalendar extends FASTElement {
     this.setDays();
   }
   
-  @attr month: number = new Date().getMonth();
+  @attr({converter: nullableNumberConverter}) month: number = new Date().getMonth();
   public monthChanged(): void {
+    if (this.month < 0) {
+      this.month = 11;
+      this.year -= 1;
+      return;
+    } else if (this.month > 11) {
+      this.month = 0;
+      this.year += 1;
+      return;
+    }
+    if (this.monthSelector) {
+      this.monthSelector.selectedIndex = this.month;
+    }
     this.setDays();
   }
 
-  @attr year: number = new Date().getFullYear();
+  @attr({converter: nullableNumberConverter}) year: number = new Date().getFullYear();
   public yearChanged(): void {
+    if (this.year > this.maxYear) {
+      this.maxYear = this.year;
+    }
+    if (this.year < this.minYear) {
+      this.minYear = this.year;
+    }
+    if (this.yearSelector) {
+      const index = this.yearSelector.options.findIndex(o => o.value === `${this.year}`);
+      this.yearSelector.selectedIndex = index;
+    }
     this.setDays();
   }
 
@@ -72,7 +98,7 @@ export class EcosCalendar extends FASTElement {
   /**
    * Selected date when mode === 'single'
    */
-  @attr date: Date | undefined = undefined;
+  @attr({converter: dateValueConverter}) date: Date | undefined = undefined;
   public dateChanged(): void {
     if (!this.date || this.isStartOfDay(this.date)) {
       this.setDays();
@@ -80,11 +106,11 @@ export class EcosCalendar extends FASTElement {
       this.date = startOfDay(this.date);
     }
   }
-
+  
   /**
    * Selected dates when mode === 'multiple'
    */
-  @attr() dates: Date[] = [];
+  @attr({converter: datesValueConverter}) dates: Date[] = [];
   public datesChanged(): void {
     if (this.dates.some(s => !this.isStartOfDay(s))) {
       this.dates = this.dates.map(s => startOfDay(s));
@@ -95,7 +121,7 @@ export class EcosCalendar extends FASTElement {
   /**
    * Selected range when mode === 'range'
    */
-  @attr from: Date | undefined = undefined;
+  @attr({converter: dateValueConverter}) from: Date | undefined = undefined;
   public fromChanged(): void {
     if (!this.from || this.isStartOfDay(this.from)) {
       this.setDays();
@@ -103,7 +129,7 @@ export class EcosCalendar extends FASTElement {
       this.from = startOfDay(this.from);
     }
   }
-  @attr end: Date | undefined = undefined;
+  @attr({converter: dateValueConverter}) end: Date | undefined = undefined;
   public endChanged(): void {
     if (!this.end || this.isStartOfDay(this.end)) {
       this.setDays();
@@ -113,6 +139,19 @@ export class EcosCalendar extends FASTElement {
   }
 
   @attr({attribute: 'appearance'}) appearance: 'lightweight' | 'neutral' = 'lightweight';
+
+  @attr({attribute: 'min-year'}) minYear = new Date().getFullYear() - 50;
+  @attr({attribute: 'max-year'}) maxYear = new Date().getFullYear() + 2;
+
+  public monthNumbers = [0,1,2,3,4,5,6,7,8,9,10,11];
+
+  public get years(): number[] {
+    const list: number[] = [];
+    for (let i = this.minYear; i <= this.maxYear; i++) {
+        list.push(i);
+    }
+    return list;
+  }
 
   private isStartOfDay(date: Date): boolean {
     return date.getHours() === 0 && date.getMinutes() === 0 && date.getSeconds() === 0
@@ -222,7 +261,9 @@ export class EcosCalendar extends FASTElement {
 
   public emitChange(): void {
     if (this.mode === 'single' || this.mode === 'multiple') {
-      this.$emit('change', this.mode === 'single' ? this.date : this.dates, {bubbles: true});
+      this.$emit('change', this.mode === 'single'
+        ? dateValueConverter.toView(this.date)
+        : datesValueConverter.toView(this.dates), {bubbles: true});
     } else if (this.mode === 'range') {
       this.$emit('change', {from: this.from, end: this.end}, {bubbles: true});
     }
