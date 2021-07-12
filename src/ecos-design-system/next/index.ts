@@ -24,6 +24,42 @@ import { NextTemplate as template } from './template';
 })
 export class EcosNext extends FASTElement {
 
+  public connectedCallback(): void {
+    super.connectedCallback();
+    window.addEventListener('popstate', this);
+    this.pushStateIdChanged();
+  }
+
+  public disconnectedCallback(): void {
+    super.disconnectedCallback();
+    window.removeEventListener('popstate', this);
+  }
+
+  public handleEvent(event: PopStateEvent): void {
+    if (this.pushStateId && event.state?.ecosNextId === this.pushStateId && event.state?.ecosNextElementId) {
+      const lastOperation = this.previousOperations[this.previousOperations.length - 1];
+      if (lastOperation && event.state?.ecosNextElementId === lastOperation?.id && event.state?.ecosNextDirection === lastOperation?.direction) {
+        this.back(true);
+        return;
+      }
+      this.goToId(event.state?.ecosNextElementId, event.state?.ecosNextDirection === 'next' ? 'next' : 'prev', true);
+    }
+  }
+
+  @attr({attribute: 'push-state-id'})
+  public pushStateId = '';
+  public pushStateIdChanged(): void {
+    if (this.pushStateId) {
+      const url = new URL(location.href);
+      if (url.searchParams.get(this.pushStateId)) {
+        this.activeid = url.searchParams.get(this.pushStateId);
+        DOM.queueUpdate(() => {
+          this.ensureIdInUrl();
+        });
+      }
+    }
+  }
+
   public hasHistory = false;
 
   @attr
@@ -145,14 +181,17 @@ export class EcosNext extends FASTElement {
     }
   }
 
-  public back(): void {
+  public back(fromPushState = false): void {
     if (this.previousOperations.length > 0) {
       const previousOperation = this.previousOperations.pop();
-      this.goToId(previousOperation.id, previousOperation.direction === 'prev' ? 'next' : 'prev', false);
+      this.goToId(previousOperation.id, previousOperation.direction === 'prev' ? 'next' : 'prev', false, fromPushState);
     }
   }
 
-  public goToId(id: string, direction: 'prev' | 'next' | 'auto' = 'auto', trackOperation = true): void {
+  public goToId(id: string, direction: 'prev' | 'next' | 'auto' = 'auto', trackOperation = true, fromPushState = false): void {
+    if (!fromPushState) {
+      this.ensureCurrentState();
+    }
     const goToIndex = this.itemIds.indexOf(id);
     if (goToIndex === -1) {
       return;
@@ -209,7 +248,37 @@ export class EcosNext extends FASTElement {
         this.activeIndex = this.itemIds.indexOf(id);
         this.activeitem = goToElement;
         this.changed();
+        if (!fromPushState) {
+          this.setState(direction);
+        }
+        this.ensureIdInUrl();
       }, {once: true});
     });
+  }
+
+  private ensureCurrentState(): void {
+    if (!this.pushStateId) {
+      return;
+    }
+    if (!history.state.ecosNextId || !history.state.ecosNextElementId) {
+      history.replaceState(Object.assign({}, history.state, {ecosNextId: this.pushStateId, ecosNextElementId: this.activeid, ecosNextDirection: 'auto'}), document.title);
+    } 
+  }
+
+  private setState(direction: string): void {
+    if (!this.pushStateId) {
+      return;
+    }
+    history.pushState(Object.assign({}, history.state, {ecosNextId: this.pushStateId, ecosNextElementId: this.activeid, ecosNextDirection: direction}), document.title);
+  }
+
+  private ensureIdInUrl() {
+    if (!this.pushStateId) {
+      return;
+    }
+    const url = new URL('', location.href);
+    url.hash = location.hash;
+    url.searchParams.set(this.pushStateId, this.activeid);
+    history.replaceState(history.state, document.title, url.toString());  
   }
 }
