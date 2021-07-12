@@ -26,7 +26,9 @@ export class EcosCard extends Card {
 
   public connectedCallback(): void {
     super.connectedCallback();
-    if (this.parentElement || this.ownerDocument.body) {
+    if (this.fillColor) {
+      this.fillColorChanged();
+    } else if (this.parentElement || this.ownerDocument.body) {
       try {
         fillColor.setValueFor(this, (element) => {
           const fill = fillColor.getValueFor(element.parentElement || element.ownerDocument.body) as SwatchRGB;
@@ -41,7 +43,7 @@ export class EcosCard extends Card {
     }
   }
   
-  @attr()
+  @attr({attribute: 'fill-color'})
   fillColor: string;
 
   public fillColorChanged(): void {
