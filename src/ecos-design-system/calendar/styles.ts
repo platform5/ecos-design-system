@@ -13,7 +13,7 @@ export const CalendarStyles = css`
 
   .header {
     display: grid;
-    grid-template-columns: 1fr 1fr 50px 50px;
+    grid-template-columns: minmax(120px, 1fr) 100px 50px 50px;
     grid-gap: var(--spacing-unit-sm);
   }
 

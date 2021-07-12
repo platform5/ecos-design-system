@@ -3,7 +3,7 @@ import { customElement, FASTElement, observable, attr } from '@microsoft/fast-el
 import { DateFieldStyles as styles } from './styles';
 import { DateFieldTemplate as template } from './template';
 import { AnchoredRegion } from '@microsoft/fast-foundation';
-import { fillColor, neutralLayer1, TextFieldAppearance } from '@microsoft/fast-components';
+import { TextFieldAppearance } from '@microsoft/fast-components';
 
 @customElement({
   name: 'ecos-date-field',
@@ -29,13 +29,38 @@ export class EcosDateField extends FASTElement {
     if (!this.id) {
       this.id = this.textFieldId;
     }
-    document.addEventListener('click', this)
-    document.addEventListener('keydown', this)
+    document.addEventListener('click', this);
+    document.addEventListener('keydown', this);
+    this.disableNativePickerChanged();
   }
 
   public disconnectedCallback(): void {
-    document.removeEventListener('click', this)
-    document.removeEventListener('keydown', this)
+    document.removeEventListener('click', this);
+    document.removeEventListener('keydown', this);
+    this.disableNativePicker = false,
+    this.disableNativePickerChanged();
+  }
+
+  @attr({mode: "boolean"})
+  public disableNativePicker = true;
+  public disableNativePickerChanged(): void {
+    console.log('disableNativePickerChanged', this.disableNativePicker);
+    const inputField = this.shadowRoot.querySelector('ecos-text-field');
+    if (!inputField?.shadowRoot?.querySelector) {
+      return;
+    }
+    const inputElement = inputField.shadowRoot.querySelector('input');
+    if (inputElement instanceof HTMLElement) {
+      if (this.disableNativePicker) {
+        inputElement.addEventListener('click', this.disablingNativePickerHandler);
+      } else {
+        inputElement.removeEventListener('click', this.disablingNativePickerHandler);
+      }
+    }
+  }
+
+  public disablingNativePickerHandler = (event: Event): void => {
+    event.preventDefault();
   }
 
   /**
