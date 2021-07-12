@@ -17,7 +17,11 @@ export const CalendarStyles = css`
     grid-gap: var(--spacing-unit-sm);
   }
 
-  .header ecos-select {
+  .header .month-control {
+    min-width: 120px;
+  }
+
+  .header .year-control {
     min-width: 80px;
   }
 

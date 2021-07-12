@@ -5,7 +5,7 @@ import { format } from '../dates';
 export const CalendarTemplate = html<EcosCalendar>`
 <div class="header" part="header">
 
-  <ecos-select @change="${(x, c) => x.month = (c.event as CustomEvent).detail.value}" ${ref('monthSelector')}>
+  <ecos-select class="month-control" part="month-control" @change="${(x, c) => x.month = (c.event as CustomEvent).detail.value}" ${ref('monthSelector')}>
     ${repeat(x => x.monthNumbers, html<number, EcosCalendar>`
       <ecos-option value="${x => x}" ?selected="${(x, c) => x === c.parent.month}">
       ${(x, c) => format(new Date(c.parent.year, x, 1, 0, 0, 0, 0), 'MMMM', c.parent)}
@@ -13,7 +13,7 @@ export const CalendarTemplate = html<EcosCalendar>`
     `)}
   </ecos-select>
 
-  <ecos-select @change="${(x, c) => x.year = (c.event as CustomEvent).detail.value}" ${ref('yearSelector')}>
+  <ecos-select class="year-control" part="year-control" @change="${(x, c) => x.year = (c.event as CustomEvent).detail.value}" ${ref('yearSelector')}>
     ${repeat(x => x.years, html<number, EcosCalendar>`
       <ecos-option value="${x => x}" ?selected="${(x, c) => x === c.parent.year}">
       ${(x) => x}

@@ -1,4 +1,4 @@
-import { fillColor, accentForegroundRest, accentForegroundHover, strokeWidth, accentFillRest, neutralStrokeRest, neutralLayerFloating } from '@microsoft/fast-components';
+import { accentForegroundRest, accentForegroundHover, strokeWidth, neutralStrokeRest, neutralLayerFloating } from '@microsoft/fast-components';
 import { css } from '@microsoft/fast-element';
 import { display, focusVisible } from "@microsoft/fast-foundation";
 import { elevation } from '../elevation';

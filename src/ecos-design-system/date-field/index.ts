@@ -120,8 +120,8 @@ export class EcosDateField extends FASTElement {
     this.ariaExpanded = this.pickerOpened ? "true" : "false";
     if (this.pickerElement && this.pickerOpened) {
       this.pickerElement.update();
-      const layer = neutralLayer1.getValueFor(this);
-      fillColor.setValueFor(this.pickerElement, layer);
+      // const layer = neutralLayer1.getValueFor(this);
+      // fillColor.setValueFor(this.pickerElement, layer);
       if (this.value) {
         this.month = dateValueConverter.fromView(this.value).getMonth();
         this.year = dateValueConverter.fromView(this.value).getFullYear();
