@@ -1,8 +1,18 @@
 import { ValueConverter } from '@microsoft/fast-element';
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 
 export const dateValueConverter: ValueConverter = {
-  toView(value: Date | undefined): string {
+  toView(value: Date | string | undefined): string {
+    if (typeof value === 'string') {
+      if (value.length === 10) {
+        return value;
+      } else {
+        value = parseISO(value)
+        if (typeof value === 'string') {
+          return value;
+        }
+      }
+    }
     return value ? format(value, 'yyyy-MM-dd') : '';
   },
   fromView(value: string | Date): Date | undefined {
