@@ -1,4 +1,4 @@
-import { customElement, FASTElement, observable } from '@microsoft/fast-element';
+import { customElement, FASTElement, observable, attr } from '@microsoft/fast-element';
 import { EcosCardDialogTemplate as template } from './template';
 import { EcosCardDialogStyles as styles } from './styles';
 
