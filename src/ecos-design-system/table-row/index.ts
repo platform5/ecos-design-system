@@ -1,4 +1,4 @@
-import { customElement, FASTElement } from '@microsoft/fast-element';
+import { customElement, FASTElement, observable } from '@microsoft/fast-element';
 import { TableRowStyles as styles } from './styles';
 import { TableRowTemplate as template } from './template';
 
@@ -8,6 +8,20 @@ import { TableRowTemplate as template } from './template';
   styles
 })
 export class EcosTableRow extends FASTElement {
+
+  public connectedCallback(): void {
+    super.connectedCallback();
+    this.expandedNodesChanged();
+  }
+
+  public expandedContainer: HTMLElement;
+  @observable public expandedNodes: (HTMLElement | Node)[] = [];
+  public expandedNodesChanged(): void {
+    if (!this.expandedContainer) {
+      return;
+    }
+    this.expandedContainer.classList.toggle('expanded', this.expandedNodes.length > 0)
+  }
 
   // TODO: this should be applied via mixin
   // but I don't know how to do that

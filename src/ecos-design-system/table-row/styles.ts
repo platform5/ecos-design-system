@@ -5,8 +5,9 @@ export const TableRowStyles = css`
   ${display("flex")}
 
   :host {
-    display: flex;
-    gap: var(--spacing-unit);
+    display: grid;
+    grid-gap: var(--spacing-unit);
+    grid-template-columns: min-content 1fr min-content;
     align-items: center;
   }
 
@@ -25,6 +26,12 @@ export const TableRowStyles = css`
     row-gap: 0;
     flex-wrap: wrap;
     width: 100%;
+  }
+
+  .expanded {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row: 2;
   }
 
   @media screen and (min-width: 732px) {
