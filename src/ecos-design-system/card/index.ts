@@ -1,9 +1,9 @@
-import { cardStyles as styles, fillColor, SwatchRGB } from '@microsoft/fast-components';
+import { cardStyles as styles, fillColor, isDark, SwatchRGB } from '@microsoft/fast-components';
 import { attr, css } from '@microsoft/fast-element';
 import { parseColorHexRGB } from '@microsoft/fast-colors';
 import { cardTemplate as template, Card, ElementDefinitionContext, FoundationElementDefinition } from '@microsoft/fast-foundation';
 
-import { lightenViaLAB, ColorRGBA64 } from "@microsoft/fast-colors";
+import { lightenViaLAB, darkenViaLAB, ColorRGBA64 } from "@microsoft/fast-colors";
 
 // the min-content below ensure that the card, when used in a context of a stack
 // correctly "ends" its content towards the bottom
@@ -26,27 +26,20 @@ export class EcosCard extends Card {
 
   public connectedCallback(): void {
     super.connectedCallback();
-    if (this.fillColor) {
-      this.fillColorChanged();
-    } else if (this.parentElement || this.ownerDocument.body) {
-      try {
-        fillColor.setValueFor(this, (element) => {
-          const fill = fillColor.getValueFor(element.parentElement || element.ownerDocument.body) as SwatchRGB;
-          const fillcolor = new ColorRGBA64(fill.r, fill.g, fill.b);
-          const newFill = lightenViaLAB(fillcolor, 1);
-          const swatch = SwatchRGB.create(newFill.r, newFill.g, newFill.b);
-          return swatch;
-        });
-      } catch (error) {
-        console.warn('Failed to process fillColor design token', this.fillColor);
-      }
-    }
+    this.fillColorChanged();
   }
   
   @attr({attribute: 'fill-color'})
-  fillColor: string;
+  fillColor: 'lighten' | 'darken' | 'auto' | 'unset' | string = 'auto';
 
   public fillColorChanged(): void {
+    if (this.fillColor === 'unset') {
+      this.unsetFillcolor();
+    } else if (['lighten', 'darken', 'auto'].includes(this.fillColor)) {
+      this.autoFillColor(this.fillColor as 'lighten' | 'darken' | 'auto');
+    } else {
+      this.setFillColor(this.fillColor);
+    }
     try {
       const color = parseColorHexRGB(this.fillColor);
       if (color) {
@@ -55,6 +48,52 @@ export class EcosCard extends Card {
       }
     } catch (error) {
       console.warn('Failed to process fillColorChanged', this.fillColor)
+    }
+  }
+
+  private autoFillColor(action: 'lighten' | 'darken' | 'auto'): void {
+
+    try {
+      fillColor.setValueFor(this, (element) => {
+        const parentFillColor = fillColor.getValueFor(this.parentElement || this.ownerDocument.body) as SwatchRGB;
+        console.log('autoFillColor', action);
+        console.log('parentFillColor', parentFillColor);
+        let effectiveAction = action;
+        if (action === 'auto') {
+          if (isDark(parentFillColor)) {
+            effectiveAction = 'lighten';
+          } else if(parentFillColor.r === 1 && parentFillColor.g === 1 && parentFillColor.b === 1) {
+            // isWhite
+            effectiveAction = 'darken';
+          } else {
+            effectiveAction = 'lighten';
+          }
+        }
+
+        const fill = fillColor.getValueFor(element.parentElement || element.ownerDocument.body) as SwatchRGB;
+        const fillcolor = new ColorRGBA64(fill.r, fill.g, fill.b);
+        const newFill = effectiveAction === 'lighten' ? lightenViaLAB(fillcolor, 0.2) : darkenViaLAB(fillcolor, 0.2);
+        const swatch = SwatchRGB.create(newFill.r, newFill.g, newFill.b);
+        return swatch;
+      });
+    } catch (error) {
+      console.warn('Failed to process fillColor design token', this.fillColor);
+    }
+  }
+
+  private unsetFillcolor(): void {
+    fillColor.deleteValueFor(this);
+  }
+
+  private setFillColor(color: string): void {
+    try {
+      const parsedColor = parseColorHexRGB(color);
+      if (parsedColor) {
+        const swatch = SwatchRGB.create(parsedColor.r, parsedColor.g, parsedColor.b);
+        fillColor.setValueFor(this, swatch);
+      }
+    } catch (error) {
+      console.warn('Failed to process fillColorChanged', color)
     }
   }
 }

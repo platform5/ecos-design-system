@@ -1,7 +1,7 @@
 import { html, slotted, ref } from '@microsoft/fast-element';
 import { EcosCardDialog } from './index';
 export const EcosCardDialogTemplate = html<EcosCardDialog>`
-<ecos-card part="card">
+<ecos-card part="card" :fill-color="${x => x.fillColor}">
   <ecos-card-row ${ref("headerRow")} part="header" class="content">
     <slot name="header" ${slotted("headerNodes")}></slot>
   </ecos-card-row>

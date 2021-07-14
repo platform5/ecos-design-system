@@ -1,4 +1,4 @@
-import { neutralLayerFloating, neutralLayer3, neutralFillActive, neutralStrokeRest } from '@microsoft/fast-components';
+import { neutralLayerFloating, neutralLayer3, neutralFillActive, neutralStrokeDividerRest } from '@microsoft/fast-components';
 import { css } from '@microsoft/fast-element';
 
 export const menuSeparatedStyles = css`
@@ -37,7 +37,7 @@ export const menuBorderedStyles = css`
   margin-left: 0;
   margin-right: 0;
   min-height: calc(var(--spacing-unit-xl) * 1.5);
-  border-top: 1px solid ${neutralStrokeRest};
+  border-top: 1px solid ${neutralStrokeDividerRest};
 }
 :host([bordered]) ::slotted(ecos-menu-item:hover) {
   background: ${neutralLayer3}

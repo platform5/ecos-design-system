@@ -8,6 +8,10 @@ import { EcosCardDialogStyles as styles } from './styles';
   styles
 })
 export class EcosCardDialog extends FASTElement{
+
+  @attr({attribute: 'fill-color'})
+  fillColor: 'lighten' | 'darken' | 'auto' | 'unset' | string = 'auto';
+
   @observable
   public headerNodes: (HTMLElement | Node)[] = [];
 
