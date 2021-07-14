@@ -5,23 +5,19 @@ export class TextFieldComponent {
   public displayCalendar = false;
 
   public openCalendar(): void {
-    console.log('open calendar');
     this.displayCalendar = true;
     this.generateDays();
   }
 
   public closeCalendar(): void {
-    console.log('close calendar');
     this.displayCalendar = false;
   }
 
   public keyDown(event: KeyboardEvent): void {
-    console.log('keydown', event);
   }
 
   public weeks: Week[] = []
   public generateDays(date?: Date): void {
-    console.log('generateDays');
     const source = date || new Date();
     const month = source.getMonth();
     const start = startOfWeek(startOfMonth(source));
@@ -48,8 +44,6 @@ export class TextFieldComponent {
       current.setDate(current.getDate() + 1);
       dayIndex++;
     }
-
-    console.log('weeks', weeks);
 
   }
 

@@ -28,7 +28,6 @@ export class EcosSettings {
   }
 
   public updateDesignSystem(): void {
-    console.log('updateDesignSystem');
     if (!this.provider) {
       return;
     }

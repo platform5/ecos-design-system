@@ -56,8 +56,6 @@ export class EcosCard extends Card {
     try {
       fillColor.setValueFor(this, (element) => {
         const parentFillColor = fillColor.getValueFor(this.parentElement || this.ownerDocument.body) as SwatchRGB;
-        console.log('autoFillColor', action);
-        console.log('parentFillColor', parentFillColor);
         let effectiveAction = action;
         if (action === 'auto') {
           if (isDark(parentFillColor)) {
