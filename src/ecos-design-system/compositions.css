@@ -31,9 +31,6 @@ ecos-card > ecos-menu,
 ecos-card > ecos-stack > ecos-menu {
   max-width: none;
 }
-ecos-table[separators] > ecos-table-row + ecos-table-row {
-  border-top: solid #ccc 1px;
-}
 ecos-dialog.auto-height {
   --dialog-height: min-content;
 }

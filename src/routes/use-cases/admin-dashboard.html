@@ -190,7 +190,7 @@
     <ecos-button appearance="outline" click.delegate="listKeysDialogOpened = !listKeysDialogOpened">Choose listing keys</ecos-button>
   </p>
   
-  <ecos-table separators>
+  <ecos-table separated hoverable>
     <ecos-table-row repeat.for="row of data">
       <ecos-icon icon="User" slot="start" if.bind="listingKeys.icon"></ecos-icon>
       <ecos-table-item if.bind="listingKeys.name">
