@@ -6,6 +6,7 @@ export const EcosCardDialogStyles = css`
 }
 :host([auto-height]) .card {
   max-height: 100vh;
+  max-height: -webkit-fill-available;
   display: flex;
   flex-direction: column;
 }
