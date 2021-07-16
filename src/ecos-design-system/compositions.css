@@ -34,7 +34,7 @@ ecos-card > ecos-stack > ecos-menu {
 ecos-dialog.auto-height {
   --dialog-height: min-content;
 }
-ecos-dialog.auto-height ecos-card-dialog {
+/* ecos-dialog.auto-height ecos-card-dialog {
   max-height: 100%;
 }
 ecos-dialog.auto-height ecos-card-dialog::part(card) {
@@ -57,4 +57,4 @@ ecos-dialog.auto-height ecos-card-dialog::part(content) {
   ecos-dialog.auto-height ecos-card-dialog::part(card) {
     max-height: 80vh;
   }
-}
+} */
