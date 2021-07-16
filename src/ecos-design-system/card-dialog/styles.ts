@@ -5,6 +5,7 @@ export const EcosCardDialogStyles = css`
   max-height: 100%;
 }
 :host([auto-height]) .card {
+  position: fixed;
   max-height: 100vh;
   max-height: -webkit-fill-available;
   display: flex;
@@ -22,6 +23,7 @@ export const EcosCardDialogStyles = css`
 }
 @media screen and (min-width: 732px) {
   :host([auto-height]) .card {
+    position: static;
     max-height: 80vh;
   }
 }
