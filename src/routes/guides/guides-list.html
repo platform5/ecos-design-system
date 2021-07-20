@@ -1,0 +1,30 @@
+<ecos-section>
+  <h1>Browse Ecos Guides</h1>
+  <p>Learn how to use Ecos Design System with these very practical guides</p>
+</ecos-section>
+
+<ecos-section>
+  <ecos-text-field placeholder="Search a guide" value.bind="search">
+    <ecos-icon icon="User" slot="start"></ecos-icon>
+  </ecos-text-field>
+  <ecos-select value.bind="filteringTag">
+    <ecos-option value="all">All tags</ecos-option>
+    <ecos-option value="${tag}" repeat.for="tag of tags">${tag}</ecos-option>
+  </ecos-select>
+  <p class="muted-text">Displaying ${getGuidesList(search, filteringTag).length} guides</p>
+</ecos-section>
+
+<ecos-section centerwidth="100ch">
+  <ecos-collection>
+    <ecos-card repeat.for="guide of getGuidesList(search, filteringTag)">
+      <ecos-stack class="wrapper">
+        <ecos-stack inline small>
+          <ecos-badge appearance="${badge === 'New' ? 'accent-light':'neutral'}" repeat.for="badge of guide.badges">${badge}</ecos-badge>
+        </ecos-stack>
+        <h2>${guide.name}</h2>
+        <p>${guide.description}</p>
+        <ecos-button appearance="accent" load="../${guide.load}">Explore</ecos-button>
+      </ecos-stack>
+    </ecos-card>
+  </ecos-card>
+</ecos-section>

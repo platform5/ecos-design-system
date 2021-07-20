@@ -1,69 +1,32 @@
-<div class="header" style="height:50vh; position: relative;">
-  <animated-svg2 style="position: absolute; bottom: 0; left: 0; width: 100%;"></animated-svg2>
-  
-  <div class="header-text">Design system built on <a href="https://fast.design">FAST</a> and web-components</div>
-</div>
 
-<ecos-section centerwidth="70ch">
-  <h1>Experiment extension of FAST design system</h1>
-  <p>FAST is a design system provided by Microsoft. It is built with web-components and is easily extensible.</p>
-  <p>What you see on this page is an experiment to build an extended version of FAST. All components provided by FAST are available (prefixed with ecos- instead of fast-) and of course new ones are added. You can see them in the <a load="../components-index/components-list">components</a> page.</p>
-</ecos-section>
-
-<ecos-section centerwidth="70ch">
-  <h2>What's a design system</h2>
-  <p>Based on a set of <i>design tokens</i>, the design system apply a consistent design and user experience on websites or applications. The design system under the hood of this particular website let's you play with those design token. For this you only need to find the <i>Adjustments</i> at the bottom left of each page and play with it.</p>
-</ecos-section>
-
-<ecos-section centerwidth="70ch">
-  <h2>Getting Started</h2>
-  <p>Well, like lots of things in life it start with a little install command</p>
-
-  <au-snippet class="mobile-full-bleed">
-    <div language="shell">
-      npm install @ecos/ecos-design-system --save
-    </div>
-  </au-snippet>
-
-  <p>In order to use web-components they need to be registered. You can do this by importing each desired components</p>
-  <au-snippet class="mobile-full-bleed" enable-output.bind="false">
-    <div language="typescript">
-      import { EcosDesignSystemProvider, EcosButton } from "@ecos/ecos-design-system";
-
-      /*
-      * Ensure that tree-shaking doesn't remove these components from the bundle.
-      * There are multiple ways to prevent tree shaking, of which this is one.
-      */
-      EcosDesignSystemProvider;
-      EcosButton;
-    </div>
-  </au-snippet>
-
-  <p>Make sure you have a Design System Provider encapsulating all the ecos components in the DOM. A common practice is to place it right after the body tag</p>
-  <au-snippet class="mobile-full-bleed">
-    <div language="html">
-      <ecos-design-system-provider use-defaults apply-background-to-body>
-        <!-- `use-defaults` is only required on the top level design-system-provider -->
-        <!-- code continues here -->
-      </ecos-design-system-provider>
-    </div>
-  </au-snippet>
-
-  <p>Use the components as native elements</p>
-  <au-snippet class="larger mobile-full-bleed" enable-output.bind="true">
-    <div language="html">
-      <ecos-design-system-provider background-color="#FFFFFF">
-        <h1>Hello World</h1>
-        <p>This text is supposed to motivate you to click below</p>
-        <ecos-button>Click me !</ecos-button>
-      </ecos-design-system-provider>
-    </div>
-  </au-snippet>
-
-
-</ecos-section>
-
-<ecos-section>
-  <h3>Want to know more ?</h3>
-  <p>Head over to the <ecos-anchor appearance="hypertext" load="../the-project">About the project</ecos-anchor> page to learn more about Ecos.</p>
+<ecos-section><h1 id="a-design-system-youll-enjoy-working-with">A design system you&#39;ll enjoy working with</h1>
+<p>Ecos Design System is built on the amazing work of Microsoft&#39;s FAST UI project. You&#39;ll soon discover the great benefits of Ecos:</p>
+<ul>
+<li>It&#39;s fast.</li>
+<li>It&#39;s extensible.</li>
+<li>It uses native web-components.</li>
+<li>It works in most framework out of the box or with minimal config.</li>
+<li>It is well documented (this is a work in progress to be honest right now, but it&#39;s going to be great with many exemples and guides)</li>
+</ul>
+<h1 id="whats-a-design-system-by-the-way-">What&#39;s a design system by the way ?</h1>
+<p>Based on a set of <em>Design Tokens</em>, the design system apply a consistent design and user experience on websites or applications. Exemples:</p>
+<ul>
+<li>you can change the whole <em>coloring</em> scheme of Ecos by changing it&#39;s <code>fillColor</code> <em>Design Token</em>.</li>
+<li>you can adjust the <em>rounding</em> of all controls by changing its <code>controlCornerRadius</code> <em>Design Token</em>.</li>
+</ul>
+<p>With Ecos, you can do this at runtime by changing each Design Token&#39;s value from a Javascript code and everything related to this value will change on the whole website or application.</p>
+<h1 id="whats-the-difference-between-fast-and-ecos-">What&#39;s the difference between FAST and ECOS ?</h1>
+<p>ECOS is strongly based on FAST. In fact, what Microsoft is building with their FAST project is amazing and fun to work with. They have built</p>
+<ul>
+<li>a strong foundation of web-components that can easily be customized and extended</li>
+<li>a solid <em>Design Token</em> mechanism for managing a whole Design System in a cohesive and extensible way</li>
+<li>amazing color methods in order to do color calculations and thus, creating a nice, coherant coloring scheme withouth the need to choose all colors. This includes contrast calculations to ensure a perfect level of accessibility</li>
+</ul>
+<p>However, FAST is designed to be a foundation and has a strong focus on low level components. Ecos is building on top of this to bring a few more useful layers:</p>
+<ul>
+<li>new web-components aimed at solving common layout and composition needs, such as <code>Section</code>, <code>Collection</code>, <code>Table</code>, <code>Stach</code> components (and more)</li>
+<li>new CSS properties setting a nice Spatial System in place. With those properties you can ensure a coherant use of <em>space</em> in your layout</li>
+<li>new colors. FAST is very minimalistic in its set of colors in order to stay focus on the low level components. ECOS aims at provided a more complete set of tools and components to help you build a complete UI/UX. Therefore you&#39;ll find more colors and some tweaks to help you bring more creativity in your end-result look and feel.</li>
+<li>new low-level components that we found are missing in the FAST project. An exemple is the <em>Date Field</em> component.</li>
+</ul>
 </ecos-section>

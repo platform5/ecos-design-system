@@ -1,5 +1,5 @@
 export * from './components';
-export * from './spatial';
+export * from './guides';
 export * from './use-cases';
 export * from './dialog-service-page';
 export * from './missing-page';

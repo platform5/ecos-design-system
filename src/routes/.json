@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Welcome",
+    "load": "welcome-page",
+    "description": "Discover Ecos Design System",
+    "badges": [
+      ""
+    ]
+  }
+]

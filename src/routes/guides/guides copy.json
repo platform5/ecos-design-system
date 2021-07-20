@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Spatial system",
+    "load": "spatial",
+    "description": "How to handle space and layouts with Ecos Design System",
+    "badges": ["UI"]
+  },
+  {
+    "name": "Colors",
+    "load": "colors",
+    "description": "Discover how to customize your design system colors",
+    "badges": ["UI"]
+  },
+  {
+    "name": "Dialog",
+    "load": "dialog",
+    "description": "Use dialogs in a smart way with the cards components",
+    "badges": ["UI"]
+  },
+  {
+    "name": "Design system inheritance",
+    "load": "ds-inheritance",
+    "description": "Learn how your design system can have multiple layers through your DOM",
+    "badges": ["UI"]
+  },
+  {
+    "name": "Create a component",
+    "load": "create-component",
+    "description": "Learn how to create app-level component when using Ecos Design System",
+    "badges": ["UI", "UX", "DX"]
+  },
+  {
+    "name": "Integrate with Aurelia 2",
+    "load": "integrate-with-aurelia-2",
+    "description": "Discover how easy it is to use Ecos Design System in an Aurelia 2 application",
+    "badges": ["Integration", "Aurelia"]
+  }
+]

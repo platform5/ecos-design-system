@@ -1,0 +1,63 @@
+<ecos-section>
+  <ecos-breadcrumb>
+    <ecos-breadcrumb-item load="../guides-list">Guides</ecos-breadcrumb-item>
+    <ecos-breadcrumb-item>Spatial System</ecos-breadcrumb-item>
+  </ecos-breadcrumb>
+</ecos-section>
+<ecos-section><h1 id="spatial-system">Spatial System</h1>
+<p>When you build a website or an application, you need</p>
+<ul>
+<li><em>Components</em>: such as buttons, cards, form fields etc.</li>
+<li><em>Composition</em>: which is the way components are arranged on the page in a way that is coherant and functionnal. </li>
+</ul>
+<p>The Spatial System is responible to solve the most common needs for your compositions - whichever it is.</p>
+<h1 id="spatial-properties-and-composition-components">Spatial properties and composition components</h1>
+<p>In order to build a nice webpage, you&#39;ll want to use a few spatial units and stick to those. This will bring much clarity and coherance on your page.</p>
+<p>ECOS provides two main tools to help you solve most of your spatial concerns:</p>
+<ol>
+<li>CSS spatial properties</li>
+<li>Composition components</li>
+</ol>
+<h2 id="css-spatial-properties">CSS Spatial properties</h2>
+<p>When you need to place two buttons next to each other you might want to have a small space between them. However you might want to have more space between to main sections of a page.</p>
+<p>ECOS has a set of properties as follow:</p>
+<ul>
+<li><code>--base-spacing-unit</code>, defaults to <code>8</code></li>
+<li><code>--spacing-unit</code>, defaults to <code>8</code></li>
+<li><code>--spacing-unit-s</code>, defaults to <code>4</code></li>
+<li><code>--spacing-unit-l</code>, defaults to <code>16</code></li>
+<li><code>--spacing-unit-x</code>, defaults to <code>32</code></li>
+<li><code>--spacing-unit-xxl</code>, defaults to <code>64</code></li>
+</ul>
+<p>You&#39;ll notice they are all multiple by two (or divided by two) from the base unit. This ensure a nice spacing scale.</p>
+<p>In your project you might want to override those values and its totally fine. The idea is that all our composition components are based on those units so when you change a value, everything will adjust accordingly.</p>
+<h1 id="responsive-spacing">Responsive spacing</h1>
+<p>Sometimes you want to <em>save</em> some space on small viewports. We provide a minimalistic approach to solve this by providing a set of <em>responsive</em> CSS spacing properties named as folllow:</p>
+<ul>
+<li><code>--responsive-spacing-unit</code></li>
+<li><code>--responsive-spacing-unit-s</code></li>
+<li><code>--responsive-spacing-unit-l</code></li>
+<li><code>--responsive-spacing-unit-x</code></li>
+<li><code>--responsive-spacing-unit-xx</code></li>
+</ul>
+<p>They are basically prefixed version of each of the main spatial units. When the viewport is below the <code>768px</code> breakpoint, their values are half the size of their non responsive respective properties. When the viewport is over the <code>768px</code> they have the same value than their respective properties.</p>
+<h2 id="composition-components">Composition components</h2>
+<p>ECOS provides the following components to help create an effective and coherant layout:</p>
+<ul>
+<li>Section</li>
+<li>Stack</li>
+<li>Collection</li>
+<li>Content</li>
+<li>Card Row</li>
+<li>Text Button</li>
+<li>Two</li>
+</ul>
+<p>You can follow the links of those components to get in depth informations about their role and options or you can have a look at the following guides to solve some common layout scenarios:</p>
+<ul>
+<li>A basic page layout</li>
+<li>A basic card layout</li>
+<li>A basic form layout</li>
+</ul>
+<h3 id="where-is-the-grid-component-">Where is the Grid component ?</h3>
+<p>There is none ! The grid is now strongly provided by CSS itself and has great support over the major browsers. Ecos is not designed to do what CSS can already do. When you need a grid, please create your own composition style with a <code>display: grid;</code> and use one of the relevant spacing unit property as your <code>grid-grap</code> CSS property.</p>
+</ecos-section>
