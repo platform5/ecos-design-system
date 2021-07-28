@@ -5,6 +5,13 @@
     
       <ecos-form change.delegate="updateDesignSystem()">
         <ecos-form-row>
+          <label>Color Algorithm</label>
+          <ecos-select value.bind="colorAlgorithm">
+            <ecos-option value="fast">FAST</ecos-option>
+            <ecos-option value="pastel">Pastel</ecos-option>
+          </ecos-select>
+        </ecos-form-row>
+        <ecos-form-row>
           <label>Background color</label>
           <input type="color" value.bind="color">
         </ecos-form-row>

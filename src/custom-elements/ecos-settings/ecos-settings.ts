@@ -1,3 +1,4 @@
+import { colorAlgorithm } from './../../ecos-design-system/design-tokens';
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { SwatchRGB, fillColor, PaletteRGB, accentPalette, baseLayerLuminance, density, designUnit, controlCornerRadius, strokeWidth, typeRampBaseFontSize } from '@microsoft/fast-components';
 import { parseColorHexRGB } from '@microsoft/fast-colors';
@@ -15,6 +16,7 @@ export class EcosSettings {
   public typeRampBaseFontSize = 16;
   public typeRampRatio = 1.25;
   public lineHeightRatio = 1.2;
+  public colorAlgorithm: 'fast' | 'pastel' = 'fast';
 
   provider = document.body;
 
@@ -47,5 +49,6 @@ export class EcosSettings {
     typeRampRatio.setValueFor(this.provider, this.typeRampRatio);
     lineHeightRatio.setValueFor(this.provider, this.lineHeightRatio);
     setTypeRamp(this.provider, this.typeRampRatio, this.lineHeightRatio);
+    colorAlgorithm.setValueFor(this.provider, this.colorAlgorithm);
   }
 }

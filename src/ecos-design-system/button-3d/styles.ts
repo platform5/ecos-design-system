@@ -2,10 +2,9 @@ import { css } from '@microsoft/fast-element';
 import { display, disabledCursor } from '@microsoft/fast-foundation';
 import {
   accentFillRest,
-  accentForegroundRest,
   foregroundOnAccentRest
 } from "@microsoft/fast-components";
-import { accentDark50, accentDark100 } from '../recipes';
+import { accentFillRestDark50, accentFillRestDark100 } from '../design-tokens';
 
 // copy from fast-components non exported variable
 export const heightNumber =
@@ -79,10 +78,10 @@ export const Button3dStyles = css`
     border-radius: 12px;
     background: linear-gradient(
       to left,
-      ${accentDark100} 0%,
-      ${accentDark50} 8%,
-      ${accentDark50} 92%,
-      ${accentDark100} 100%
+      ${accentFillRestDark100} 0%,
+      ${accentFillRestDark50} 8%,
+      ${accentFillRestDark50} 92%,
+      ${accentFillRestDark100} 100%
     );
   }
   .front {

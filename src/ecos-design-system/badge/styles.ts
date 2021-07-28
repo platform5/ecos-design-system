@@ -5,7 +5,7 @@ import {
   accentFillRest,
   foregroundOnAccentRest
 } from "@microsoft/fast-components";
-import { accentLight100 } from '../recipes';
+import { accentFillRestLight100 } from '../design-tokens';
 
 export const extendedBadgeStyles = css`
   .control {
@@ -17,7 +17,7 @@ export const extendedBadgeStyles = css`
     color: ${foregroundOnAccentRest};
   }
   :host([appearance=accent-light]) .control {
-    background: ${accentLight100};
+    background: ${accentFillRestLight100};
     color: ${foregroundOnAccentRest};
   }
   :host([appearance=outline]) .control {

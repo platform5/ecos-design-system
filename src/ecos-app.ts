@@ -3,6 +3,7 @@ import { IRouterConfiguration, Navigation, RoutingInstruction, IRouter } from 'a
 import template from './ecos-app.html';
 import components from './routes/components/components.json';
 import { AureliaEcosIconLoader } from './ecos-icons';
+import { enhanceNeutralFillInputDesignTokens } from './ecos-design-system';
 
 @inject(IRouterConfiguration, IRouter, AureliaEcosIconLoader)
 @customElement({name: 'ecos-app', template})
@@ -17,8 +18,9 @@ export class EcosApp implements ICustomElementViewModel {
     @IRouter private router: IRouter,
     private iconLoader: AureliaEcosIconLoader
     ) {
-      this.initIcons();
-      this.handleUrlRoutes();
+    this.initIcons();
+    enhanceNeutralFillInputDesignTokens();
+    this.handleUrlRoutes();
     this.routerConfiguration.addHook((instructions: RoutingInstruction[], navigation: Navigation) => {
       // when routing we want to scroll the viewport up again
       const vp = document.querySelector('au-viewport');

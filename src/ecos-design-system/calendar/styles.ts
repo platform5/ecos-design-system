@@ -1,7 +1,7 @@
 import { typeRampMinus2FontSize } from '@microsoft/fast-components';
 import { css } from '@microsoft/fast-element';
 import { display } from "@microsoft/fast-foundation";
-import { accentLight100 } from '../recipes';
+import { accentFillRestLight100 } from '../design-tokens';
 
 export const CalendarStyles = css`
   ${display("grid")}
@@ -52,7 +52,7 @@ export const CalendarStyles = css`
 
   .today > span {
     display: inline-flex;
-    background-color: ${accentLight100};
+    background-color: ${accentFillRestLight100};
     color: var(--foreground-on-accent-active);
     width: 28px;
     height: 28px;

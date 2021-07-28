@@ -44,3 +44,5 @@ document.head.appendChild(navbarContentStyles);
 export * from './design-tokens';
 export * from './dates';
 export * from './value-converters';
+export * from './pastel-colors';
+export * from './mixins';
