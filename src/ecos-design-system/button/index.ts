@@ -1,6 +1,6 @@
-import { buttonStyles as styles } from '@microsoft/fast-components';
+import { buttonStyles as styles, accentFillHover, accentFillFocus, foregroundOnAccentHover, foregroundOnAccentFocus } from '@microsoft/fast-components';
 import { css } from '@microsoft/fast-element';
-import { buttonTemplate as template, Button, ElementDefinitionContext, FoundationElementDefinition, applyMixins } from '@microsoft/fast-foundation';
+import { buttonTemplate as template, Button, ElementDefinitionContext, FoundationElementDefinition, applyMixins, focusVisible } from '@microsoft/fast-foundation';
 import { SecondaryImportantError } from '../mixins/secondary-important-error';
 
 export const extendPaddingWithRadiusStyles = css`
@@ -27,12 +27,20 @@ export const iconButtonStyles = css`
   display: flex;
 }
 :host([appearance=lightweight][icon]) span.content::before,
-:host([appearance=lightweight][hover-fill]) span.content::before{
+:host([appearance=lightweight][hover-fill]) span.content::before,
+:host([appearance=lightweight][icon]) .control:${focusVisible} span.content::before,
+:host([appearance=lightweight][hover-fill]) .control:${focusVisible} span.content::before {
   background: transparent;
 }
 :host([appearance=lightweight][icon]:hover),
 :host([appearance=lightweight][hover-fill]:hover) {
-  background: var(--accent-fill-hover);;
+  background: ${accentFillHover};
+  color: ${foregroundOnAccentHover};
+}
+:host([appearance=lightweight][icon]:focus),
+:host([appearance=lightweight][hover-fill]:focus) {
+  background: ${accentFillFocus};
+  color: ${foregroundOnAccentFocus};
 }
 `;
 

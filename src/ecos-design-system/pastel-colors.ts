@@ -33,8 +33,9 @@ export function findBestContrast(background: string, startWith: string, minContr
 
 export interface PastelPanel {
   fillRest: string;
-  fillStrong: string;
   fillHover: string;
+  fillActive: string;
+  fillFocus: string;
   foregroundRestOnFill: string;
   foregroundRest: string;
 }
@@ -48,8 +49,9 @@ export function pastelRecipeAlgorithm(element: HTMLElement, baseColor: string): 
 
   return {
     fillRest: fillRestBackground,
-    fillStrong: ligthen(baseColor, 0.3),
     fillHover: ligthen(baseColor, 0.7),
+    fillActive: ligthen(baseColor, 0.6),
+    fillFocus: ligthen(baseColor, 0.6),
     foregroundRestOnFill: bestFillContrast,
     foregroundRest: bestDefaultContrast
   };

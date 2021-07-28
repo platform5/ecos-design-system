@@ -1,5 +1,5 @@
 import { DesignToken } from '@microsoft/fast-foundation';
-import { SwatchRGB, designUnit, density, fillColor, accentPalette, neutralFillInputRestDelta, neutralFillInputHoverDelta, neutralFillInputActiveDelta, neutralFillInputFocusDelta, accentFillRecipe } from '@microsoft/fast-components';
+import { SwatchRGB, designUnit, density, fillColor, accentPalette, neutralFillInputRestDelta, neutralFillInputHoverDelta, neutralFillInputActiveDelta, neutralFillInputFocusDelta, accentFillRecipe, accentFillFocus, accentFillActive } from '@microsoft/fast-components';
 import { parseColor, blendColor } from "@microsoft/fast-colors";
 import { darkenViaLAB, lightenViaLAB, ColorRGBA64 } from "@microsoft/fast-colors";
 import { colorStringToSwatch, accentPanel } from './pastel-colors';
@@ -66,6 +66,22 @@ accentFillHover.withDefault((element) => {
     return colorStringToSwatch(accentPanel.getValueFor(element).fillHover);
   } else {
     return accentFillRecipe.getValueFor(element).evaluate(element).hover;
+  }
+});
+accentFillFocus.withDefault((element) => {
+  const ca = colorAlgorithm.getValueFor(element);
+  if (ca === 'pastel') {
+    return colorStringToSwatch(accentPanel.getValueFor(element).fillFocus);
+  } else {
+    return accentFillRecipe.getValueFor(element).evaluate(element).focus;
+  }
+});
+accentFillActive.withDefault((element) => {
+  const ca = colorAlgorithm.getValueFor(element);
+  if (ca === 'pastel') {
+    return colorStringToSwatch(accentPanel.getValueFor(element).fillActive);
+  } else {
+    return accentFillRecipe.getValueFor(element).evaluate(element).active;
   }
 });
 accentForegroundRest.withDefault((element) => {
