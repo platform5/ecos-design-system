@@ -41,6 +41,8 @@ export const DateFieldTemplate = html<EcosDateField>`
       :month="${x => x.month}"
       :year="${x => x.year}"
       :appearance="${x => x.calendaAppearance}"
+      :min="${x => x.min}"
+      :max="${x => x.max}"
       :min-year="${x => x.minYear}"
       :max-year="${x => x.maxYear}"
       :disabled-week-days="${x => x.disabledWeekDays}"
