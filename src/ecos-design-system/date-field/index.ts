@@ -132,8 +132,8 @@ export class EcosDateField extends FASTElement {
   @attr({attribute: 'max-year'}) maxYear = new Date().getFullYear() + 2;
   @attr({attribute: 'min', converter: dateValueConverter}) min: Date | string | undefined = '';
   @attr({attribute: 'max', converter: dateValueConverter}) max: Date | string | undefined = '';
-  @attr({attribute: 'disabled-week-days', converter: numbersValueConverter}) disabledWeekDays = '';
-  @attr({attribute: 'disabled-dates', converter: datesValueConverter}) disabledDates: Date[] | string | undefined = '';
+  @attr({attribute: 'disabled-week-days', converter: numbersValueConverter}) disabledWeekDays: number[] = [];
+  @attr({attribute: 'disabled-dates', converter: datesValueConverter}) disabledDates: Date[] = [];
 
   @observable month: number = new Date().getMonth();
   @observable year: number = new Date().getFullYear();

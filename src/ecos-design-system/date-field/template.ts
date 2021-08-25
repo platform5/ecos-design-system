@@ -43,10 +43,10 @@ export const DateFieldTemplate = html<EcosDateField>`
       :appearance="${x => x.calendaAppearance}"
       :min="${x => x.min}"
       :max="${x => x.max}"
-      :min-year="${x => x.minYear}"
-      :max-year="${x => x.maxYear}"
-      :disabled-week-days="${x => x.disabledWeekDays}"
-      :disabled-dates="${x => x.disabledDates}"
+      :minYear="${x => x.minYear}"
+      :maxYear="${x => x.maxYear}"
+      :disabledWeekDays="${x => x.disabledWeekDays}"
+      :disabledDates="${x => x.disabledDates}"
       @change="${(x, c) => x.dateChanged(c.event as CustomEvent)}"
       ></ecos-calendar>
   </ecos-anchored-region>
