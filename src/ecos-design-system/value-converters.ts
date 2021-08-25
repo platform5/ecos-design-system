@@ -2,6 +2,9 @@ import { ValueConverter } from '@microsoft/fast-element';
 import { format, parseISO } from 'date-fns';
 
 const date2string = (value: Date | string | undefined): string => {
+  if (value instanceof Date && isNaN(value.getTime())) {
+    return '';
+  }
   if (typeof value === 'string') {
     if (value.length === 10) {
       return value;
