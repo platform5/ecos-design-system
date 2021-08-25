@@ -1,19 +1,23 @@
 import { ValueConverter } from '@microsoft/fast-element';
 import { format, parseISO } from 'date-fns';
 
-export const dateValueConverter: ValueConverter = {
-  toView(value: Date | string | undefined): string {
-    if (typeof value === 'string') {
-      if (value.length === 10) {
+const date2string = (value: Date | string | undefined): string => {
+  if (typeof value === 'string') {
+    if (value.length === 10) {
+      return value;
+    } else {
+      value = parseISO(value)
+      if (typeof value === 'string') {
         return value;
-      } else {
-        value = parseISO(value)
-        if (typeof value === 'string') {
-          return value;
-        }
       }
     }
-    return value ? format(value, 'yyyy-MM-dd') : '';
+  }
+  return value ? format(value, 'yyyy-MM-dd') : '';
+}
+
+export const dateValueConverter: ValueConverter = {
+  toView(value: Date | string | undefined): string {
+    return date2string(value);
   },
   fromView(value: string | Date): Date | undefined {
     if (value instanceof Date) {
@@ -32,7 +36,7 @@ export const datesValueConverter: ValueConverter = {
     if (!value || value.length === 0) {
       return '';
     }
-    return value.map(v => format(v, 'yyyy-MM-dd')).join(',');
+    return value.map(v => date2string(v)).join(',');
   },
   fromView(value: string): Date[] {
     if (Array.isArray(value)) {
