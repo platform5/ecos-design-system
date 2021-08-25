@@ -130,6 +130,8 @@ export class EcosDateField extends FASTElement {
 
   @attr({attribute: 'min-year'}) minYear = new Date().getFullYear() - 50;
   @attr({attribute: 'max-year'}) maxYear = new Date().getFullYear() + 2;
+  @attr({attribute: 'min'}) min: Date | undefined;
+  @attr({attribute: 'max'}) max: Date | undefined;
   @attr({attribute: 'disabled-week-days'}) disabledWeekDays = '';
   @attr({attribute: 'disabled-dates'}) disabledDates = '';
 
