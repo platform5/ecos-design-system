@@ -6,7 +6,7 @@ import { colorStringToSwatch, accentPanel } from './pastel-colors';
 import { Palette, PaletteRGB, foregroundOnAccentRest, foregroundOnAccentHover, accentFillRest, accentFillHover, accentForegroundRest, accentForegroundRecipe, foregroundOnAccentRecipe } from "@microsoft/fast-components";
 
 export type ColorAlgorithm = 'fast' | 'pastel';
-export const colorAlgorithm = DesignToken.create<ColorAlgorithm>('color-algorithm').withDefault('fast');
+export const colorAlgorithm = DesignToken.create<ColorAlgorithm>({name: 'color-algorithm', cssCustomPropertyName: null}).withDefault('fast');
 export const typeRampRatio = DesignToken.create<number>('type-ramp-ratio').withDefault(1.25);
 export const lineHeightRatio = DesignToken.create<number>('line-height-ratio').withDefault(1.2);
 
