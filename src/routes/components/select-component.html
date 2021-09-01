@@ -12,9 +12,9 @@
       <ecos-option>Prix</ecos-option>
     </ecos-select>
     <ecos-select>
-      <ecos-option>Alphabétique</ecos-option>
-      <ecos-option>Proximité</ecos-option>
-      <ecos-option>Prix</ecos-option>
+      <ecos-option value="alpha">Alphabetical</ecos-option>
+      <ecos-option value="distance" selected.bind="choice === 'distance' & attr">Distance</ecos-option>
+      <ecos-option value="price">Price</ecos-option>
     </ecos-select>
   </p>
   <p>&nbsp;</p>

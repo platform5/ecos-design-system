@@ -65,7 +65,7 @@ export class EcosNavbar extends FASTElement {
   }
 
   public addScrollListener(): void {
-    if (!this.scrollingContainerSelector) {
+    if (!this.scrollingContainerSelector || !document.querySelector(this.scrollingContainerSelector)) {
       document.addEventListener('scroll', this);
     } else {
       const scrollingContainer = document.querySelector(this.scrollingContainerSelector);
@@ -74,7 +74,7 @@ export class EcosNavbar extends FASTElement {
   }
 
   public removeScrollListener(): void {
-    if (!this.scrollingContainerSelector) {
+    if (!this.scrollingContainerSelector || !document.querySelector(this.scrollingContainerSelector)) {
       document.removeEventListener('scroll', this);
     } else {
       const scrollingContainer = document.querySelector(this.scrollingContainerSelector);

@@ -39,11 +39,11 @@ export const datesValueConverter: ValueConverter = {
     if (!value || value.length === 0) {
       return '';
     }
-    return value.map(v => date2string(v)).join(',');
+    return value.map(v => date2string(v)).filter(v => v).join(',');
   },
   fromView(value: string): Date[] {
     if (Array.isArray(value)) {
-      return value;
+      return value.filter(d => d instanceof Date && !isNaN(d.getTime()));
     }
     if (!value) {
       return [];

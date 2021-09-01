@@ -1,1 +1,3 @@
-export class SelectComponent {}
+export class SelectComponent {
+  public choice = 'distance';
+}

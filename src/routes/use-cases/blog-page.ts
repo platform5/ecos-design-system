@@ -11,6 +11,7 @@ export class BlogPage implements ICustomElementViewModel {
   }
 
   public attaching(): Promise<void> {
+    console.log('blog page attaching', this.element);
     return Animation.scaleIn(this.element, 400);
   }
 
