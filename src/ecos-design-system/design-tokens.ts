@@ -93,11 +93,7 @@ accentForegroundRest.withDefault((element) => {
   }
 });
 foregroundOnAccentRest.withDefault((element) => {
-  // fake lines to ensure foregroundOnAccentRest is updated with accentPalette changes
-  // can be removed once FAST fixes deep dependencies issues with token updates
-  const ap = accentPalette.getValueFor(element);
   const ca = colorAlgorithm.getValueFor(element);
-  if (ap === undefined) {return SwatchRGB.create(0, 0, 0);}
   if (ca === 'pastel') {
     return colorStringToSwatch(accentPanel.getValueFor(element).foregroundRestOnFill);
   } else {
@@ -107,10 +103,6 @@ foregroundOnAccentRest.withDefault((element) => {
   }
 });
 foregroundOnAccentHover.withDefault((element) => {
-  // fake lines to ensure foregroundOnAccentRest is updated with accentPalette changes
-  // can be removed once FAST fixes deep dependencies issues with token updates
-  const ap = accentPalette.getValueFor(element);
-  if (ap === undefined) {return SwatchRGB.create(0, 0, 0);}
   const ca = colorAlgorithm.getValueFor(element);
   if (ca === 'pastel') {
     return colorStringToSwatch(accentPanel.getValueFor(element).foregroundRestOnFill);
@@ -124,51 +116,35 @@ foregroundOnAccentHover.withDefault((element) => {
 export const secondaryPalette = DesignToken.create<Palette>({
   name: "secondary-palette",
   cssCustomPropertyName: null,
-}).withDefault(PaletteRGB.create(colorStringToSwatch('#65A5E0')));
+}).withDefault(PaletteRGB.from(colorStringToSwatch('#65A5E0')));
 
 export const importantPalette = DesignToken.create<Palette>({
   name: "important-palette",
   cssCustomPropertyName: null,
-}).withDefault(PaletteRGB.create(colorStringToSwatch('#F4BD31')));
+}).withDefault(PaletteRGB.from(colorStringToSwatch('#F4BD31')));
 
 export const errorPalette = DesignToken.create<Palette>({
   name: "error-palette",
   cssCustomPropertyName: null,
-}).withDefault(PaletteRGB.create(colorStringToSwatch('#E24B34')));
+}).withDefault(PaletteRGB.from(colorStringToSwatch('#E24B34')));
 
 
 export const accentFillRestLight50 = DesignToken.create<string>('accent-fill-rest-light-50').withDefault((element) => {
-  // fake lines to ensure foregroundOnAccentRest is updated with accentPalette changes
-  // can be removed once FAST fixes deep dependencies issues with token updates
-  const ap = accentPalette.getValueFor(element);
-  if (ap === undefined) {return ''}
   const base = accentFillRest.getValueFor(element) as SwatchRGB;
   const accent = new ColorRGBA64(base.r, base.g, base.b);
   return lightenViaLAB(accent, 0.25).toStringHexRGB();
 });
 export const accentFillRestLight100 = DesignToken.create<string>('accent-fill-rest-light-100').withDefault((element) => {
-  // fake lines to ensure foregroundOnAccentRest is updated with accentPalette changes
-  // can be removed once FAST fixes deep dependencies issues with token updates
-  const ap = accentPalette.getValueFor(element);
-  if (ap === undefined) {return ''}
   const base = accentFillRest.getValueFor(element) as SwatchRGB;
   const accent = new ColorRGBA64(base.r, base.g, base.b);
   return lightenViaLAB(accent, 1).toStringHexRGB();
 });
 export const accentFillRestDark50 = DesignToken.create<string>('accent-fill-rest-dark-50').withDefault((element) => {
-  // fake lines to ensure foregroundOnAccentRest is updated with accentPalette changes
-  // can be removed once FAST fixes deep dependencies issues with token updates
-  const ap = accentPalette.getValueFor(element);
-  if (ap === undefined) {return ''}
   const base = accentFillRest.getValueFor(element) as SwatchRGB;
   const accent = new ColorRGBA64(base.r, base.g, base.b);
   return darkenViaLAB(accent, 1).toStringHexRGB();
 });
 export const accentFillRestDark100 = DesignToken.create<string>('accent-fill-rest-dark-100').withDefault((element) => {
-  // fake lines to ensure foregroundOnAccentRest is updated with accentPalette changes
-  // can be removed once FAST fixes deep dependencies issues with token updates
-  const ap = accentPalette.getValueFor(element);
-  if (ap === undefined) {return ''}
   const base = accentFillRest.getValueFor(element) as SwatchRGB;
   const accent = new ColorRGBA64(base.r, base.g, base.b);
   return darkenViaLAB(accent, 2).toStringHexRGB();
