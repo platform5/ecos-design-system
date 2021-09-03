@@ -59,7 +59,7 @@ export class EcosSection extends FASTElement {
   }
   
   @attr({attribute: 'fill-color'})
-  fillColor: 'lighten' | 'darken' | 'auto' | 'unset' | string = 'auto';
+  fillColor: 'lighten' | 'darken' | 'auto' | 'unset' | string = 'unset';
 
   public fillColorChanged(): void {
     if (this.fillColor === 'unset') {
