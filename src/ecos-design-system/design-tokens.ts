@@ -5,8 +5,6 @@ import { darkenViaLAB, lightenViaLAB, ColorRGBA64 } from "@microsoft/fast-colors
 import { colorStringToSwatch, accentPanel } from './pastel-colors';
 import { Palette, PaletteRGB, foregroundOnAccentRest, foregroundOnAccentHover, accentFillRest, accentFillHover, accentForegroundRest, accentForegroundRecipe, foregroundOnAccentRecipe } from "@microsoft/fast-components";
 
-export type ColorAlgorithm = 'fast' | 'pastel';
-export const colorAlgorithm = DesignToken.create<ColorAlgorithm>({name: 'color-algorithm', cssCustomPropertyName: null}).withDefault('fast');
 export const typeRampRatio = DesignToken.create<number>('type-ramp-ratio').withDefault(1.25);
 export const lineHeightRatio = DesignToken.create<number>('line-height-ratio').withDefault(1.2);
 
@@ -52,66 +50,57 @@ export function enhanceNeutralFillInputDesignTokens(): void {
   });
 }
 
-accentFillRest.withDefault((element) => {
-  const ca = colorAlgorithm.getValueFor(element);
-  if (ca === 'pastel') {
-    return colorStringToSwatch(accentPanel.getValueFor(element).fillRest);
-  } else {
+export function activeFastColorAlgorithm(): void {
+  accentFillRest.withDefault((element) => {
     return accentFillRecipe.getValueFor(element).evaluate(element).rest;
-  }
-});
-accentFillHover.withDefault((element) => {
-  const ca = colorAlgorithm.getValueFor(element);
-  if (ca === 'pastel') {
-    return colorStringToSwatch(accentPanel.getValueFor(element).fillHover);
-  } else {
+  });
+  accentFillHover.withDefault((element) => {
     return accentFillRecipe.getValueFor(element).evaluate(element).hover;
-  }
-});
-accentFillFocus.withDefault((element) => {
-  const ca = colorAlgorithm.getValueFor(element);
-  if (ca === 'pastel') {
-    return colorStringToSwatch(accentPanel.getValueFor(element).fillFocus);
-  } else {
+  });
+  accentFillFocus.withDefault((element) => {
     return accentFillRecipe.getValueFor(element).evaluate(element).focus;
-  }
-});
-accentFillActive.withDefault((element) => {
-  const ca = colorAlgorithm.getValueFor(element);
-  if (ca === 'pastel') {
-    return colorStringToSwatch(accentPanel.getValueFor(element).fillActive);
-  } else {
+  });
+  accentFillActive.withDefault((element) => {
     return accentFillRecipe.getValueFor(element).evaluate(element).active;
-  }
-});
-accentForegroundRest.withDefault((element) => {
-  const ca = colorAlgorithm.getValueFor(element);
-  if (ca === 'pastel') {
-    return colorStringToSwatch(accentPanel.getValueFor(element).foregroundRest);
-  } else {
+  });
+  accentForegroundRest.withDefault((element) => {
     return accentForegroundRecipe.getValueFor(element).evaluate(element).rest;
-  }
-});
-foregroundOnAccentRest.withDefault((element) => {
-  const ca = colorAlgorithm.getValueFor(element);
-  if (ca === 'pastel') {
-    return colorStringToSwatch(accentPanel.getValueFor(element).foregroundRestOnFill);
-  } else {
+  });
+  foregroundOnAccentRest.withDefault((element) => {
     return foregroundOnAccentRecipe
       .getValueFor(element)
       .evaluate(element, accentFillRest.getValueFor(element));
-  }
-});
-foregroundOnAccentHover.withDefault((element) => {
-  const ca = colorAlgorithm.getValueFor(element);
-  if (ca === 'pastel') {
-    return colorStringToSwatch(accentPanel.getValueFor(element).foregroundRestOnFill);
-  } else {
+  });
+  foregroundOnAccentHover.withDefault((element) => {
     return foregroundOnAccentRecipe
       .getValueFor(element)
       .evaluate(element, accentFillHover.getValueFor(element));
-  }
-});
+  });
+}
+
+export function activePastelColorAlgorithm(): void {
+  accentFillRest.withDefault((element) => {
+    return colorStringToSwatch(accentPanel.getValueFor(element).fillRest);
+  });
+  accentFillHover.withDefault((element) => {
+    return colorStringToSwatch(accentPanel.getValueFor(element).fillHover);
+  });
+  accentFillFocus.withDefault((element) => {
+    return colorStringToSwatch(accentPanel.getValueFor(element).fillFocus);
+  });
+  accentFillActive.withDefault((element) => {
+    return colorStringToSwatch(accentPanel.getValueFor(element).fillActive);
+  });
+  accentForegroundRest.withDefault((element) => {
+    return colorStringToSwatch(accentPanel.getValueFor(element).foregroundRest);
+  });
+  foregroundOnAccentRest.withDefault((element) => {
+    return colorStringToSwatch(accentPanel.getValueFor(element).foregroundRestOnFill);
+  });
+  foregroundOnAccentHover.withDefault((element) => {
+    return colorStringToSwatch(accentPanel.getValueFor(element).foregroundRestOnFill);
+  });
+}
 
 export const secondaryPalette = DesignToken.create<Palette>({
   name: "secondary-palette",
