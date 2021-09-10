@@ -14,8 +14,13 @@ export const NavbarTemplate = html<EcosNavbar>`
       <div class="secondary" part="secondary" ${ref('secondaryContentSource')}>
         <slot name="secondary" ${ref('secondaryContentSlot')}></slot>
       </div>
-      <div class="secondary-toggler" part="secondary-toggler" ${ref('secondaryTogglerElement')} @click="${x => x.toggleSecondary()}">
-        <slot name="secondary-toggler"></slot>
+      <div class="right-container" part="right-container">
+        <div class="right" part="right" ${ref('rightContentSource')}>
+          <slot name="right" ${ref('rightContentSlot')}></slot>
+        </div>
+        <div class="secondary-toggler" part="secondary-toggler" ${ref('secondaryTogglerElement')} @click="${x => x.toggleSecondary()}">
+          <slot name="secondary-toggler"></slot>
+        </div>
       </div>
       <div class="toggler" part="toggler" ${ref('mobileTogglerElement')} @click="${x => x.toggle()}">
         ${when(x => !x.isMobileOpened, html<EcosNavbar>`
@@ -36,6 +41,8 @@ export const NavbarTemplate = html<EcosNavbar>`
   </div>
   <div hidden class="mobile-content" part="mobile-content" ${ref('mobileContentElement')}>
     <div class="mobile-main" part="mobile-main" ${ref('mainContentMobileContainer')}>
+    </div>
+    <div class="right-secondary" part="mobile-right" ${ref('rightContentMobileContainer')}>
     </div>
     <div class="mobile-secondary" part="mobile-secondary" ${ref('secondaryContentMobileContainer')}>
     </div>

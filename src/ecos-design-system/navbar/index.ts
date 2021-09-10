@@ -31,10 +31,12 @@ export class EcosNavbar extends FASTElement {
   // slots for naviation contents
   public mainContentSlot: HTMLElement;
   public secondaryContentSlot: HTMLElement;
+  public rightContentSlot: HTMLElement;
 
   // sources of the content to bring it back after opening mobile / secondary
   public mainContentSource: HTMLElement;
   public secondaryContentSource: HTMLElement;
+  public rightContentSource: HTMLElement;
 
   // secondary container for opening the secondary (more) content area
   public secondaryContentElement: HTMLElement;
@@ -42,6 +44,7 @@ export class EcosNavbar extends FASTElement {
   // mobiles containers for when the elements must be opened on mobile
   public mainContentMobileContainer: HTMLElement;
   public secondaryContentMobileContainer: HTMLElement;
+  public rightContentMobileContainer: HTMLElement;
 
   // mobile element to open
   public mobileContentElement: HTMLElement;
@@ -119,9 +122,11 @@ export class EcosNavbar extends FASTElement {
     if (!this.isMobileOpened) {
       this.mainContentMobileContainer.appendChild(this.mainContentSlot);
       this.secondaryContentMobileContainer.appendChild(this.secondaryContentSlot);
+      this.rightContentMobileContainer.appendChild(this.rightContentSlot);
     } else {
       this.mainContentSource.appendChild(this.mainContentSlot);
       this.secondaryContentSource.appendChild(this.secondaryContentSlot);
+      this.rightContentSource.appendChild(this.rightContentSlot);
     }
     this.isMobileOpened = !this.isMobileOpened;
     this.mobileContentElement.toggleAttribute('hidden', !this.isMobileOpened);

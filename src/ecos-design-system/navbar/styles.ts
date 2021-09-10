@@ -70,11 +70,15 @@ export const NavbarStyles = css`
   .main {
     display: none;
   }
+  .right-container {
+    display: none;
+  }
   .secondary {
     display: none;
   }
+  .right {
+  }
   .secondary-toggler {
-    display: none;
     cursor: pointer;
   }
   .secondary-toggler ::part(control) {
@@ -115,12 +119,14 @@ export const NavbarStyles = css`
   }
 
   .mobile-main,
-  .mobile-secondary {
+  .mobile-secondary,
+  .mobile-right {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
-  .mobile-secondary {
+  .mobile-secondary,
+  .mobile-right {
     margin-top: calc(var(--design-unit) * 4px);
   }
 
@@ -133,13 +139,17 @@ export const NavbarStyles = css`
       display: block;
       justify-self: center;
     }
-    .xxx-secondary {
+    .right-container {
       display: block;
       justify-self: end;
     }
+    .right {
+      /* display: block;
+      justify-self: end; */
+    }
     .secondary-toggler {
-      display: block;
-      justify-self: end;
+      /* display: block;
+      justify-self: end; */
     }
     .secondary-content {
       box-sizing: border-box;
