@@ -24,6 +24,9 @@ export class EcosSection extends FASTElement {
 
   @attr()
   public centerwidth = '65ch';
+  public centerwidthChanged(): void {
+    this.style.setProperty('--ecos-section-center-width', this.centerwidth);
+  }
 
   @observable nodes: Node[];
 
