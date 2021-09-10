@@ -66,6 +66,7 @@ export const NavbarStyles = css`
   }
   .branding {
     justify-self: start;
+    display: flex;
   }
   .main {
     display: none;
