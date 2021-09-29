@@ -18,37 +18,32 @@ export class EcosSettings {
   public lineHeightRatio = 1.2;
   public colorAlgorithm: 'fast' | 'pastel' = 'fast';
 
-  provider = document.body;
-
   public constructor(private element: HTMLElement) {
 
   }
 
   public attached(): void {
-    baseLayerLuminance.setValueFor(this.provider, this.baseLayerLuminance);
+    baseLayerLuminance.withDefault(this.baseLayerLuminance);
     this.updateDesignSystem();
   }
 
   public updateDesignSystem(): void {
-    if (!this.provider) {
-      return;
-    }
-    baseLayerLuminance.setValueFor(this.provider, this.baseLayerLuminance);
+    baseLayerLuminance.withDefault(this.baseLayerLuminance);
 
     const fill = parseColorHexRGB(this.color)!;
     const fillSwatch = SwatchRGB.create(fill.r, fill.g, fill.b);
-    fillColor.setValueFor(this.provider, fillSwatch);
+    fillColor.withDefault(fillSwatch);
     const base = parseColorHexRGB(this.accent)!;
     const swatch = SwatchRGB.create(base.r, base.g, base.b);
-    accentPalette.setValueFor(this.provider, PaletteRGB.create(swatch));
-    designUnit.setValueFor(this.provider, this.designUnit);
-    density.setValueFor(this.provider, this.density);
-    controlCornerRadius.setValueFor(this.provider, this.controlCornerRadius);
-    strokeWidth.setValueFor(this.provider, this.strokeWidth);
-    typeRampBaseFontSize.setValueFor(this.provider, `${this.typeRampBaseFontSize}px`);
-    typeRampRatio.setValueFor(this.provider, this.typeRampRatio);
-    lineHeightRatio.setValueFor(this.provider, this.lineHeightRatio);
-    setTypeRamp(this.provider, this.typeRampRatio, this.lineHeightRatio);
+    accentPalette.withDefault(PaletteRGB.create(swatch));
+    designUnit.withDefault(this.designUnit);
+    density.withDefault(this.density);
+    controlCornerRadius.withDefault(this.controlCornerRadius);
+    strokeWidth.withDefault(this.strokeWidth);
+    typeRampBaseFontSize.withDefault(`${this.typeRampBaseFontSize}px`);
+    typeRampRatio.withDefault(this.typeRampRatio);
+    lineHeightRatio.withDefault(this.lineHeightRatio);
+    setTypeRamp(document.body, this.typeRampRatio, this.lineHeightRatio);
 
     if (this.colorAlgorithm === 'fast') {
       activeFastColorAlgorithm();

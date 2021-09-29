@@ -1,24 +1,18 @@
 import { DesignToken } from '@microsoft/fast-foundation';
 import { fillColor, SwatchRGB, accentPalette } from "@microsoft/fast-components";
-import { parseColor } from "@microsoft/fast-colors";
+import { ColorRGBA64 } from "@microsoft/fast-colors";
 import { rgbToHSL, ColorHSL, hslToRGB, contrastRatio } from "@microsoft/fast-colors";
 
-export function colorStringToSwatch(color: string): SwatchRGB {
-  const parsed = parseColor(color);
-  return SwatchRGB.create(parsed.r, parsed.g, parsed.b);
-}
-
-export function ligthen(color: string, percent: number): string {
-  const parsed = parseColor(color);
-  const parsedHSL = rgbToHSL(parsed);
+export function ligthen(color: SwatchRGB, percent: number): SwatchRGB {
+  const parsedHSL = rgbToHSL(new ColorRGBA64(color.r, color.g, color.b));
   const lightenedHSL = new ColorHSL(parsedHSL.h, parsedHSL.s, ((1 - parsedHSL.l) * percent) + parsedHSL.l);
   const lightened = hslToRGB(lightenedHSL);
-  return lightened.toStringHexRGB();
+  return SwatchRGB.create(lightened.r, lightened.g, lightened.b);
 }
 
-export function findBestContrast(background: string, startWith: string, minContrast = 4.5): string {
-  const backgroundRGB = parseColor(background);
-  let colorRGB = parseColor(startWith);
+export function findBestContrast(background: SwatchRGB, startWith: SwatchRGB, minContrast = 4.5): SwatchRGB {
+  const backgroundRGB = new ColorRGBA64(background.r, background.g, background.b)
+  let colorRGB = new ColorRGBA64(startWith.r, startWith.g, startWith.b)
   let contrast = contrastRatio(backgroundRGB, colorRGB);
   let iterations = 0;
   while (contrast < minContrast && iterations < 100) {
@@ -28,24 +22,24 @@ export function findBestContrast(background: string, startWith: string, minContr
     colorRGB = hslToRGB(darkenedHSL);
     contrast = contrastRatio(backgroundRGB, colorRGB);
   }
-  return colorRGB.toStringHexRGB();
+  return SwatchRGB.create(colorRGB.r, colorRGB.g, colorRGB.b);
 }
 
 export interface PastelPanel {
-  fillRest: string;
-  fillHover: string;
-  fillActive: string;
-  fillFocus: string;
-  foregroundRestOnFill: string;
-  foregroundRest: string;
+  fillRest: SwatchRGB;
+  fillHover: SwatchRGB;
+  fillActive: SwatchRGB;
+  fillFocus: SwatchRGB;
+  foregroundRestOnFill: SwatchRGB;
+  foregroundRest: SwatchRGB;
 }
 
-export function pastelRecipeAlgorithm(element: HTMLElement, baseColor: string): PastelPanel {
+export function pastelRecipeAlgorithm(element: HTMLElement, baseColor: SwatchRGB): PastelPanel {
   const fillRestBackground = ligthen(baseColor, 0.8);
-  const defaultBackground = fillColor.getValueFor(element).toColorString();
+  const defaultBackground = fillColor.getValueFor(element);
 
   const bestFillContrast = findBestContrast(fillRestBackground, baseColor);
-  const bestDefaultContrast = findBestContrast(defaultBackground, baseColor);
+  const bestDefaultContrast = findBestContrast(defaultBackground as SwatchRGB, baseColor);
 
   return {
     fillRest: fillRestBackground,
@@ -58,6 +52,6 @@ export function pastelRecipeAlgorithm(element: HTMLElement, baseColor: string): 
 }
 
 export const accentPanel = DesignToken.create<PastelPanel>({name: 'accent-panel', cssCustomPropertyName: null}).withDefault((element) => {
-  return pastelRecipeAlgorithm(element, accentPalette.getValueFor(element).source.toColorString());
+  return pastelRecipeAlgorithm(element, accentPalette.getValueFor(element).source as SwatchRGB);
 });
 
