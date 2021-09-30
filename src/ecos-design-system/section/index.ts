@@ -65,6 +65,9 @@ export class EcosSection extends FASTElement {
   fillColor: 'lighten' | 'darken' | 'auto' | 'unset' | string = 'unset';
 
   public fillColorChanged(): void {
+    if (!this.$fastController.isConnected) {
+      return;
+    }
     if (this.fillColor === 'unset') {
       this.unsetFillcolor();
     } else if (['lighten', 'darken', 'auto'].includes(this.fillColor)) {
