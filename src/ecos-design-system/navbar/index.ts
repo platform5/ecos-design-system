@@ -1,5 +1,5 @@
 import { FoundationElement } from '@microsoft/fast-foundation'
-import { customElement, FASTElement, attr, observable } from '@microsoft/fast-element';
+import { attr, observable } from '@microsoft/fast-element';
 import { NavbarStyles as styles } from './styles';
 import { NavbarTemplate as template } from './template';
 

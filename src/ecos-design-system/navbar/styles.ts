@@ -144,14 +144,6 @@ export const NavbarStyles = css`
       display: block;
       justify-self: end;
     }
-    .right {
-      /* display: block;
-      justify-self: end; */
-    }
-    .secondary-toggler {
-      /* display: block;
-      justify-self: end; */
-    }
     .secondary-content {
       box-sizing: border-box;
       transition: transform 250ms ease, opacity 250ms ease;
