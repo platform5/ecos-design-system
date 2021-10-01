@@ -43,6 +43,7 @@ navbarContentStyles.innerHTML = `.navbar-content {padding-top: calc((${navbarHei
 document.head.appendChild(navbarContentStyles);
 
 export * from './design-tokens';
+export * from './icon-loader';
 export * from './dates';
 export * from './value-converters';
 export * from './pastel-colors';
