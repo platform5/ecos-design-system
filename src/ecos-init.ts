@@ -13,7 +13,7 @@ DesignSystem.getOrCreate().register(fastSwitch({prefix: 'ecos'}));
 DesignSystem.getOrCreate().register(fastTextArea({prefix: 'ecos'}));
 // DesignSystem.getOrCreate().register(fastTextField({prefix: 'ecos'}));
 
-import { ecosBadge, ecosButton, ecosCard, ecosCheckbox, ecosDialog, ecosMenu, ecosMenuItem, ecosSelect, ecosTextField } from './ecos-design-system';
+import { ecosBadge, ecosButton, ecosCard, ecosCheckbox, ecosDialog, ecosMenu, ecosMenuItem, ecosNavBar, ecosSelect, ecosTextField } from './ecos-design-system';
 DesignSystem.getOrCreate().register(ecosBadge({prefix: 'ecos'}));
 DesignSystem.getOrCreate().register(ecosButton({prefix: 'ecos'}));
 DesignSystem.getOrCreate().register(ecosCheckbox({prefix: 'ecos'}));
@@ -21,6 +21,7 @@ DesignSystem.getOrCreate().register(ecosCard({prefix: 'ecos'}));
 DesignSystem.getOrCreate().register(ecosDialog({prefix: 'ecos'}));
 DesignSystem.getOrCreate().register(ecosMenu({prefix: 'ecos'}));
 DesignSystem.getOrCreate().register(ecosMenuItem({prefix: 'ecos'}));
+DesignSystem.getOrCreate().register(ecosNavBar({prefix: 'ecos'}));
 DesignSystem.getOrCreate().register(ecosSelect({prefix: 'ecos'}));
 DesignSystem.getOrCreate().register(ecosTextField({prefix: 'ecos'}));
 
@@ -40,7 +41,6 @@ import {
   EcosIcon,
   EcosInlineGroup,
   EcosNext,
-  EcosNavbar,
   EcosSection,
   EcosStack,
   EcosTable,
@@ -65,7 +65,6 @@ EcosFormRow;
 EcosIcon;
 EcosInlineGroup;
 EcosNext;
-EcosNavbar;
 EcosSection;
 EcosStack;
 EcosTable;

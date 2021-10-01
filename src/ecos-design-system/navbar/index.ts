@@ -1,13 +1,14 @@
+import { FoundationElement } from '@microsoft/fast-foundation'
 import { customElement, FASTElement, attr, observable } from '@microsoft/fast-element';
 import { NavbarStyles as styles } from './styles';
 import { NavbarTemplate as template } from './template';
 
-@customElement({
-  name: 'ecos-navbar',
-  template,
-  styles
-})
-export class EcosNavbar extends FASTElement {
+// @customElement({
+//   name: 'ecos-navbar',
+//   template,
+//   styles
+// })
+export class EcosNavbar extends FoundationElement {
 
   @attr()
   public layer = '4';
@@ -145,3 +146,9 @@ export class EcosNavbar extends FASTElement {
   }
 
 }
+
+export const ecosNavBar = EcosNavbar.compose({
+  baseName: 'navbar',
+  template,
+  styles
+});
