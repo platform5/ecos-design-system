@@ -30,6 +30,7 @@ export * from './table-item';
 export * from './table-row';
 export * from './text-button';
 export * from './text-field';
+export * from './text-field-login';
 export * from './two';
 
 import './typography.css';
