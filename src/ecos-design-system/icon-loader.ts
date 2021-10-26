@@ -39,6 +39,7 @@ export class EcosIconLoader {
   
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private async loadIn(iconName: string, module: Promise<any>, variant: 'outline' | 'solid'): Promise<void> {
     return module.then((mod) => {
       if (typeof mod.default === 'string') {

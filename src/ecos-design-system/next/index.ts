@@ -188,10 +188,10 @@ export class EcosNext extends FASTElement {
     }
   }
 
+  private moving = false;
+  private queuedOperations: {id: string, direction: 'prev' | 'next' | 'auto', trackOperation: boolean, fromPushState: boolean}[] = [];
   public goToId(id: string, direction: 'prev' | 'next' | 'auto' = 'auto', trackOperation = true, fromPushState = false): void {
-    if (!fromPushState) {
-      this.ensureCurrentState();
-    }
+    // Validate the move
     const goToIndex = this.itemIds.indexOf(id);
     if (goToIndex === -1) {
       return;
@@ -199,6 +199,17 @@ export class EcosNext extends FASTElement {
     const goToElement = this.nextItems[goToIndex];
     if (goToElement.classList.contains('current')) {
       return;
+    }
+
+    // Once the move is validated, queue the move if one is already being processed
+    if (this.moving) {
+      this.queuedOperations.push({id, direction, trackOperation, fromPushState});
+      return;
+    }
+    this.moving = true;
+
+    if (!fromPushState) {
+      this.ensureCurrentState();
     }
     if (direction === 'auto') {
       direction = goToIndex > this.activeIndex ? 'next' : 'prev';
@@ -252,6 +263,12 @@ export class EcosNext extends FASTElement {
           this.setState(direction);
         }
         this.ensureIdInUrl();
+
+        this.moving = false;
+        if (this.queuedOperations.length > 0) {
+          const nextOperation = this.queuedOperations.shift();
+          this.goToId(nextOperation.id, nextOperation.direction, nextOperation.trackOperation, nextOperation.fromPushState);
+        }
       }, {once: true});
     });
   }
