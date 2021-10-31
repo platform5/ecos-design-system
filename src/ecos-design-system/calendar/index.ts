@@ -162,8 +162,7 @@ export class EcosCalendar extends FASTElement {
     this.days.splice(0, this.days.length);
   
     const source = startOfDay(new Date());
-    source.setMonth(this.month);
-    source.setFullYear(this.year);
+    source.setFullYear(this.year, this.month + 1, 0);
     const month = source.getMonth();
     const start = startOfWeek(startOfMonth(source), {weekStartsOn: 1});
 
