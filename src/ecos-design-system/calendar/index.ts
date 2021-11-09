@@ -101,8 +101,10 @@ export class EcosCalendar extends FASTElement {
   @attr({converter: dateValueConverter}) date: Date | undefined = undefined;
   public dateChanged(): void {
     if (!this.date || this.isStartOfDay(this.date)) {
-      this.month = this.date.getMonth();
-      this.year = this.date.getFullYear();
+      if (this.date) {
+        this.month = this.date.getMonth();
+        this.year = this.date.getFullYear();
+      }
       this.setDays();
     } else {
       this.date = startOfDay(this.date);
