@@ -30,12 +30,14 @@ export class EcosDateField extends FASTElement {
       this.id = this.textFieldId;
     }
     document.addEventListener('click', this);
+    document.addEventListener('touchstart', this);
     document.addEventListener('keydown', this);
     this.disableNativePickerChanged();
   }
 
   public disconnectedCallback(): void {
     document.removeEventListener('click', this);
+    document.removeEventListener('touchstart', this);
     document.removeEventListener('keydown', this);
     this.disableNativePicker = false,
     this.disableNativePickerChanged();
@@ -178,7 +180,7 @@ export class EcosDateField extends FASTElement {
     if (!this.pickerOpened) {
       return;
     }
-    if (event instanceof MouseEvent) {
+    if (event instanceof MouseEvent || event instanceof TouchEvent) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const path: Element[] = (event as any).path || event.composedPath()
       if (path.find(el => el === this.pickerElement || el === this.calendarIconElement)) {
