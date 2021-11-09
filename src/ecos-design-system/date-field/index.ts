@@ -53,8 +53,10 @@ export class EcosDateField extends FASTElement {
     if (inputElement instanceof HTMLElement) {
       if (this.disableNativePicker) {
         inputElement.addEventListener('click', this.disablingNativePickerHandler);
+        inputElement.addEventListener('touchstart', this.disablingNativePickerHandler);
       } else {
         inputElement.removeEventListener('click', this.disablingNativePickerHandler);
+        inputElement.removeEventListener('touchstart', this.disablingNativePickerHandler);
       }
     }
   }
