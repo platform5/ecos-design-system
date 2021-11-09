@@ -164,6 +164,7 @@ export class EcosDateField extends FASTElement {
 
   public fieldDateChanged(event: Event): void {
     this.value = (event.target as any)?.value;
+    this.$emit('change', this.value, {bubbles: true});
   }
 
   public dateChanged(event: CustomEvent): void {
