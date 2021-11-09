@@ -46,7 +46,6 @@ export class EcosDateField extends FASTElement {
   @attr({mode: "boolean"})
   public disableNativePicker = true;
   public disableNativePickerChanged(): void {
-    console.log('disableNativePickerChanged', this.disableNativePicker);
     const inputField = this.shadowRoot.querySelector('ecos-text-field');
     if (!inputField?.shadowRoot?.querySelector) {
       return;
@@ -109,7 +108,7 @@ export class EcosDateField extends FASTElement {
 
     @attr value = '';
     valueChanged(): void {
-      console.log('value changed', this.value);
+      // console.log('value changed', this.value);
     }
 
    /**
@@ -177,18 +176,23 @@ export class EcosDateField extends FASTElement {
   }
 
   public handleEvent(event: Event): void {
-    if (!this.pickerOpened) {
-      return;
-    }
     if (event instanceof MouseEvent || event instanceof TouchEvent) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const path: Element[] = (event as any).path || event.composedPath()
       if (path.find(el => el === this.pickerElement || el === this.calendarIconElement)) {
         return;
       }
-      this.pickerOpened = false;
+      if (path.find(el => el === this)) {
+        if (!this.pickerOpened) {
+          this.togglePicker();
+        }
+        return;
+      }
+      if (this.pickerOpened) {
+        this.pickerOpened = false;
+      }
     } else if (event instanceof KeyboardEvent) {
-      if (event.key === 'Escape') {
+      if (event.key === 'Escape' && this.pickerOpened) {
         this.pickerOpened = false;
       }
     }
