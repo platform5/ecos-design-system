@@ -1,6 +1,6 @@
-import { dialogStyles as styles } from '@microsoft/fast-components';
+import { dialogStyles as styles, Dialog } from '@microsoft/fast-components';
 import { attr, html, css } from '@microsoft/fast-element';
-import { dialogTemplate as template, Dialog, ElementDefinitionContext, FoundationElementDefinition } from '@microsoft/fast-foundation';
+import { dialogTemplate as template, ElementDefinitionContext, FoundationElementDefinition } from '@microsoft/fast-foundation';
 import { fadingStyles } from './styles';
 
 const overrideStyles = (context: ElementDefinitionContext, definition: FoundationElementDefinition) => {

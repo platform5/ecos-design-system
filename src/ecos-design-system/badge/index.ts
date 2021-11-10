@@ -1,6 +1,6 @@
-import { badgeStyles as styles } from '@microsoft/fast-components';
+import { badgeStyles as styles, Badge } from '@microsoft/fast-components';
 import { attr, css } from '@microsoft/fast-element';
-import { applyMixins, badgeTemplate as template, Badge, ElementDefinitionContext, FoundationElementDefinition } from '@microsoft/fast-foundation';
+import { applyMixins, badgeTemplate as template, ElementDefinitionContext, FoundationElementDefinition } from '@microsoft/fast-foundation';
 import { extendedBadgeStyles } from './styles';
 import { SecondaryImportantError } from '../mixins/secondary-important-error';
 

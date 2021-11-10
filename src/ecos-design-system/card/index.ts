@@ -1,7 +1,7 @@
-import { cardStyles as styles, fillColor, isDark, SwatchRGB } from '@microsoft/fast-components';
+import { cardStyles as styles, fillColor, isDark, SwatchRGB, Card } from '@microsoft/fast-components';
 import { attr, css } from '@microsoft/fast-element';
 import { parseColorHexRGB } from '@microsoft/fast-colors';
-import { cardTemplate as template, Card, ElementDefinitionContext, FoundationElementDefinition } from '@microsoft/fast-foundation';
+import { cardTemplate as template, ElementDefinitionContext, FoundationElementDefinition } from '@microsoft/fast-foundation';
 
 import { lightenViaLAB, darkenViaLAB, ColorRGBA64 } from "@microsoft/fast-colors";
 

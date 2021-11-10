@@ -1,11 +1,10 @@
 import {
-  MenuItem,
   MenuItemOptions,
   menuItemTemplate as template,
   ElementDefinitionContext,
   FoundationElementDefinition
 } from "@microsoft/fast-foundation";
-import { menuItemStyles as styles } from "@microsoft/fast-components";
+import { menuItemStyles as styles, MenuItem } from "@microsoft/fast-components";
 import { css } from "@microsoft/fast-element";
 import { maxRadiusCheckboxStyles } from './styles';
 

@@ -1,6 +1,6 @@
 import { css } from '@microsoft/fast-element';
-import { checkboxTemplate as template, Checkbox, CheckboxOptions, ElementDefinitionContext, FoundationElementDefinition } from '@microsoft/fast-foundation';
-import { checkboxStyles as styles } from '@microsoft/fast-components';
+import { checkboxTemplate as template, CheckboxOptions, ElementDefinitionContext, FoundationElementDefinition } from '@microsoft/fast-foundation';
+import { checkboxStyles as styles, Checkbox } from '@microsoft/fast-components';
 
 const maxRadiusCheckboxStyles = css`
   :host .control {

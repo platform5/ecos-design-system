@@ -1,6 +1,6 @@
-import { selectStyles as styles} from '@microsoft/fast-components';
+import { selectStyles as styles, Select} from '@microsoft/fast-components';
 import { css } from '@microsoft/fast-element';
-import { selectTemplate as template, Select, SelectOptions, ElementDefinitionContext, FoundationElementDefinition } from '@microsoft/fast-foundation';
+import { selectTemplate as template, SelectOptions, ElementDefinitionContext, FoundationElementDefinition } from '@microsoft/fast-foundation';
 import { selectStartStyles } from './styles';
 
 const overrideStyles = (context: ElementDefinitionContext, definition: FoundationElementDefinition) => {

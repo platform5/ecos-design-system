@@ -1,6 +1,6 @@
-import { buttonStyles as styles, accentFillHover, accentFillFocus, foregroundOnAccentHover, foregroundOnAccentFocus } from '@microsoft/fast-components';
+import { buttonStyles as styles, Button, accentFillHover, accentFillFocus, foregroundOnAccentHover, foregroundOnAccentFocus } from '@microsoft/fast-components';
 import { css } from '@microsoft/fast-element';
-import { buttonTemplate as template, Button, ElementDefinitionContext, FoundationElementDefinition, applyMixins, focusVisible } from '@microsoft/fast-foundation';
+import { buttonTemplate as template, ElementDefinitionContext, FoundationElementDefinition, applyMixins, focusVisible } from '@microsoft/fast-foundation';
 import { SecondaryImportantError } from '../mixins/secondary-important-error';
 
 export const extendPaddingWithRadiusStyles = css`
