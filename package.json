@@ -10,7 +10,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@microsoft/fast-components": "^2.11.6",
+    "@microsoft/fast-components": "2.14.4",
     "@microsoft/fast-element": "^1.5.1",
     "aurelia-fast-adapter": "^1.0.5",
     "date-fns": "^2.22.1",
