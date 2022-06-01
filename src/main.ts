@@ -31,7 +31,7 @@ Aurelia
     colorOptions: ColorOptions.colors
   }))
   .register(RouterConfiguration.customize({ 
-    useUrlFragmentHash: true,
+    useUrlFragmentHash: false,
     swapOrder:'attach-next-detach-current'
   }))
   //.register(FASTAdapter.customize({withPrefix: 'ecos'}))
