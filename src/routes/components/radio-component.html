@@ -14,3 +14,29 @@
     </ecos-radio-group>
   </p>
 </ecos-section>
+
+<ecos-section>
+  <h4>Products : Input</h4>
+  <label repeat.for="product of products">
+    <input type="radio" name="group4" value.bind="product" checked.bind="selectedProduct">
+    ${product}
+  </label>
+
+  <br>
+  <br>
+  <br>
+
+  <h4>Products : ecos-radio</h4>
+  
+  <fast-radio-group role="genial">
+    <label repeat.for="product of products">
+      <ecos-radio type="radio" name="group4" value.bind="product" checked.bind="selectedProduct"></ecos-radio> ${product}
+    </label>
+  </fast-radio-group>
+  
+  <br>
+  <br>
+  <br>
+
+  Selected product: ${selectedProduct}
+</ecos-section>
